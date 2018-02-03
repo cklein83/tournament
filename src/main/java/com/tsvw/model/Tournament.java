@@ -1,0 +1,135 @@
+package com.tsvw.model;
+
+import net.formio.binding.Ignored;
+import net.formio.validation.constraints.NotEmpty;
+import org.hibernate.Hibernate;
+
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+@Entity(name = "tournaments")
+public class Tournament {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private Long id;
+
+    @NotEmpty
+    private String name;
+
+    private String subtitle;
+
+    @NotEmpty
+    private Date date;
+
+    @NotEmpty
+    private Integer qualiCount;
+
+    @NotEmpty
+    private Integer matchTimeSeconds;
+
+    @OneToMany(targetEntity = Match.class)
+    private List<Match> matches = new ArrayList<>();
+
+    @OneToMany(targetEntity = Group.class)
+    private List<Group> groups = new ArrayList<>();
+
+    // ---------------- constructors ------------------
+
+    public Tournament(String name, Date date, Integer matchTimeSeconds, Integer qualiCount)
+    {
+        this.name = name;
+        this.date = date;
+        this.matchTimeSeconds = matchTimeSeconds;
+        this.qualiCount = qualiCount;
+    }
+
+    public Tournament() {
+    }
+
+    // ---------------- getters and setters ------------------
+
+    @Ignored
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void addMatch(Match match){
+        matches.add(match);
+    }
+
+    @Ignored
+    public List<Match> getMatches() {
+        return matches;
+    }
+
+    public void setMatches(List<Match> matches) {
+        this.matches = matches;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public String getSubtitle() {
+        return subtitle;
+    }
+
+    public void setSubtitle(String subtitle) {
+        this.subtitle = subtitle;
+    }
+
+    public Integer getMatchTimeSeconds() {
+        return matchTimeSeconds;
+    }
+
+    public void setMatchTimeSeconds(Integer matchTimeSeconds) {
+        this.matchTimeSeconds = matchTimeSeconds;
+    }
+
+    public Integer getQualiCount() {
+        return qualiCount;
+    }
+
+    public void setQualiCount(Integer qualiCount) {
+        this.qualiCount = qualiCount;
+    }
+
+    public List<Group> getGroups() {
+        return groups;
+    }
+
+    public void setGroups(List<Group> groups) {
+        this.groups = groups;
+    }
+
+    public void addGroup(Group group) {
+        this.groups.add(group);
+    }
+
+    public List<Team> getTeams() {
+        ArrayList<Team> teams = new ArrayList<>();
+        for (Group g : groups) {
+            teams.addAll(g.getTeams());
+        }
+        return teams;
+    }
+}

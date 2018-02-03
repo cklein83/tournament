@@ -1,0 +1,59 @@
+#@mainLayout()
+
+<script>
+    $(function () {
+        var webSocket = new WebSocket("ws://" + location.hostname + ":" + location.port + "/update");
+        webSocket.onmessage = function (msg) { updateMatch(msg); };
+        //webSocket.onclose = function () { alert("WebSocket connection closed") };
+
+        function updateMatch(msg) {
+            var data = JSON.parse(msg.data);
+            var g1 = data.goalsTeam1;
+            var g2 = data.goalsTeam2;
+
+            $("#goalsTeam1").text(g1);
+            $("#goalsTeam2").text(g2);
+        }
+    })
+</script>
+
+<div class="container">
+    <div id="match-result" class="live result">
+        <span id="goalsTeam2">$match.goalsTeam2</span> : <span id="goalsTeam1">$match.goalsTeam1</span>
+    </div>
+    <div id="end-message" class="live-message" style="display: none;">
+        <span class="message">End match?</span>
+        <br/>
+        <span class="button green" id="end-button-yes">Yes</span>
+        <span class="button red" id="end-button-no">No</span>
+    </div>
+    <div class="teams black">
+        BLACK
+        <div class="live-player">
+            <img class="avatar" src="/images/player.jpg"/>
+            <div class="name">$match.keeperTeam2.forename <span class="nick">$match.keeperTeam2.nickname</span> $match.keeperTeam2.surname</div>
+        </div>
+        #if($match.strikerTeam2)
+        <div class="live-player">
+            <img class="avatar" src="/images/player.jpg"/>
+            <div class="name">$match.strikerTeam2.forename <span class="nick">$match.strikerTeam2.nickname</span> $match.strikerTeam2.surname</div>
+        </div>
+        #end
+    </div>
+    <img class="live-background" src="/images/table.png"/>
+    <div class="teams white">
+        WHITE
+        #if($match.strikerTeam1)
+        <div class="live-player">
+            <img class="avatar" src="/images/player.jpg"/>
+            <div class="name">$match.strikerTeam1.forename <span class="nick">$match.strikerTeam1.nickname</span> $match.strikerTeam1.surname</div>
+        </div>
+        #end
+        <div class="live-player">
+            <img class="avatar" src="/images/player.jpg"/>
+            <div class="name">$match.keeperTeam1.forename <span class="nick">$match.keeperTeam1.nickname</span> $match.keeperTeam1.surname</div>
+        </div>
+
+    </div>
+</div>
+#end

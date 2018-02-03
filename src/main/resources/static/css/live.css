@@ -1,0 +1,90 @@
+.result {
+    font-size: 4em;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.live.result {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 800px;
+    height: 400px;
+    font-size: 20em;
+    line-height: 400px;
+    z-index: 10;
+    overflow: hidden;
+}
+
+.live-message {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 300px;
+    height: 50px;
+    font-size: 2em;
+    text-align: center;
+    z-index: 10;
+}
+
+.message {
+    font-size: 4em;
+}
+
+.live-background {
+    max-width: 1920px;
+    max-height: 1080px;
+    height: 100%;
+    margin: auto;
+    display: block;
+    opacity: 0.5;
+    z-index: 0;
+    transform: rotate(-90deg);
+}
+
+.team {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50%;
+    box-sizing: border-box;
+    z-index: 5;
+}
+
+.team.black {
+    left: 0;
+    text-align: right;
+    padding-right: 450px;
+}
+
+.team.white {
+    right: 0;
+    padding-left: 450px;
+}
+
+.live-player {
+    height: 50%;
+    padding-top: 33%;
+    box-sizing: border-box;
+}
+
+.live-player .name {
+    font-size: 2em;
+    font-family: 'Fjalla One', sans-serif;
+}
+
+.name .nick {
+    color: gray;
+    letter-spacing: 1px;
+    /*text-transform: uppercase;*/
+}
+
+.nick:before {
+    content: open-quote;
+}
+.nick:after {
+    content: close-quote;
+}

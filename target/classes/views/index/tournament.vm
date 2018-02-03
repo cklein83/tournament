@@ -1,0 +1,181 @@
+#@mainLayout()
+
+<div class="blog-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <h1 class="blog-title">$t.name</h1>
+                <p class="lead blog-description">$t.subtitle</p>
+            </div>
+            <div class="col-sm-4">
+                <img src="/images/logo.png" />
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+
+<div class="row">
+
+    <div class="col-sm-7 blog-main">
+
+        <h4>Vorrunde</h4>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Uhrzeit</th>
+                <th scope="col">Gruppe</th>
+                <th scope="col">Team 1</th>
+                <th scope="col">Team 2</th>
+                <th scope="col">Ergebnis</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>18:00</td>
+                <td>A</td>
+                <td>FC Bierdurst</td>
+                <td>Mlog</td>
+                <td>1 : 2</td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>18:09</td>
+                <td>B</td>
+                <td>AS Tralkörper</td>
+                <td>mybet</td>
+                <td>0 : 4</td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>18:18</td>
+                <td>C</td>
+                <td>El Fuego</td>
+                <td>Amos</td>
+                <td>2 : 2</td>
+            </tr>
+            </tbody>
+        </table>
+
+        #set($timeInMin = $t.matchTimeSeconds / 60)
+        <p class="lead blog-description">$timeInMin Minuten</p>
+
+        <div class="row">&nbsp;</div>
+
+        <h4>Viertelfinale</h4>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Uhrzeit</th>
+                <th scope="col">Gruppe</th>
+                <th scope="col">Team 1</th>
+                <th scope="col">Team 2</th>
+                <th scope="col">Ergebnis</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>20:00</td>
+                <td>A</td>
+                <td>FC Bierdurst</td>
+                <td>El Fuego</td>
+                <td>4 : 2</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <div class="row">&nbsp;</div>
+
+        <h4>Halbfinale</h4>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Uhrzeit</th>
+                <th scope="col">Gruppe</th>
+                <th scope="col">Team 1</th>
+                <th scope="col">Team 2</th>
+                <th scope="col">Ergebnis</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>20:00</td>
+                <td>A</td>
+                <td>El Fuego</td>
+                <td>Magna</td>
+                <td>2 : 1</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <div class="row">&nbsp;</div>
+
+        <h4>Finale</h4>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Uhrzeit</th>
+                <th scope="col">Gruppe</th>
+                <th scope="col">Team 1</th>
+                <th scope="col">Team 2</th>
+                <th scope="col">Ergebnis</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>21:00</td>
+                <td>A</td>
+                <td>Bechtle</td>
+                <td>Magna</td>
+                <td>3 : 0</td>
+            </tr>
+            </tbody>
+        </table>
+
+    </div><!-- /.blog-main -->
+
+    <div class="col-sm-4 offset-sm-1 blog-sidebar">
+
+        #foreach($g in $t.getGroups())
+        <div class="sidebar-module">
+            <table class="table-sm" style="width:100%">
+                <thead class="thead-dark">
+                <tr>
+                    <th scope="col">$g.name</th>
+                </tr>
+                </thead>
+                <tbody>
+                #foreach($team in $g.getTeams())
+                #if($t.qualiCount % 2 != 0 && $foreach.count == $t.qualiCount)
+                <tr class="table-warning">
+                #elseif($foreach.count <= $t.qualiCount)
+                <tr class="table-success">
+                #else
+                <tr>
+                #end
+                    <th scope="row">$foreach.count.</th>
+                    <td>$team.name</td>
+                    <td>?:?</td>
+                    <td>?</td>
+                </tr>
+                #end
+                </tbody>
+            </table>
+        </div>
+        #end
+
+    </div><!-- /.blog-sidebar -->
+
+</div><!-- /.row -->
+
+</div><!-- /.container -->
+#end
