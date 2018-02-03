@@ -43,6 +43,8 @@ public class Start {
         // backend
         path("/backend", () -> {
             get("", BackendController::index, velocityTemplateEngine);
+            get("/createExampleTournament", BackendController::createExampleTournament);
+
         });
 
     }
