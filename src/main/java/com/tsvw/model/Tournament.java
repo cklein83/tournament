@@ -30,7 +30,14 @@ public class Tournament {
     @NotEmpty
     private Integer matchTimeSeconds;
 
+    @NotEmpty
+    private Integer pauseInBetweenSeconds;
+
+    @NotEmpty
+    private Integer pauseBeforeFinalSeconds;
+
     @OneToMany(targetEntity = Match.class)
+    @OrderBy("number ASC")
     private List<Match> matches = new ArrayList<>();
 
     @OneToMany(targetEntity = Group.class)
@@ -38,10 +45,12 @@ public class Tournament {
 
     // ---------------- constructors ------------------
 
-    public Tournament(String name, Date date, Integer matchTimeSeconds, Integer qualiCount)
+    public Tournament(String name, Date date, Integer matchTimeSeconds, Integer pauseInBetweenSeconds, Integer pauseBeforeFinalSeconds, Integer qualiCount)
     {
         this.name = name;
         this.date = date;
+        this.pauseInBetweenSeconds = pauseInBetweenSeconds;
+        this.pauseBeforeFinalSeconds = pauseBeforeFinalSeconds;
         this.matchTimeSeconds = matchTimeSeconds;
         this.qualiCount = qualiCount;
     }
@@ -131,5 +140,21 @@ public class Tournament {
             teams.addAll(g.getTeams());
         }
         return teams;
+    }
+
+    public Integer getPauseInBetweenSeconds() {
+        return pauseInBetweenSeconds;
+    }
+
+    public void setPauseInBetweenSeconds(Integer pauseInBetweenSeconds) {
+        this.pauseInBetweenSeconds = pauseInBetweenSeconds;
+    }
+
+    public Integer getPauseBeforeFinalSeconds() {
+        return pauseBeforeFinalSeconds;
+    }
+
+    public void setPauseBeforeFinalSeconds(Integer pauseBeforeFinalSeconds) {
+        this.pauseBeforeFinalSeconds = pauseBeforeFinalSeconds;
     }
 }

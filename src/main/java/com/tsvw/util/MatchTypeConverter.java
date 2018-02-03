@@ -19,6 +19,8 @@ public class MatchTypeConverter implements AttributeConverter<MatchType, String>
                 return "1/4";
             case SEMIFINAL:
                 return "1/2";
+            case SMALLFINAL:
+                return "s1";
             case FINAL:
                 return "1";
             default:
@@ -37,8 +39,10 @@ public class MatchTypeConverter implements AttributeConverter<MatchType, String>
                 return MatchType.QUARTERFINAL;
             case "1/2":
                 return MatchType.SEMIFINAL;
+            case "s1":
+                return MatchType.SMALLFINAL;
             case "1":
-                return MatchType.QUARTERFINAL;
+                return MatchType.FINAL;
             default:
                 throw new IllegalArgumentException("Unknown" + dbData);
         }

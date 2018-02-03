@@ -4,6 +4,7 @@ import com.tsvw.util.MatchTypeConverter;
 import net.formio.validation.constraints.NotEmpty;
 
 import javax.persistence.*;
+import java.text.DateFormat;
 import java.util.Date;
 
 @Entity(name = "matches")
@@ -13,7 +14,9 @@ public class Match {
     @GeneratedValue(strategy= GenerationType.SEQUENCE)
     private long id;
 
-    private Date timestamp;
+    private Integer number;
+
+    private Date startDate;
 
     @NotEmpty
     private Status status;
@@ -22,26 +25,35 @@ public class Match {
     private Tournament tournament;
 
     private int goalsTeam1;
-
     private int goalsTeam2;
 
-    @OneToOne(optional = false)
+    @ManyToOne(optional = true)
     private Team team1;
 
-    @OneToOne(optional = false)
+    @ManyToOne(optional = true)
     private Team team2;
+
+    private String dummyTeam1;
+    private String dummyTeam2;
 
     @Convert(converter = MatchTypeConverter.class)
     private MatchType matchType;
 
     // ---------------- constructors ------------------
 
-    public Match(Tournament tournament, Date date, MatchType matchType, Team team1, Team team2) {
+    public Match(Tournament tournament, Integer number, Date date, MatchType matchType, Team team1, Team team2) {
+        this(tournament, number, date, matchType, team1, team2, "", "");
+    }
+
+    public Match(Tournament tournament, Integer number, Date date, MatchType matchType, Team team1, Team team2, String dummyTeam1, String dummyTeam2) {
         this.tournament = tournament;
+        this.number = number;
         this.matchType = matchType;
-        this.timestamp = date;
+        this.startDate = date;
         this.team1 = team1;
         this.team2 = team2;
+        this.dummyTeam1 = dummyTeam1;
+        this.dummyTeam2 = dummyTeam2;
         this.status = Status.NEW;
     }
 
@@ -114,11 +126,39 @@ public class Match {
         this.tournament = tournament;
     }
 
-    public Date getTimestamp() {
-        return timestamp;
+    public Date getStartDate() {
+        return startDate;
     }
 
-    public void setTimestamp(Date timestamp) {
-        this.timestamp = timestamp;
+    public void setStartDate(Date startDate) {
+        this.startDate = startDate;
+    }
+
+    public String getStartTimeFormatted() {
+        return DateFormat.getTimeInstance(DateFormat.SHORT).format(startDate);
+    }
+
+    public Integer getNumber() {
+        return number;
+    }
+
+    public void setNumber(Integer number) {
+        this.number = number;
+    }
+
+    public String getDummyTeam1() {
+        return dummyTeam1;
+    }
+
+    public void setDummyTeam1(String dummyTeam1) {
+        this.dummyTeam1 = dummyTeam1;
+    }
+
+    public String getDummyTeam2() {
+        return dummyTeam2;
+    }
+
+    public void setDummyTeam2(String dummyTeam2) {
+        this.dummyTeam2 = dummyTeam2;
     }
 }

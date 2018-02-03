@@ -3,6 +3,8 @@ package com.tsvw.model;
 import net.formio.validation.constraints.NotEmpty;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity(name = "teams")
 public class Team {
@@ -16,6 +18,10 @@ public class Team {
 
     @ManyToOne(optional = false)
     private Group group;
+
+    @OneToMany(targetEntity = Match.class)
+    @OrderBy("number ASC")
+    private List<Match> matches = new ArrayList<>();
 
     // ---------------- constructors ------------------
 
@@ -37,7 +43,6 @@ public class Team {
         this.id = id;
     }
 
-
     public String getName() {
         return name;
     }
@@ -52,5 +57,13 @@ public class Team {
 
     public void setGroup(Group group) {
         this.group = group;
+    }
+
+    public List<Match> getMatches() {
+        return matches;
+    }
+
+    public void setMatches(List<Match> matches) {
+        this.matches = matches;
     }
 }

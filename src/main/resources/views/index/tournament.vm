@@ -18,9 +18,13 @@
 
 <div class="row">
 
-    <div class="col-sm-7 blog-main">
+    <div class="col-sm-9 blog-main">
 
-        <h4>Vorrunde</h4>
+        #foreach($matches in $matchesByType)
+
+        #if($matches.size() > 0)
+        <h4>$matches.get(0).matchType</h4>
+        #end
         <table class="table table-striped">
             <thead>
             <tr>
@@ -33,124 +37,54 @@
             </tr>
             </thead>
             <tbody>
+            #foreach($m in $matches)
             <tr>
-                <th scope="row">1</th>
-                <td>18:00</td>
-                <td>A</td>
-                <td>FC Bierdurst</td>
-                <td>Mlog</td>
-                <td>1 : 2</td>
+                <th scope="row">$m.number</th>
+                <td>$m.startTimeFormatted</td>
+                #if($m.team1)
+                <td>$m.team1.group.name</td>
+                #else
+                <td>-</td>
+                #end
+                #if($m.team1)
+                <td>$m.team1.name</td>
+                #else
+                <td>$m.dummyTeam1</td>
+                #end
+                #if($m.team2)
+                <td>$m.team2.name</td>
+                #else
+                <td>$m.dummyTeam2</td>
+                #end
+                #if($m.status.toString() != "new")
+                <td>$m.goalsTeam1 : $m.goalsTeam2</td>
+                #else
+                <td>- : -</td>
+                #end
             </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>18:09</td>
-                <td>B</td>
-                <td>AS Tralkörper</td>
-                <td>mybet</td>
-                <td>0 : 4</td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>18:18</td>
-                <td>C</td>
-                <td>El Fuego</td>
-                <td>Amos</td>
-                <td>2 : 2</td>
-            </tr>
+            #end
             </tbody>
         </table>
 
+        #if($foreach.count == 1)
         #set($timeInMin = $t.matchTimeSeconds / 60)
         <p class="lead blog-description">Spielzeit: $timeInMin Minuten</p>
+        #end
 
         <div class="row">&nbsp;</div>
 
-        <h4>Viertelfinale</h4>
-        <table class="table table-striped">
-            <thead>
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">Uhrzeit</th>
-                <th scope="col">Gruppe</th>
-                <th scope="col">Team 1</th>
-                <th scope="col">Team 2</th>
-                <th scope="col">Ergebnis</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>20:00</td>
-                <td>A</td>
-                <td>FC Bierdurst</td>
-                <td>El Fuego</td>
-                <td>4 : 2</td>
-            </tr>
-            </tbody>
-        </table>
-
-        <div class="row">&nbsp;</div>
-
-        <h4>Halbfinale</h4>
-        <table class="table table-striped">
-            <thead>
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">Uhrzeit</th>
-                <th scope="col">Gruppe</th>
-                <th scope="col">Team 1</th>
-                <th scope="col">Team 2</th>
-                <th scope="col">Ergebnis</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>20:00</td>
-                <td>A</td>
-                <td>El Fuego</td>
-                <td>Magna</td>
-                <td>2 : 1</td>
-            </tr>
-            </tbody>
-        </table>
-
-        <div class="row">&nbsp;</div>
-
-        <h4>Finale</h4>
-        <table class="table table-striped">
-            <thead>
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">Uhrzeit</th>
-                <th scope="col">Gruppe</th>
-                <th scope="col">Team 1</th>
-                <th scope="col">Team 2</th>
-                <th scope="col">Ergebnis</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>21:00</td>
-                <td>A</td>
-                <td>Bechtle</td>
-                <td>Magna</td>
-                <td>3 : 0</td>
-            </tr>
-            </tbody>
-        </table>
+        #end
 
     </div><!-- /.blog-main -->
 
-    <div class="col-sm-4 offset-sm-1 blog-sidebar">
+    <div class="col-sm-3 blog-sidebar">
 
-        #foreach($g in $t.getGroups())
+        #foreach($g in $t.groups)
         <div class="sidebar-module">
-            <table class="table-sm" style="width:100%">
+            <table class="table-sm">
                 <thead class="thead-dark">
                 <tr>
-                    <th scope="col">$g.name</th>
+                    <th scope="col" colspan="4">$g.name</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -162,10 +96,10 @@
                 #else
                 <tr>
                 #end
-                    <th scope="row">$foreach.count.</th>
-                    <td>$team.name</td>
-                    <td>?:?</td>
-                    <td>?</td>
+                    <th scope="row" class="col-md-1">$foreach.count.</th>
+                    <td class="col-md-3">$team.name</td>
+                    <td class="col-md-2">-:-</td>
+                    <td class="col-md-2">-</td>
                 </tr>
                 #end
                 </tbody>
