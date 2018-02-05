@@ -80,4 +80,8 @@
     div.main-content > .container > .row > div.col-sm-9.blog-main p.lead.blog-description {
         page-break-after: always;
     }
+
+    footer.blog-footer {
+        display: none;
+    }
 }

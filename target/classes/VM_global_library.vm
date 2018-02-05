@@ -25,14 +25,12 @@
 
 $!bodyContent##
 
-<!--
 <footer class="blog-footer">
     <p>Developed for <a href="http://fussball.tsv-weinsberg.de">TSV Weinsberg Fussball</a> by <a href="#">cklein Software Development</a>.</p>
     <p>
         <a href="#">Back to top</a>
     </p>
 </footer>
--->
 
 
 <!-- Bootstrap core JavaScript

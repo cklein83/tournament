@@ -1,9 +1,12 @@
 package com.tsvw.model;
 
 import net.formio.validation.constraints.NotEmpty;
+import org.apache.commons.collections.comparators.ComparatorChain;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 @Entity(name = "groups")
@@ -60,6 +63,51 @@ public class Group {
     }
 
     public List<com.tsvw.model.Team> getTeams() {
+        return teams;
+    }
+
+    protected Integer getOrZero(Integer i) {
+        return i == null ? 0 : i;
+    }
+
+    @Transient
+    private Comparator<Team> pointComparator = new Comparator<Team>() {
+        @Override
+        public int compare(Team team1, Team team2) {
+            return getOrZero(team2.getPoints()).compareTo(getOrZero(team1.getPoints()));
+        }
+    };
+
+    @Transient
+    private Comparator<Team> goalDiffComparator = new Comparator<Team>() {
+        @Override
+        public int compare(Team team1, Team team2) {
+            Integer diffT1 = getOrZero(team1.getGoals()) - getOrZero(team1.getContragoals());
+            Integer diffT2 = getOrZero(team2.getGoals()) - getOrZero(team2.getContragoals());
+            return diffT2.compareTo(diffT1);
+        }
+    };
+
+    @Transient
+    private Comparator<Team> mostGoalsComparator = new Comparator<Team>() {
+        @Override
+        public int compare(Team team1, Team team2) {
+            return getOrZero(team2.getGoals()).compareTo(getOrZero(team1.getGoals()));
+        }
+    };
+
+    /**
+     * A) first sort by points
+     * C) then sort by goal diff
+     * B) then let the most scored goals be better in case two diffs are equal
+     * @return
+     */
+    public List<com.tsvw.model.Team> getRankedTeams() {
+        ComparatorChain cc = new ComparatorChain();
+        cc.addComparator(pointComparator);
+        cc.addComparator(goalDiffComparator);
+        cc.addComparator(mostGoalsComparator);
+        Collections.sort(teams, cc);
         return teams;
     }
 

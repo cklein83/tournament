@@ -11,8 +11,10 @@ import javax.persistence.EntityManager;
 import java.security.InvalidParameterException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.stream.Collectors;
 
 public class BackendController {
 
@@ -50,22 +52,24 @@ public class BackendController {
         t.setSubtitle("Firmenturnier in der Weibertreuhalle Weinsberg");
         entityManager.persist(t);
 
-        // groups
+        // groups + teams
+
+        ArrayList<Team> teams = new ArrayList<>();
 
         Group groupA = new Group("Gruppe A", t);
         entityManager.persist(groupA);
 
         Team teamA1 = new Team("FC Bierdurst", groupA);
-        entityManager.persist(teamA1);
+        teams.add(teamA1);
         groupA.addTeam(teamA1);
         Team teamA2 = new Team("Kaufland", groupA);
-        entityManager.persist(teamA2);
+        teams.add(teamA2);
         groupA.addTeam(teamA2);
         Team teamA3 = new Team("Kardex Mlog", groupA);
-        entityManager.persist(teamA3);
+        teams.add(teamA3);
         groupA.addTeam(teamA3);
         Team teamA4 = new Team("Bechtle", groupA);
-        entityManager.persist(teamA4);
+        teams.add(teamA4);
         groupA.addTeam(teamA4);
 
         t.addGroup(groupA);
@@ -74,16 +78,16 @@ public class BackendController {
         entityManager.persist(groupB);
 
         Team teamB1 = new Team("Therapiezentrum", groupB);
-        entityManager.persist(teamB1);
+        teams.add(teamB1);
         groupB.addTeam(teamB1);
         Team teamB2 = new Team("AS Tralkörper", groupB);
-        entityManager.persist(teamB2);
+        teams.add(teamB2);
         groupB.addTeam(teamB2);
         Team teamB3 = new Team("Magna I", groupB);
-        entityManager.persist(teamB3);
+        teams.add(teamB3);
         groupB.addTeam(teamB3);
         Team teamB4 = new Team("Amos", groupB);
-        entityManager.persist(teamB4);
+        teams.add(teamB4);
         groupB.addTeam(teamB4);
 
         t.addGroup(groupB);
@@ -92,16 +96,16 @@ public class BackendController {
         entityManager.persist(groupC);
 
         Team teamC1 = new Team("Campina", groupC);
-        entityManager.persist(teamC1);
+        teams.add(teamC1);
         groupC.addTeam(teamC1);
         Team teamC2 = new Team("Telekom", groupC);
-        entityManager.persist(teamC2);
+        teams.add(teamC2);
         groupC.addTeam(teamC2);
         Team teamC3 = new Team("DMDLJZW", groupC);
-        entityManager.persist(teamC3);
+        teams.add(teamC3);
         groupC.addTeam(teamC3);
         Team teamC4 = new Team("mybet", groupC);
-        entityManager.persist(teamC4);
+        teams.add(teamC4);
         groupC.addTeam(teamC4);
 
         t.addGroup(groupC);
@@ -110,21 +114,26 @@ public class BackendController {
         entityManager.persist(groupD);
 
         Team teamD1 = new Team("El Fuego", groupD);
-        entityManager.persist(teamD1);
+        teams.add(teamD1);
         groupD.addTeam(teamD1);
         Team teamD2 = new Team("IT Works", groupD);
-        entityManager.persist(teamD2);
+        teams.add(teamD2);
         groupD.addTeam(teamD2);
         Team teamD3 = new Team("Reisebüro Dogru", groupD);
-        entityManager.persist(teamD3);
+        teams.add(teamD3);
         groupD.addTeam(teamD3);
         Team teamD4 = new Team("Magna II", groupD);
-        entityManager.persist(teamD4);
+        teams.add(teamD4);
         groupD.addTeam(teamD4);
 
         t.addGroup(groupD);
 
+        for (Team team : teams) {
+            entityManager.persist(team);
+        }
+
         // matches
+
         /*
         Random random = new Random();
         for (Group g : t.getGroups()) {
@@ -356,6 +365,17 @@ public class BackendController {
             Match m = new Match(t, ++matchNo, workDate, MatchType.FINAL, null, null, "Sieger 1/2-Finale Spiel 29", "Sieger 1/2-Finale Spiel 30");
             entityManager.persist(m);
             t.addMatch(m);
+        }
+
+        //
+
+        for (Team team : teams) {
+            team.setMatches(
+                    t.getMatches().stream()
+                            .filter(
+                                    m -> m.getTeam1() == team || m.getTeam2() == team)
+                            .collect(Collectors.toList()));
+            entityManager.persist(team);
         }
 
         //

@@ -91,7 +91,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                #foreach($team in $g.getTeams())
+                #foreach($team in $g.getRankedTeams())
                 #if($t.qualiCount % 2 != 0 && $foreach.count == $t.qualiCount)
                 <tr class="table-warning">
                 #elseif($foreach.count <= $t.qualiCount)
@@ -101,8 +101,16 @@
                 #end
                     <th scope="row" class="col-md-1">$foreach.count.</th>
                     <td class="col-md-3">$team.name</td>
+                    #if($team.goals && $team.contragoals)
+                    <td class="col-md-2">$team.goals:$team.contragoals</td>
+                    #else
                     <td class="col-md-2">-:-</td>
+                    #end
+                    #if($team.points)
+                    <td class="col-md-2">$team.points</td>
+                    #else
                     <td class="col-md-2">-</td>
+                    #end
                 </tr>
                 #end
                 </tbody>
