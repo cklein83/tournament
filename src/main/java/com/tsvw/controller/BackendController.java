@@ -61,7 +61,7 @@ public class BackendController {
         Team teamA2 = new Team("Kaufland", groupA);
         entityManager.persist(teamA2);
         groupA.addTeam(teamA2);
-        Team teamA3 = new Team("Telekom", groupA);
+        Team teamA3 = new Team("Kardex Mlog", groupA);
         entityManager.persist(teamA3);
         groupA.addTeam(teamA3);
         Team teamA4 = new Team("Bechtle", groupA);
@@ -94,7 +94,7 @@ public class BackendController {
         Team teamC1 = new Team("Campina", groupC);
         entityManager.persist(teamC1);
         groupC.addTeam(teamC1);
-        Team teamC2 = new Team("Kardex Mlog", groupC);
+        Team teamC2 = new Team("Telekom", groupC);
         entityManager.persist(teamC2);
         groupC.addTeam(teamC2);
         Team teamC3 = new Team("DMDLJZW", groupC);

@@ -161,3 +161,21 @@ h6, .h6 {
 .blog-footer p:last-child {
   margin-bottom: 0;
 }
+
+/* thx to andrej */
+.sidebar-module .table-sm th, .sidebar-module .table-sm td {
+  word-wrap: break-word;
+}
+
+.sidebar-module .col-md-1 {
+  max-width: 25px;
+  width: 25px;
+}
+
+.table-striped > thead > tr > th:nth-child(1) { width: 5%;}
+.table-striped > thead > tr > th:nth-child(2) { width: 12%;}
+.table-striped > thead > tr > th:nth-child(3) { width: 15%;}
+.table-striped > thead > tr > th:nth-child(4) { width: 30%;}
+.table-striped > thead > tr > th:nth-child(5) { width: 30%;}
+.table-striped > thead > tr > th:nth-child(6) { width: 8%;}
+.table-striped > tbody > tr > td:nth-child(6) { text-align: center;}

@@ -7,29 +7,32 @@
     <meta name="author" content="">
     <link rel="icon" href="/images/favicon.ico">
 
-    <title>Turnierplaner</title>
+    <title>Turnierplan</title>
 
     <!-- Bootstrap core CSS -->
     <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="/css/blog.css" rel="stylesheet">
+
+    <!-- Custom style for Page printing-->
+    <link href="/css/print.css" rel="stylesheet" type="text/css" media="print">
 </head>
 
 <body>
 
 <div class="row">&nbsp;</div>
 
-
-
 $!bodyContent##
 
+<!--
 <footer class="blog-footer">
-    <p>Blog template built for <a href="https://getbootstrap.com">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+    <p>Developed for <a href="http://fussball.tsv-weinsberg.de">TSV Weinsberg Fussball</a> by <a href="#">cklein Software Development</a>.</p>
     <p>
         <a href="#">Back to top</a>
     </p>
 </footer>
+-->
 
 
 <!-- Bootstrap core JavaScript

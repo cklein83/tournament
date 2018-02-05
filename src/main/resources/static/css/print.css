@@ -1,0 +1,83 @@
+@media print {
+    body {
+        padding: 0;
+        margin: 0;
+    }
+
+    .col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {
+        float: left;
+    }
+
+    .blog-header {
+        padding-bottom: 0;
+        margin-bottom: 0;
+        border-bottom: 0;
+    }
+
+    .blog-header .col-sm-6 {
+        width: 70%;
+    }
+
+    .blog-header .col-sm-4 {
+        width: 30%;
+    }
+
+    .blog-header .col-sm-4 img {
+        height: 50px;
+    }
+
+    .blog-header .col-sm-6 h1 {
+        font-size: 1.2rem;
+    }
+
+    div.main-content > .container > .row {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    div.main-content > .container > .row > div.col-sm-3.blog-sidebar {
+        flex-wrap: wrap;
+    }
+
+    div.main-content > .container > .row > div.col-sm-3.blog-sidebar .sidebar-module {
+        width: 50%;
+        box-sizing: border-box;
+        float: left;
+        padding: 0 5px 5px 0;
+    }
+
+    div.main-content > .container > .row > div.col-sm-3.blog-sidebar .sidebar-module .table-sm {
+        border-collapse: inherit;
+        border: 1px solid #999;
+        padding: 0 3px;
+    }
+
+    div.main-content > .container > .row > div.col-sm-3.blog-sidebar .sidebar-module .table-sm th,
+    div.main-content > .container > .row > div.col-sm-3.blog-sidebar .sidebar-module .table-sm td {
+        padding: 0;
+    }
+
+    div.main-content > .container > .row > div.col-sm-9.blog-main > h4 {
+        text-align: center;
+    }
+
+    div.main-content > .container > .row > div.col-sm-9.blog-main > .table th,
+    div.main-content > .container > .row > div.col-sm-9.blog-main > .table td {
+        padding: .10rem;
+    }
+
+    div.main-content > .container > .row > div.col-sm-9.blog-main p.lead.blog-description {
+        margin: 0;
+        font-size: .9rem;
+        color: #666;
+        font-weight: 600;
+    }
+
+    div.main-content > .container > .row > div.col-sm-9.blog-main > .table:nth-of-type(1) {
+        margin-bottom: 0.2rem;
+    }
+
+    div.main-content > .container > .row > div.col-sm-9.blog-main p.lead.blog-description {
+        page-break-after: always;
+    }
+}
