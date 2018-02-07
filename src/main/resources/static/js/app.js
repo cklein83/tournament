@@ -1,14 +1,12 @@
 $(document).ready(function () {
+    // Responsible 4 different slide intervals
+    $('#myCarousel').on('slid.bs.carousel', function () {
 
-    //Toggle menupoints for corresponding viewport
-    $(".dropdown").click(function () {
-        var currentWindowsSize = $(window).width();
-        if (currentWindowsSize < 767) {
-            $(".dropdown-content").slideUp();
-            $(".dropdown").removeClass("border-shadow-upper-lower");
-            $(this).find(".dropdown-content").slideDown();
-            $(this).addClass("border-shadow-upper-lower");
-        }
-    });
+        var duration = $(this).find('.active').attr('data-interval');
 
+        $('#myCarousel').carousel("pause")
+        setTimeout(function () {
+            $('#myCarousel').carousel("next")
+        }, duration)
+    })
 });

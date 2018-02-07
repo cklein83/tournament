@@ -9,36 +9,47 @@
 
     <title>Turnierplan</title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
     <!-- Custom styles for this template -->
     <link href="/css/blog.css" rel="stylesheet">
 
     <!-- Custom style for Page printing-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+          integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <link href="/css/print.css" rel="stylesheet" type="text/css" media="print">
+    <link href="/css/tournament.css" rel="stylesheet" type="text/css">
+
+    <!-- Bootstrap core CSS -->
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
+            integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+            integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+            integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+            crossorigin="anonymous"></script>
+    <script src="/js/app.js"></script>
 </head>
 
 <body>
 
-<div class="row">&nbsp;</div>
+    $!bodyContent##
+##TODO Footer should be improved | Container is wrong and to many text without html tags
+<div class="container">
+    <div class="row footer-thin">
+        &copy;&nbspDeveloped for&nbsp;
+        <a href="http://fussball.tsv-weinsberg.de">TSV Weinsberg Fussball</a>
+        &nbsp;by&nbsp;
+        <a href="#">cklein Software Development</a>.
+    </div>
+</div>
 
-$!bodyContent##
-
-<footer class="blog-footer">
-    <p>Developed for <a href="http://fussball.tsv-weinsberg.de">TSV Weinsberg Fussball</a> by <a href="#">cklein Software Development</a>.</p>
-    <p>
-        <a href="#">Back to top</a>
-    </p>
-</footer>
-
-
-<!-- Bootstrap core JavaScript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-<script src="/bootstrap/js/bootstrap.min.js"></script>
+##<footer class="blog-footer">
+##    <p>Developed for <a href="http://fussball.tsv-weinsberg.de">TSV Weinsberg Fussball</a> by <a href="#">cklein Software Development</a>.</p>
+##    <p>
+##        <a href="#">Back to top</a>
+##    </p>
+##</footer>
 </body>
 </html>
 
