@@ -1,84 +1,98 @@
 #@mainLayout()
-
 <div class="blog-header">
-    <div class="container">
+    <div>
         <div class="row">
             <div class="col-sm-6">
                 <h1 class="blog-title">$t.name</h1>
                 <p class="lead blog-description">$t.subtitle</p>
             </div>
             <div class="col-sm-4">
-                <img src="/images/logo.png" />
+                <img src="/images/logo.png"/>
             </div>
         </div>
     </div>
 </div>
 
-<div class="main-content"> <!-- Start of main-content -->
-
-<div class="container">
 
 <div class="row">
 
-    <div class="col-sm-9 blog-main">
+    <div class="carousel-slider col-sm-9 blog-main">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner" role="listbox">
 
-        #foreach($matches in $matchesByType)
+                <div data-interval="3000" class="carousel-item active slide--game-table">
 
-        #if($matches.size() > 0)
-        <h4>$matches.get(0).matchType</h4>
-        #end
-        <table class="table table-striped">
-            <thead>
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">Uhrzeit</th>
-                <th scope="col">Gruppe</th>
-                <th scope="col">Team 1</th>
-                <th scope="col">Team 2</th>
-                <th scope="col">Ergebnis</th>
-            </tr>
-            </thead>
-            <tbody>
-            #foreach($m in $matches)
-            <tr>
-                <th scope="row">$m.number</th>
-                <td>$m.startTimeFormatted</td>
-                #if($m.team1)
-                <td>$m.team1.group.name</td>
-                #else
-                <td>-</td>
-                #end
-                #if($m.team1)
-                <td>$m.team1.name</td>
-                #else
-                <td>$m.dummyTeam1</td>
-                #end
-                #if($m.team2)
-                <td>$m.team2.name</td>
-                #else
-                <td>$m.dummyTeam2</td>
-                #end
-                #if($m.status.toString() != "new")
-                <td>$m.goalsTeam1 : $m.goalsTeam2</td>
-                #else
-                <td>- : -</td>
-                #end
-            </tr>
-            #end
-            </tbody>
-        </table>
+                    <div>
 
-        #if($foreach.count == 1)
-        #set($timeInMin = $t.matchTimeSeconds / 60)
-        <p class="lead blog-description">Spielzeit: $timeInMin Minuten</p>
-        #end
+                        #foreach($matches in $matchesByType)
 
-        <div class="row">&nbsp;</div>
-        <div class="row">&nbsp;</div>
+                            #if($matches.size() > 0)
+                                <h4>$matches.get(0).matchType</h4>
+                            #end
+                            <table class="table table-striped">
+                                <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Uhrzeit</th>
+                                    <th scope="col">Gruppe</th>
+                                    <th scope="col">Team 1</th>
+                                    <th scope="col">Team 2</th>
+                                    <th scope="col">Ergebnis</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                    #foreach($m in $matches)
+                                    <tr>
+                                        <th scope="row">$m.number</th>
+                                        <td>$m.startTimeFormatted</td>
+                                        #if($m.team1)
+                                            <td>$m.team1.group.name</td>
+                                        #else
+                                            <td>-</td>
+                                        #end
+                                        #if($m.team1)
+                                            <td>$m.team1.name</td>
+                                        #else
+                                            <td>$m.dummyTeam1</td>
+                                        #end
+                                        #if($m.team2)
+                                            <td>$m.team2.name</td>
+                                        #else
+                                            <td>$m.dummyTeam2</td>
+                                        #end
+                                        #if($m.status.toString() != "new")
+                                            <td>$m.goalsTeam1 : $m.goalsTeam2</td>
+                                        #else
+                                            <td>- : -</td>
+                                        #end
+                                    </tr>
+                                    #end
+                                </tbody>
+                            </table>
 
-        #end
+                            #if($foreach.count == 1)
+                                #set($timeInMin = $t.matchTimeSeconds / 60)
+                                <p class="lead blog-description">Spielzeit: $timeInMin Minuten</p>
+                            #end
 
-    </div><!-- /.blog-main -->
+                            <div class="row">&nbsp;</div>
+                            <div class="row">&nbsp;</div>
+
+                        #end
+
+                    </div><!-- /.blog-main -->
+
+                </div>
+
+                <div data-interval="3000" class="carousel-item slide--advertisment">
+                    <img class="d-block img-fluid"
+                         src="/images/flyer.png"
+                         alt="Flyer" />
+                </div>
+            </div>
+
+        </div>
+    </div>
 
     <div class="col-sm-3 blog-sidebar">
 
@@ -94,11 +108,11 @@
                 #foreach($team in $g.getRankedTeams())
                 #if($t.qualiCount % 2 != 0 && $foreach.count == $t.qualiCount)
                 <tr class="table-warning">
-                #elseif($foreach.count <= $t.qualiCount)
+                    #elseif($foreach.count <= $t.qualiCount)
                 <tr class="table-success">
-                #else
+                    #else
                 <tr>
-                #end
+                    #end
                     <th scope="row" class="col-md-1">$foreach.count.</th>
                     <td class="col-md-3">$team.name</td>
                     #if($team.goals && $team.contragoals)
@@ -118,10 +132,6 @@
         </div>
         #end
 
-    </div><!-- /.blog-sidebar -->
-
-</div><!-- /.row -->
-
-</div><!-- /.container -->
+    </div>
 </div>
 #end

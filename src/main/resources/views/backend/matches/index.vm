@@ -7,7 +7,7 @@
     <form action="/backend/matches" method="GET">
         <div class="col-sm-6 form-group row">
             <label for="tournament" class="col-sm-2 col-form-label">Turnier:</label>
-            <select id="tournament" class="col-sm-7 form-control" name="tid" size="1" onchange="this.form.submit();">
+            <select id="tournament" class="col-sm-5 form-control" name="tid" size="1" onchange="this.form.submit();">
                 #foreach($t in $tournaments)
                 #if($tid == $t.id)
                 #set($tSelected = "selected")
@@ -17,6 +17,12 @@
                 <option value="$t.id" $tSelected>$t.name</option>
                 #end
             </select>
+            <span class="col-sm-5">
+                <input id="finishRound" type="hidden" name="finishRound" value="" />
+                <button type="button" name="finishRound" class="btn btn-success" onclick="$('#finishRound').attr('value', 'true'); this.form.submit();">
+                    <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Runde beenden
+                </button>
+            </span>
         </div>
     </form>
 

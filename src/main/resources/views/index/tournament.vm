@@ -1,6 +1,6 @@
 #@mainLayout()
 <div class="blog-header">
-    <div class="container">
+    <div>
         <div class="row">
             <div class="col-sm-6">
                 <h1 class="blog-title">$t.name</h1>
@@ -13,13 +13,16 @@
     </div>
 </div>
 
-<div class="carousel-slider">
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner" role="listbox">
-            <div data-interval="10000" class="carousel-item active slide--game-table">
-                <div class="row">
 
-                    <div class="col-sm-9 blog-main">
+<div class="row">
+
+    <div class="carousel-slider col-sm-9 blog-main">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner" role="listbox">
+
+                <div data-interval="3000" class="carousel-item active slide--game-table">
+
+                    <div>
 
                         #foreach($matches in $matchesByType)
 
@@ -79,54 +82,56 @@
 
                     </div><!-- /.blog-main -->
 
-                    <div class="col-sm-3 blog-sidebar">
+                </div>
 
-                        #foreach($g in $t.groups)
-                            <div class="sidebar-module">
-                                <table class="table-sm">
-                                    <thead class="thead-dark">
-                                    <tr>
-                                        <th scope="col" colspan="4">$g.name</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                        #foreach($team in $g.getRankedTeams())
-                                            #if($t.qualiCount % 2 != 0 && $foreach.count == $t.qualiCount)
-                                            <tr class="table-warning">
-                                            #elseif($foreach.count <= $t.qualiCount)
-                                            <tr class="table-success">
-                                            #else
-                                            <tr>
-                                            #end
-                                            <th scope="row" class="col-md-1">$foreach.count.</th>
-                                            <td class="col-md-3">$team.name</td>
-                                            #if($team.goals && $team.contragoals)
-                                                <td class="col-md-2">$team.goals:$team.contragoals</td>
-                                            #else
-                                                <td class="col-md-2">-:-</td>
-                                            #end
-                                            #if($team.points)
-                                                <td class="col-md-2">$team.points</td>
-                                            #else
-                                                <td class="col-md-2">-</td>
-                                            #end
-                                        </tr>
-                                        #end
-                                    </tbody>
-                                </table>
-                            </div>
-                        #end
-
-                    </div>
-
+                <div data-interval="3000" class="carousel-item slide--advertisment">
+                    <img class="d-block img-fluid"
+                         src="/images/flyer.png"
+                         alt="Flyer" />
                 </div>
             </div>
-            <div data-interval="2000" class="carousel-item slide--advertisment">
-                <img class="d-block img-fluid"
-                     src="http://www.powerpointhintergrund.com/download/dark-blue-background-backgrounds-pinterest-wallpaper--11327"
-                     alt="Second slide">
-            </div>
+
         </div>
+    </div>
+
+    <div class="col-sm-3 blog-sidebar">
+
+        #foreach($g in $t.groups)
+        <div class="sidebar-module">
+            <table class="table-sm">
+                <thead class="thead-dark">
+                <tr>
+                    <th scope="col" colspan="4">$g.name</th>
+                </tr>
+                </thead>
+                <tbody>
+                #foreach($team in $g.getRankedTeams())
+                #if($t.qualiCount % 2 != 0 && $foreach.count == $t.qualiCount)
+                <tr class="table-warning">
+                    #elseif($foreach.count <= $t.qualiCount)
+                <tr class="table-success">
+                    #else
+                <tr>
+                    #end
+                    <th scope="row" class="col-md-1">$foreach.count.</th>
+                    <td class="col-md-3">$team.name</td>
+                    #if($team.goals && $team.contragoals)
+                    <td class="col-md-2">$team.goals:$team.contragoals</td>
+                    #else
+                    <td class="col-md-2">-:-</td>
+                    #end
+                    #if($team.points)
+                    <td class="col-md-2">$team.points</td>
+                    #else
+                    <td class="col-md-2">-</td>
+                    #end
+                </tr>
+                #end
+                </tbody>
+            </table>
+        </div>
+        #end
+
     </div>
 </div>
 #end

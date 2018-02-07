@@ -41,19 +41,12 @@ public class IndexController {
         List<Match> matchesSmall = tournamentService.getMatchesByMatchType(tournament, MatchType.SMALLFINAL);
         List<Match> matchesFinal = tournamentService.getMatchesByMatchType(tournament, MatchType.FINAL);
 
-        boolean prelimDone = tournament.isPreliminationDone();
-        //map.put("prelimDone", prelimDone);
-        String showFinals = request.queryParams("showFinals");
-
         List<List<Match>> matches = new ArrayList<>();
-        if (showFinals == null || Boolean.parseBoolean(showFinals) == false) {
-            matches.add(matchesPrelim);
-        } else {
-            matches.add(matchesQuarter);
-            matches.add(matchesSemi);
-            matches.add(matchesSmall);
-            matches.add(matchesFinal);
-        }
+        matches.add(matchesPrelim);
+        matches.add(matchesQuarter);
+        matches.add(matchesSemi);
+        matches.add(matchesSmall);
+        matches.add(matchesFinal);
 
         map.put("t", tournament);
         map.put("matchesByType", matches);
