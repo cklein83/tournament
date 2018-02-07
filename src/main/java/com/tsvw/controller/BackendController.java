@@ -41,6 +41,12 @@ public class BackendController {
             map.put("matches", tournament.getMatches());
         }
 
+        String finishRound = request.queryParams("finishRound");
+        if (finishRound != null && Boolean.parseBoolean(finishRound)) {
+            String alert = "Konnte aktuelle Runde nicht beenden, da noch nicht abgeschlossene Spiele offen sind.";
+            map.put("alert", alert);
+        }
+
         map.put("tid", tournamentId);
 
         map.put("matchStatusVariants", Status.values());

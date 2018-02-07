@@ -34,6 +34,8 @@
 <body>
 
     $!bodyContent##
+
+<!--
 ##TODO Footer should be improved | Container is wrong and to many text without html tags
 <div class="container">
     <div class="row footer-thin">
@@ -52,6 +54,7 @@
 ##</footer>
 </body>
 </html>
+-->
 
 #end
 
@@ -68,6 +71,10 @@
     <link rel="icon" href="/images/favicon.ico">
 
     <title>Tournament Planner - Backend</title>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
+            integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+            crossorigin="anonymous"></script>
 
     <!-- Bootstrap core CSS -->
     <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">

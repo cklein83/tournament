@@ -4,6 +4,12 @@
     <div class="row">&nbsp;</div>
     <div class="row">&nbsp;</div>
 
+    #if($alert)
+    <div class="alert alert-warning" role="alert">
+        <strong>Warnung!</strong> $alert
+    </div>
+    #end
+
     <form action="/backend/matches" method="GET">
         <div class="col-sm-6 form-group row">
             <label for="tournament" class="col-sm-2 col-form-label">Turnier:</label>
@@ -19,10 +25,33 @@
             </select>
             <span class="col-sm-5">
                 <input id="finishRound" type="hidden" name="finishRound" value="" />
-                <button type="button" name="finishRound" class="btn btn-success" onclick="$('#finishRound').attr('value', 'true'); this.form.submit();">
+                <button type="button" name="finishRound" class="btn btn-success" data-toggle="modal" data-target="#finishRoundModal">
                     <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Runde beenden
                 </button>
             </span>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="finishRoundModal" tabindex="-1" role="dialog" aria-labelledby="finishRoundModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="finishRoundModalLabel">Runde beenden</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Es werden die Status aller Matches geprüft und anschließend die jeweils nächste Runde initialisiert.</p>
+                        <p>Dies bedeutet z.B. bei komplett abgeschlossenen Vorrundenspielen, dass die Viertelfinalpaarungen ermittelt und vorinitialisiert werden.</p>
+                        <p>Gelangen diese Partien nach Abschluss des Viertelfinales in den Zustand "beendet", so kann das Halbfinale generiert werden usw.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Abbrechen</button>
+                        <button type="button" class="btn btn-primary" onclick="$('#finishRound').attr('value', 'true'); this.form.submit();">Weiter</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </form>
 
@@ -135,3 +164,4 @@
     -->
 </div>
 #end
+
