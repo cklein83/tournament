@@ -33,6 +33,7 @@ public class Start {
         // index
         path("/", () -> {
             get("", IndexController::index, velocityTemplateEngine);
+            get("/", IndexController::index, velocityTemplateEngine);
         });
 
         // tournament
@@ -43,6 +44,9 @@ public class Start {
         // backend
         path("/backend", () -> {
             get("", BackendController::index, velocityTemplateEngine);
+            get("/", BackendController::index, velocityTemplateEngine);
+            get("/matches", BackendController::matchesList, velocityTemplateEngine);
+            post("/matches", BackendController::saveListMatch);
             get("/createExampleTournament", BackendController::createExampleTournament);
 
         });

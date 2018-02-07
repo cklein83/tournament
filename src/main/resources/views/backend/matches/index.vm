@@ -1,0 +1,131 @@
+#@backendLayout()
+<div class="col-12">
+
+    <div class="row">&nbsp;</div>
+    <div class="row">&nbsp;</div>
+
+    <form action="/backend/matches" method="GET">
+        <div class="col-sm-6 form-group row">
+            <label for="tournament" class="col-sm-2 col-form-label">Turnier:</label>
+            <select id="tournament" class="col-sm-7 form-control" name="tid" size="1" onchange="this.form.submit();">
+                #foreach($t in $tournaments)
+                #if($tid == $t.id)
+                #set($tSelected = "selected")
+                #else
+                #set($tSelected = "")
+                #end
+                <option value="$t.id" $tSelected>$t.name</option>
+                #end
+            </select>
+        </div>
+    </form>
+
+    <div class="row">&nbsp;</div>
+
+    #if($matches)
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Nr</th>
+            <th>Datum</th>
+            <th>Typ</th>
+            <th>Team 1</th>
+            <th>Tore T1</th>
+            <th>Tore T2</th>
+            <th>Team 2</th>
+            <th>Status</th>
+            <th style="width: 15%;">Aktion</th>
+        </tr>
+        </thead>
+        <tbody>
+        #foreach($m in $matches)
+        <tr>
+            <form action="/backend/matches" method="post">
+            <input type="hidden" name="tid" value="$tid"/>
+            <input type="hidden" name="mid" value="$m.id"/>
+
+            <th scope="row">$m.number</th>
+            <td>$m.startTimeFormatted</td>
+
+            <td>$m.matchType.toString()</td>
+
+            #if($m.team1)
+            <td>$m.team1.name</td>
+            #else
+            <td>$m.dummyTeam1</td>
+            #end
+
+            #if($m.status.toString() == "finished")
+                #set($disabled="disabled")
+            #else
+                #set($disabled="")
+            #end
+            <td>
+                <div class="form-group row">
+                    <!--
+                    <input class="col-sm-3 form-control" name="goals-t1-$m.id" type="text" value="$m.goalsTeam1" $disabled onchange="$(this).next('button').css('display', 'block'); $(this).addClass('alert-success');" onfocus="$(this).addClass('alert-info');" onblur="$(this).removeClass('alert-info');" />
+                    <button type="button" class="btn btn-success btn" style="display: none !important; margin-left: 3px;" onclick="this.form.submit();">
+                        <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Save
+                    </button>
+                    -->
+                    <input class="col-sm-3 form-control" name="goals1" type="text" value="$m.goalsTeam1" $disabled onchange="$(this).addClass('alert-success');" onfocus="$(this).addClass('alert-info');" onblur="$(this).removeClass('alert-info');" />
+                </div>
+            </td>
+            <td>
+                <div class="form-group row">
+                    <!--
+                    <input class="col-sm-3 form-control" name="goals-t2-$m.id" type="text" value="$m.goalsTeam2" $disabled onchange="$(this).next('button').css('display', 'block'); $(this).addClass('alert-success');" onfocus="$(this).addClass('alert-info');" onblur="$(this).removeClass('alert-info');" />
+                    <button type="button" class="btn btn-success btn" style="display: none !important; margin-left: 3px;" onclick="this.form.submit();">
+                        <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Save
+                    </button>
+                    -->
+                    <input class="col-sm-3 form-control" name="goals2" type="text" value="$m.goalsTeam2" $disabled onchange="$(this).addClass('alert-success');" onfocus="$(this).addClass('alert-info');" onblur="$(this).removeClass('alert-info');" />
+                </div>
+            </td>
+
+            #if($m.team2)
+            <td>$m.team2.name</td>
+            #else
+            <td>$m.dummyTeam2</td>
+            #end
+
+            <td>
+                <select id="matchStatus" class="form-control" name="status" size="1" onchange="$(this).addClass('alert-success');" onfocus="$(this).addClass('alert-info');" onblur="$(this).removeClass('alert-info');">
+                    #foreach($matchStatus in $matchStatusVariants)
+                    #if($m.status.toString() == $matchStatus.toString())
+                    #set($matchStatusSelected="selected")
+                    #else
+                    #set($matchStatusSelected="")
+                    #end
+                    <option value="$matchStatus.toString()" $matchStatusSelected>$matchStatus.toString()</option>
+                    #end
+                </select>
+            </td>
+
+            <td>
+                <button type="button" class="btn btn-success" onclick="this.form.submit();">
+                    <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                </button>
+                <button type="button" class="btn btn-primary">
+                    <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                </button>
+                <button type="button" class="btn btn-danger">
+                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                </button>
+            </td>
+
+            </form>
+        </tr>
+        #end
+    </table>
+    #end
+
+    <!--
+    <div class="alert alert-danger" role="alert">
+        <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+        <span class="sr-only">Error:</span>
+        Enter a valid email address
+    </div>
+    -->
+</div>
+#end

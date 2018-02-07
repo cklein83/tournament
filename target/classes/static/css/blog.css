@@ -179,3 +179,9 @@ h6, .h6 {
 .table-striped > thead > tr > th:nth-child(5) { width: 30%;}
 .table-striped > thead > tr > th:nth-child(6) { width: 8%;}
 .table-striped > tbody > tr > td:nth-child(6) { text-align: center;}
+
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url('../bootstrap/fonts/glyphicons-halflings-regular.eot');
+  src: url('../bootstrap/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
+}

@@ -88,15 +88,13 @@ public class MatchService {
 //        return true;
 //    }
 //
-//    public Match getMatch(Long id) {
-//        EntityManager entityManager = JPAUtil.getEntityManager();
-//        entityManager.getTransaction().begin();
-//
-//        Match match = entityManager.find(Match.class, id);
-//
-//        JPAUtil.shutdown();
-//        return match;
-//    }
+
+    public Match getMatch(Long id) {
+        EntityManager entityManager = JPAUtil.getEntityManager();
+        //entityManager.getTransaction().begin();
+        Match match = entityManager.find(Match.class, id);
+        return match;
+    }
 //
 //    public boolean playersValid(Team... pX ){
 //
