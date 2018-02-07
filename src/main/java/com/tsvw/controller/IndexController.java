@@ -1,5 +1,6 @@
 package com.tsvw.controller;
 
+import com.sun.org.apache.xpath.internal.operations.Bool;
 import com.tsvw.model.Match;
 import com.tsvw.model.MatchType;
 import com.tsvw.model.Status;
@@ -40,12 +41,19 @@ public class IndexController {
         List<Match> matchesSmall = tournamentService.getMatchesByMatchType(tournament, MatchType.SMALLFINAL);
         List<Match> matchesFinal = tournamentService.getMatchesByMatchType(tournament, MatchType.FINAL);
 
+        boolean prelimDone = tournament.isPreliminationDone();
+        //map.put("prelimDone", prelimDone);
+        String showFinals = request.queryParams("showFinals");
+
         List<List<Match>> matches = new ArrayList<>();
-        matches.add(matchesPrelim);
-        matches.add(matchesQuarter);
-        matches.add(matchesSemi);
-        matches.add(matchesSmall);
-        matches.add(matchesFinal);
+        if (showFinals == null || Boolean.parseBoolean(showFinals) == false) {
+            matches.add(matchesPrelim);
+        } else {
+            matches.add(matchesQuarter);
+            matches.add(matchesSemi);
+            matches.add(matchesSmall);
+            matches.add(matchesFinal);
+        }
 
         map.put("t", tournament);
         map.put("matchesByType", matches);

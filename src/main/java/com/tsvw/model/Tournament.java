@@ -157,4 +157,9 @@ public class Tournament {
     public void setPauseBeforeFinalSeconds(Integer pauseBeforeFinalSeconds) {
         this.pauseBeforeFinalSeconds = pauseBeforeFinalSeconds;
     }
+
+    public boolean isPreliminationDone() {
+
+        return false;
+    }
 }
