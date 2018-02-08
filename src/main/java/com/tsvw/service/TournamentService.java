@@ -1,6 +1,7 @@
 package com.tsvw.service;
 
 
+import com.tsvw.Start;
 import com.tsvw.model.*;
 import com.tsvw.util.JPAUtil;
 import org.apache.commons.lang.time.DateUtils;
@@ -17,25 +18,28 @@ import java.util.stream.Collectors;
 public class TournamentService {
 
         public List<Tournament> getAllTournaments() {
-        EntityManager entityManager = JPAUtil.getEntityManager();
+        EntityManager entityManager = Start.em;
 
-        entityManager.getTransaction().begin();
+        //entityManager.getTransaction().begin();
         List<Tournament> tournaments = entityManager.createQuery("select t from tournaments as t").getResultList();
 
-        entityManager.close();
+        //entityManager.close();
 
         return tournaments;
     }
 
     public Tournament getTournament(Long id) {
-        EntityManager entityManager = JPAUtil.getEntityManager();
+        EntityManager entityManager = Start.em;
 
         Tournament tournament = entityManager.find(Tournament.class, id);
 
         return tournament;
     }
 
+
+
     public List<Match> getMatchesByMatchType(Tournament tournament, MatchType matchType) {
+        EntityManager entityManager = Start.em;
         List<Match> matches = tournament.getMatches().stream()
                 .filter(m -> m.getMatchType() == matchType)
                 .collect(Collectors.toList());
@@ -401,6 +405,7 @@ public class TournamentService {
         entityManager.persist(t);
 
         entityManager.getTransaction().commit();
+        //entityManager.close();
         JPAUtil.shutdown();
     }
 }

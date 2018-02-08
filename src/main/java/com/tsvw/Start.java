@@ -9,6 +9,7 @@ import spark.ModelAndView;
 
 import spark.template.velocity.VelocityTemplateEngine;
 
+import javax.persistence.EntityManager;
 import java.util.HashMap;
 
 import static spark.Spark.*;
@@ -17,6 +18,8 @@ public class Start {
     private final static VelocityTemplateEngine velocityTemplateEngine = new VelocityTemplateEngine();
 
     public static UpdateService updateService = new UpdateService();
+
+    public static EntityManager em = JPAUtil.getEntityManager();
 
     public static void main(String[] args) {
 
@@ -27,7 +30,7 @@ public class Start {
         webSocket("/update", UpdateService.class);
 
         after((request, response) -> {
-            JPAUtil.shutdown();
+            //JPAUtil.shutdown();
         });
 
         // index
