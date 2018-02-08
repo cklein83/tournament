@@ -1,14 +1,16 @@
 package com.tsvw.service;
 
-import com.tsvw.model.Match;
-import com.tsvw.model.Status;
-import org.eclipse.jetty.websocket.api.*;
-import org.eclipse.jetty.websocket.api.annotations.*;
-import org.json.JSONObject;
+import org.eclipse.jetty.websocket.api.Session;
+import org.eclipse.jetty.websocket.api.annotations.OnWebSocketClose;
+import org.eclipse.jetty.websocket.api.annotations.OnWebSocketConnect;
+import org.eclipse.jetty.websocket.api.annotations.OnWebSocketMessage;
+import org.eclipse.jetty.websocket.api.annotations.WebSocket;
 
-import java.io.*;
-import java.util.*;
-import java.util.concurrent.*;
+import java.io.IOException;
+import java.util.Map;
+import java.util.Queue;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentLinkedQueue;
 
 @WebSocket
 public class UpdateService {
@@ -21,7 +23,7 @@ public class UpdateService {
     @OnWebSocketConnect
     public void connected(Session session) {
 
-        //System.out.println("someone conneced");
+        System.out.println("someone conneced");
         sessions.add(session);
     }
 
@@ -37,30 +39,35 @@ public class UpdateService {
     }
 
     public static void broadcastMessage(String type, String message) {
-//        final Match currentMatch = matchService.getCurrentMatch();
-//        if( currentMatch.getStatus() == Status.STARTED){
-//            if(message.equals("1")){
-//                int g1 = currentMatch.getGoalsTeam1();
-//                currentMatch.setGoalsTeam1(++g1);
-//            }
-//            else if(message.equals("2")){
-//                int g2 = currentMatch.getGoalsTeam2();
-//                currentMatch.setGoalsTeam2(++g2);
-//            }
-//            matchService.updateMatch(currentMatch.getId(), currentMatch.getGoalsTeam1(), currentMatch.getGoalsTeam2());
-//        }
-//        sessions.stream().filter(Session::isOpen).forEach(session -> {
-//            try {
-//                if(type.equals("updateMatch")){
-//                    session.getRemote().sendString(
-//                            String.valueOf(new JSONObject()
-//                                    .put("goalsTeam1", currentMatch.getGoalsTeam1())
-//                                    .put("goalsTeam2", currentMatch.getGoalsTeam2()))
-//                    );
-//                }
-//            } catch (Exception e) {
-//                e.printStackTrace();
-//            }
-//        });
+        /*
+        final Match currentMatch = matchService.getCurrentMatch();
+        if( currentMatch.getStatus() == Status.STARTED){
+            if(message.equals("1")){
+                int g1 = currentMatch.getGoalsTeam1();
+                currentMatch.setGoalsTeam1(++g1);
+            }
+            else if(message.equals("2")){
+                int g2 = currentMatch.getGoalsTeam2();
+                currentMatch.setGoalsTeam2(++g2);
+            }
+            matchService.updateMatch(currentMatch.getId(), currentMatch.getGoalsTeam1(), currentMatch.getGoalsTeam2());
+        }
+        */
+        sessions.stream().filter(Session::isOpen).forEach(session -> {
+            try {
+                if (type.equals("refresh-data")) {
+                    session.getRemote().sendString(
+                            /*
+                            String.valueOf(new JSONObject()
+                                    .put("goalsTeam1", currentMatch.getGoalsTeam1())
+                                    .put("goalsTeam2", currentMatch.getGoalsTeam2()))
+                                    */
+                            "refresh-data"
+                    );
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
     }
 }

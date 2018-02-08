@@ -5,6 +5,7 @@ import com.tsvw.model.Status;
 import com.tsvw.model.Tournament;
 import com.tsvw.service.MatchService;
 import com.tsvw.service.TournamentService;
+import com.tsvw.service.UpdateService;
 import com.tsvw.util.JPAUtil;
 import org.hibernate.Hibernate;
 import spark.ModelAndView;
@@ -98,6 +99,8 @@ public class BackendController {
 
             entityManager.merge(match);
             entityManager.getTransaction().commit();
+
+            UpdateService.broadcastMessage("refresh-data", "");
         }
         response.redirect("/backend/matches");
         return "OK";

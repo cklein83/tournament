@@ -24,7 +24,7 @@ public class Start {
         port(8888);
         staticFileLocation("/static");
 
-        //webSocket("/update", UpdateService.class);
+        webSocket("/update", UpdateService.class);
 
         after((request, response) -> {
             JPAUtil.shutdown();
@@ -39,6 +39,17 @@ public class Start {
         // tournament
         path("/tournament", () -> {
             get("/:id", IndexController::showTournament, velocityTemplateEngine);
+        });
+
+        // match
+        path("/match", () -> {
+            get("/prelimMatches/:tid", MatchController::showPrelimMatches, velocityTemplateEngine);
+            get("/finalMatches/:tid", MatchController::showFinalMatches, velocityTemplateEngine);
+        });
+
+        // match
+        path("/group", () -> {
+            get("/rankedGroups/:tid", GroupController::showRankedGroups, velocityTemplateEngine);
         });
 
         // backend
