@@ -29,6 +29,12 @@
                     <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Runde beenden
                 </button>
             </span>
+            <span class="col-sm-5">
+                #if($showOnlyFinals)
+                  #set($sofChecked=true)
+                #end
+                <input id="showOnlyFinals" type="checkbox" name="showOnlyFinals" $sofChecked onchange="this.form.submit();" />
+            </span>
         </div>
 
         <!-- Modal -->
@@ -74,6 +80,7 @@
         </thead>
         <tbody>
         #foreach($m in $matches)
+        #if(!$showOnlyFinals || $m.matchType != "prelim")
         <tr>
             <form action="/backend/matches" method="post">
             <input type="hidden" name="tid" value="$tid"/>
@@ -151,6 +158,7 @@
 
             </form>
         </tr>
+        #end
         #end
     </table>
     #end
