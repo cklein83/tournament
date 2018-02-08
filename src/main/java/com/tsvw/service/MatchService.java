@@ -1,5 +1,6 @@
 package com.tsvw.service;
 
+import com.tsvw.Start;
 import com.tsvw.model.*;
 import com.tsvw.util.JPAUtil;
 import javax.persistence.EntityManager;
@@ -90,7 +91,7 @@ public class MatchService {
 //
 
     public Match getMatch(Long id) {
-        EntityManager entityManager = JPAUtil.getEntityManager();
+        EntityManager entityManager = Start.em;
         //entityManager.getTransaction().begin();
         Match match = entityManager.find(Match.class, id);
         return match;

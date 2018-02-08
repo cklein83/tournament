@@ -1,5 +1,6 @@
 package com.tsvw.controller;
 
+import com.tsvw.Start;
 import com.tsvw.model.Match;
 import com.tsvw.model.Status;
 import com.tsvw.model.Tournament;
@@ -69,7 +70,9 @@ public class BackendController {
     public static String saveListMatch(Request request, Response response) {
         String matchId = request.queryParams("mid");
         if (matchId != null && matchId.isEmpty() == false) {
-            EntityManager entityManager = JPAUtil.getEntityManager();
+            //EntityManager entityManager = JPAUtil.getEntityManager();
+
+            EntityManager entityManager = Start.em;
             entityManager.getTransaction().begin();
 
             Match match = matchService.getMatch(Long.parseLong(matchId));
