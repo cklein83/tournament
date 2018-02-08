@@ -47,14 +47,12 @@
 
         var webSocket = new WebSocket("ws://" + location.hostname + ":" + location.port + "/update");
         webSocket.onmessage = function (msg) {
-            var data = JSON.parse(msg.data);
-            cmd = data.cmd
-            console.log("CMD: " + cmd);
-            if (cmd == "refresh-data") {
+            console.log("MSG: " + msg);
+            if (msg == "refresh-data") {
                 reload();
             }
         };
-        webSocket.onclose = function () { console.log("WebSocket connection closed") };
+        //webSocket.onclose = function () { alert("WebSocket connection closed") };
 
         reload();
 

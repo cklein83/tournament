@@ -13,3 +13,12 @@ body {
   url('/bootstrap/fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
 }
 */
+
+.table select.form-control {
+  min-width: 110px;
+}
+
+.table input.form-control {
+    min-width: 45px;
+    text-align: center;
+}

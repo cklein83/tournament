@@ -30,6 +30,7 @@ public class IndexController {
         Tournament tournament = tournamentService.getTournament(Long.parseLong(tournamentId));
         map.put("t", tournament);
 
+        /*
         map.put("prelimDone", tournament.isPreliminationDone());
 
         List<Match> matchesPrelim = tournamentService.getMatchesByMatchType(tournament, MatchType.PRELIM);
@@ -49,6 +50,7 @@ public class IndexController {
         finalMatches.add(matchesSmall);
         finalMatches.add(matchesFinal);
         map.put("finalMatches", finalMatches);
+        */
 
         return new ModelAndView(map, "views/index/tournament.vm");
     }

@@ -49,8 +49,12 @@ public class BackendController {
 
         String finishRound = request.queryParams("finishRound");
         if (finishRound != null && Boolean.parseBoolean(finishRound)) {
+            /*
             String alert = "Konnte aktuelle Runde nicht beenden, da noch nicht abgeschlossene Spiele offen sind.";
             map.put("alert", alert);
+            */
+            String success = "Runde erfolgreich beendet. Nächste Runde wurde automatisch mit Teams befüllt.";
+            map.put("success", success);
         }
 
         map.put("tid", tournamentId);
@@ -69,6 +73,7 @@ public class BackendController {
             entityManager.getTransaction().begin();
 
             Match match = matchService.getMatch(Long.parseLong(matchId));
+            Hibernate.initialize(match);
 
             // goals
             String goals1 = request.queryParams("goals1");
@@ -104,7 +109,7 @@ public class BackendController {
             entityManager.merge(match);
             entityManager.getTransaction().commit();
 
-            UpdateService.broadcastMessage("refresh-data", "");
+            //UpdateService.broadcastMessage("refresh-data", "");
         }
         response.redirect("/backend/matches");
         return "OK";

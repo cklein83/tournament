@@ -2,12 +2,477 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="44baac04-c398-407d-94af-04204f6aa6c1" name="Default" comment="point calculation, diff calculation, team ordering, match result display">
+      <change beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/bootstrap/css/glyphicons.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/bootstrap/js/bootstrap.bundle.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/bootstrap/js/bootstrap.bundle.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/bootstrap/js/bootstrap.bundle.min.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/bootstrap/js/bootstrap.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/bootstrap/js/bootstrap.min.js.map" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/images/ads/11teamsports.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/images/ads/Advertisement-Grid-Black.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/images/ads/Advertisement-Grid-Lightgrey.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/images/ads/Advertisement-Grid.psd" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/js/mixpanel-2-latest.min.js" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/tsvw/controller/BackendController.java" afterPath="$PROJECT_DIR$/src/main/java/com/tsvw/controller/BackendController.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/tsvw/controller/IndexController.java" afterPath="$PROJECT_DIR$/src/main/java/com/tsvw/controller/IndexController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tsvw/service/TournamentService.java" afterPath="$PROJECT_DIR$/src/main/java/com/tsvw/service/TournamentService.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tsvw/service/UpdateService.java" afterPath="$PROJECT_DIR$/src/main/java/com/tsvw/service/UpdateService.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/VM_global_library.vm" afterPath="$PROJECT_DIR$/src/main/resources/VM_global_library.vm" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/jumbotron.css" afterPath="$PROJECT_DIR$/src/main/resources/static/css/jumbotron.css" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/views/backend/matches/index.vm" afterPath="$PROJECT_DIR$/src/main/resources/views/backend/matches/index.vm" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tsvw/controller/BackendController.class" afterPath="$PROJECT_DIR$/target/classes/com/tsvw/controller/BackendController.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/tsvw/controller/IndexController.class" afterPath="$PROJECT_DIR$/target/classes/com/tsvw/controller/IndexController.class" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/views/index/tournament.vm" afterPath="$PROJECT_DIR$/src/main/resources/views/index/tournament.vm" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/persistence.xml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/VM_global_library.vm" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tsvw/Start.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tsvw/controller/BackendController.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tsvw/controller/IndexController.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tsvw/controller/MatchController.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tsvw/model/Group.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tsvw/model/Match.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tsvw/model/MatchType.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tsvw/model/Status.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tsvw/model/Team.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tsvw/model/Tournament.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tsvw/service/MatchService.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tsvw/service/TournamentService.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tsvw/service/UpdateService.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tsvw/util/Constants.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tsvw/util/JPAUtil.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tsvw/util/MatchTypeConverter$1.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/tsvw/util/MatchTypeConverter.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/i18n/messages.properties" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/prototype/fe/blog.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/prototype/fe/css/bootstrap-grid.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/prototype/fe/css/bootstrap-grid.css.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/prototype/fe/css/bootstrap-grid.min.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/prototype/fe/css/bootstrap-grid.min.css.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/prototype/fe/css/bootstrap-reboot.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/prototype/fe/css/bootstrap-reboot.css.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/prototype/fe/css/bootstrap-reboot.min.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/prototype/fe/css/bootstrap-reboot.min.css.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/prototype/fe/css/bootstrap.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/prototype/fe/css/bootstrap.css.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/prototype/fe/css/bootstrap.min.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/prototype/fe/css/bootstrap.min.css.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/prototype/fe/img/logo-tsv-weinsberg-fussball.gif" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/prototype/fe/index.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/prototype/fe/js/bootstrap.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/prototype/fe/js/bootstrap.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/sql/database.sql" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap/css/bootstrap-grid.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap/css/bootstrap-grid.css.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap/css/bootstrap-grid.min.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap/css/bootstrap-grid.min.css.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap/css/bootstrap-reboot.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap/css/bootstrap-reboot.css.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap/css/bootstrap-reboot.min.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap/css/bootstrap-reboot.min.css.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap/css/bootstrap-theme.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap/css/bootstrap-theme.css.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap/css/bootstrap-theme.min.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap/css/bootstrap-theme.min.css.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap/css/bootstrap.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap/css/bootstrap.css.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap/css/bootstrap.min.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap/css/bootstrap.min.css.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap/fonts/glyphicons-halflings-regular.eot" afterPath="$PROJECT_DIR$/src/main/resources/static/bootstrap/css/fonts/glyphicons-halflings-regular.eot" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap/fonts/glyphicons-halflings-regular.svg" afterPath="$PROJECT_DIR$/src/main/resources/static/bootstrap/css/fonts/glyphicons-halflings-regular.svg" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap/fonts/glyphicons-halflings-regular.ttf" afterPath="$PROJECT_DIR$/src/main/resources/static/bootstrap/css/fonts/glyphicons-halflings-regular.ttf" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap/fonts/glyphicons-halflings-regular.woff" afterPath="$PROJECT_DIR$/src/main/resources/static/bootstrap/css/fonts/glyphicons-halflings-regular.woff" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap/fonts/glyphicons-halflings-regular.woff2" afterPath="$PROJECT_DIR$/src/main/resources/static/bootstrap/css/fonts/glyphicons-halflings-regular.woff2" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap/js/bootstrap.js" afterPath="$PROJECT_DIR$/src/main/resources/static/bootstrap/js/bootstrap.bundle.js" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap/js/bootstrap.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap/js/npm.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/.editorconfig" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/.gitattributes" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/.gitignore" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/.hound.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/.travis.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/CHANGELOG.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/CNAME" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/CONTRIBUTING.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/Gemfile" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/Gemfile.lock" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/Gruntfile.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/ISSUE_TEMPLATE.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/LICENSE" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/README.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/_config.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/bower.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/composer.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/dist/css/bootstrap-theme.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/dist/css/bootstrap-theme.css.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/dist/css/bootstrap-theme.min.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/dist/css/bootstrap-theme.min.css.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/dist/css/bootstrap.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/dist/css/bootstrap.css.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/dist/css/bootstrap.min.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/dist/css/bootstrap.min.css.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/dist/fonts/glyphicons-halflings-regular.eot" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/dist/fonts/glyphicons-halflings-regular.svg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/dist/fonts/glyphicons-halflings-regular.ttf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/dist/fonts/glyphicons-halflings-regular.woff" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/dist/fonts/glyphicons-halflings-regular.woff2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/dist/js/npm.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/LICENSE" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/_data/browser-bugs.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/_data/browser-features.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/_data/core-team.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/_data/glyphicons.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/_data/sass-team.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/_data/showcase.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/_data/translations.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/_includes/ads.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/_includes/components/alerts.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/_includes/components/badges.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/_includes/components/breadcrumbs.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/_includes/components/button-dropdowns.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/_includes/components/button-groups.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/_includes/components/dropdowns.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/_includes/components/glyphicons.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/_includes/components/input-groups.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/_includes/components/jumbotron.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/_includes/components/labels.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/_includes/components/list-group.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/_includes/components/media.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/_includes/components/navbar.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/_includes/components/navs.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/_includes/components/page-header.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/_includes/components/pagination.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/_includes/components/panels.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/_includes/components/progress-bars.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/_includes/components/responsive-embed.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/_includes/components/thumbnails.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/_includes/components/wells.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/_includes/css/buttons.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/_includes/css/code.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/_includes/css/forms.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/_includes/css/grid.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/_includes/css/helpers.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/_includes/css/images.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/_includes/css/less.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/_includes/css/overview.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/_includes/css/responsive-utilities.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/_includes/css/sass.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/_includes/css/tables.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/_includes/css/type.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/_includes/customizer-variables.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/_includes/footer.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/_includes/getting-started/accessibility.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/_includes/getting-started/browser-device-support.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/_includes/getting-started/community.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/_includes/getting-started/disabling-responsiveness.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/_includes/getting-started/download.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/_includes/getting-started/examples.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/_includes/getting-started/grunt.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/_includes/getting-started/license.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/_includes/getting-started/template.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/_includes/getting-started/third-party-support.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/_includes/getting-started/tools.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/_includes/getting-started/translations.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/_includes/getting-started/whats-included.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/_includes/header.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/_includes/js/affix.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/_includes/js/alerts.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/_includes/js/buttons.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/_includes/js/carousel.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/_includes/js/collapse.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/_includes/js/dropdowns.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/_includes/js/modal.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/_includes/js/overview.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/_includes/js/popovers.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/_includes/js/scrollspy.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/_includes/js/tabs.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/_includes/js/tooltips.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/_includes/js/transitions.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/_includes/nav/about.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/_includes/nav/components.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/_includes/nav/css.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/_includes/nav/customize.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/_includes/nav/getting-started.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/_includes/nav/javascript.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/_includes/nav/main.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/_includes/nav/migration.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/_layouts/default.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/_layouts/home.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/_plugins/bridge.rb" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/_plugins/bugify.rb" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/_pug/customizer-nav.pug" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/_pug/customizer-variables.pug" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/about.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/apple-touch-icon.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/assets/brand/bootstrap-outline.svg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/assets/brand/bootstrap-punchout.svg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/assets/brand/bootstrap-solid.svg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/assets/css/docs.min.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/assets/css/docs.min.css.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/assets/css/ie10-viewport-bug-workaround.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/assets/css/src/docs.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/assets/css/src/pygments-manni.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/assets/flash/ZeroClipboard.swf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/assets/img/components.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/assets/img/devices.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/assets/img/expo-lyft.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/assets/img/expo-newsweek.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/assets/img/expo-riot.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/assets/img/expo-vogue.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/assets/img/sass-less.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/assets/js/customize.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/assets/js/docs.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/assets/js/ie-emulation-modes-warning.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/assets/js/ie10-viewport-bug-workaround.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/assets/js/ie8-responsive-file-warning.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/assets/js/raw-files.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/assets/js/src/application.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/assets/js/src/customizer.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/assets/js/vendor/Blob.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/assets/js/vendor/FileSaver.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/assets/js/vendor/ZeroClipboard.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/assets/js/vendor/anchor.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/assets/js/vendor/autoprefixer.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/assets/js/vendor/holder.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/assets/js/vendor/jquery.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/assets/js/vendor/jszip.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/assets/js/vendor/less.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/assets/js/vendor/uglify.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/browser-bugs.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/components.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/css.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/customize.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/dist/css/bootstrap-theme.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/dist/css/bootstrap-theme.css.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/dist/css/bootstrap-theme.min.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/dist/css/bootstrap-theme.min.css.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/dist/css/bootstrap.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/dist/css/bootstrap.css.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/dist/css/bootstrap.min.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/dist/css/bootstrap.min.css.map" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/dist/fonts/glyphicons-halflings-regular.eot" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/dist/fonts/glyphicons-halflings-regular.svg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/dist/fonts/glyphicons-halflings-regular.ttf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/dist/fonts/glyphicons-halflings-regular.woff" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/dist/fonts/glyphicons-halflings-regular.woff2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/dist/js/bootstrap.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/dist/js/bootstrap.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/dist/js/npm.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/examples/blog/blog.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/examples/blog/index.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/examples/carousel/carousel.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/examples/carousel/index.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/examples/cover/cover.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/examples/cover/index.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/examples/dashboard/dashboard.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/examples/dashboard/index.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/examples/grid/grid.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/examples/grid/index.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/examples/jumbotron-narrow/index.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/examples/jumbotron-narrow/jumbotron-narrow.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/examples/jumbotron/index.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/examples/jumbotron/jumbotron.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/examples/justified-nav/index.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/examples/justified-nav/justified-nav.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/examples/navbar-fixed-top/index.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/examples/navbar-fixed-top/navbar-fixed-top.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/examples/navbar-static-top/index.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/examples/navbar-static-top/navbar-static-top.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/examples/navbar/index.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/examples/navbar/navbar.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/examples/non-responsive/index.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/examples/non-responsive/non-responsive.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/examples/offcanvas/index.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/examples/offcanvas/offcanvas.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/examples/offcanvas/offcanvas.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/examples/screenshots/blog.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/examples/screenshots/carousel.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/examples/screenshots/cover.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/examples/screenshots/dashboard.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/examples/screenshots/equal-height-columns.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/examples/screenshots/grid.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/examples/screenshots/jumbotron-narrow.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/examples/screenshots/jumbotron.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/examples/screenshots/justified-nav.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/examples/screenshots/navbar-fixed.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/examples/screenshots/navbar-static.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/examples/screenshots/navbar.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/examples/screenshots/non-responsive.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/examples/screenshots/offcanvas.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/examples/screenshots/sign-in.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/examples/screenshots/starter-template.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/examples/screenshots/sticky-footer-navbar.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/examples/screenshots/sticky-footer.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/examples/screenshots/theme.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/examples/signin/index.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/examples/signin/signin.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/examples/starter-template/index.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/examples/starter-template/starter-template.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/examples/sticky-footer-navbar/index.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/examples/sticky-footer-navbar/sticky-footer-navbar.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/examples/sticky-footer/index.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/examples/sticky-footer/sticky-footer.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/examples/theme/index.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/examples/theme/theme.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/examples/tooltip-viewport/index.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/examples/tooltip-viewport/tooltip-viewport.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/examples/tooltip-viewport/tooltip-viewport.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/favicon.ico" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/getting-started.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/index.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/javascript.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/migration.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/docs/robots.txt" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/fonts/glyphicons-halflings-regular.eot" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/fonts/glyphicons-halflings-regular.svg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/fonts/glyphicons-halflings-regular.ttf" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/fonts/glyphicons-halflings-regular.woff" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/fonts/glyphicons-halflings-regular.woff2" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/grunt/.jshintrc" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/grunt/bs-commonjs-generator.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/grunt/bs-glyphicons-data-generator.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/grunt/bs-lessdoc-parser.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/grunt/bs-raw-files-generator.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/grunt/change-version.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/grunt/configBridge.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/grunt/npm-shrinkwrap.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/grunt/sauce_browsers.yml" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/js/.jscsrc" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/js/.jshintrc" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/js/affix.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/js/alert.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/js/button.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/js/carousel.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/js/collapse.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/js/dropdown.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/js/modal.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/js/popover.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/js/scrollspy.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/js/tab.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/js/tests/README.md" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/js/tests/index.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/js/tests/unit/.jshintrc" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/js/tests/unit/affix.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/js/tests/unit/alert.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/js/tests/unit/button.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/js/tests/unit/carousel.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/js/tests/unit/collapse.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/js/tests/unit/dropdown.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/js/tests/unit/modal.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/js/tests/unit/phantom.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/js/tests/unit/popover.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/js/tests/unit/scrollspy.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/js/tests/unit/tab.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/js/tests/unit/tooltip.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/js/tests/vendor/jquery.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/js/tests/vendor/qunit.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/js/tests/vendor/qunit.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/js/tests/visual/affix-with-sticky-footer.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/js/tests/visual/affix.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/js/tests/visual/alert.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/js/tests/visual/button.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/js/tests/visual/carousel.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/js/tests/visual/collapse.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/js/tests/visual/dropdown.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/js/tests/visual/modal.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/js/tests/visual/popover.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/js/tests/visual/scrollspy.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/js/tests/visual/tab.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/js/tests/visual/tooltip.html" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/js/tooltip.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/js/transition.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/less/.csscomb.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/less/.csslintrc" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/less/alerts.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/less/badges.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/less/bootstrap.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/less/breadcrumbs.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/less/button-groups.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/less/buttons.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/less/carousel.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/less/close.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/less/code.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/less/component-animations.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/less/dropdowns.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/less/forms.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/less/glyphicons.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/less/grid.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/less/input-groups.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/less/jumbotron.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/less/labels.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/less/list-group.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/less/media.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/less/mixins.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/less/mixins/alerts.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/less/mixins/background-variant.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/less/mixins/border-radius.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/less/mixins/buttons.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/less/mixins/center-block.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/less/mixins/clearfix.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/less/mixins/forms.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/less/mixins/gradients.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/less/mixins/grid-framework.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/less/mixins/grid.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/less/mixins/hide-text.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/less/mixins/image.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/less/mixins/labels.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/less/mixins/list-group.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/less/mixins/nav-divider.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/less/mixins/nav-vertical-align.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/less/mixins/opacity.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/less/mixins/pagination.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/less/mixins/panels.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/less/mixins/progress-bar.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/less/mixins/reset-filter.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/less/mixins/reset-text.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/less/mixins/resize.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/less/mixins/responsive-visibility.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/less/mixins/size.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/less/mixins/tab-focus.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/less/mixins/table-row.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/less/mixins/text-emphasis.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/less/mixins/text-overflow.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/less/mixins/vendor-prefixes.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/less/modals.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/less/navbar.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/less/navs.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/less/normalize.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/less/pager.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/less/pagination.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/less/panels.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/less/popovers.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/less/print.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/less/progress-bars.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/less/responsive-embed.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/less/responsive-utilities.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/less/scaffolding.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/less/tables.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/less/theme.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/less/thumbnails.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/less/tooltip.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/less/type.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/less/utilities.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/less/variables.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/less/wells.less" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/nuget/MyGet.ps1" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/nuget/bootstrap.less.nuspec" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/nuget/bootstrap.nuspec" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/package.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/bootstrap_complete/package.json" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/app.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/blog.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/carousel.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/jumbotron.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/live.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/menu.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/narrow-jumbotron.css" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/images/favicon.ico" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/images/logo.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/app.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/js/jquery-3.2.1.min.js" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/views/backend/index.vm" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/views/index/index.vm" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/views/index/tournament.vm" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/views/slided/index.vm" afterPath="" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -27,18 +492,18 @@
       <file leaf-file-name="BackendController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/tsvw/controller/BackendController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="558">
-              <caret line="46" column="38" lean-forward="false" selection-start-line="46" selection-start-column="38" selection-end-line="46" selection-end-column="38" />
+            <state relative-caret-position="180">
+              <caret line="25" column="54" lean-forward="false" selection-start-line="25" selection-start-column="54" selection-end-line="25" selection-end-column="54" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.vm" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.vm" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/views/backend/matches/index.vm">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="42" column="35" lean-forward="false" selection-start-line="42" selection-start-column="35" selection-end-line="42" selection-end-column="35" />
+            <state relative-caret-position="720">
+              <caret line="40" column="81" lean-forward="false" selection-start-line="40" selection-start-column="81" selection-end-line="40" selection-end-column="81" />
               <folding />
             </state>
           </provider>
@@ -94,11 +559,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Start.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Start.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/tsvw/Start.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="720">
-              <caret line="51" column="43" lean-forward="false" selection-start-line="51" selection-start-column="43" selection-end-line="51" selection-end-column="43" />
+            <state relative-caret-position="324">
+              <caret line="29" column="13" lean-forward="false" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="8586">
+              <caret line="477" column="32" lean-forward="true" selection-start-line="477" selection-start-column="32" selection-end-line="477" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -107,7 +582,7 @@
       <file leaf-file-name="UpdateService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/tsvw/service/UpdateService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
+            <state relative-caret-position="54">
               <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
               <folding />
             </state>
@@ -230,8 +705,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -338,17 +814,6 @@
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
               <item name="bootstrap" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="turnierplaner" type="b2602c69:ProjectViewProjectNode" />
-              <item name="turnierplaner" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="bootstrap" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
               <item name="fonts" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -358,8 +823,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="bootstrap" type="462c0819:PsiDirectoryNode" />
-              <item name="fonts" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="turnierplaner" type="b2602c69:ProjectViewProjectNode" />
@@ -368,7 +832,8 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+              <item name="ads" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="turnierplaner" type="b2602c69:ProjectViewProjectNode" />
@@ -437,7 +902,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -676,28 +1140,43 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1973" y="25" width="1627" height="1025" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297062" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.47065592" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32911393" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27767235" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.7410817" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297062" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32953826" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4707233" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32911393" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24984187" sideWeight="0.5" order="7" side_tool="false" content_ui="combo" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27767235" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295063" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39934713" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297062" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32953826" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24984187" sideWeight="0.5" order="7" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295063" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -788,13 +1267,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="73" column="20" lean-forward="true" selection-start-line="73" selection-start-column="20" selection-end-line="73" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -843,7 +1315,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="342">
           <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -858,7 +1329,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1568">
           <caret line="378" column="22" lean-forward="false" selection-start-line="378" selection-start-column="22" selection-end-line="378" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -873,7 +1343,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="103">
           <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -900,17 +1369,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="511">
           <caret line="101" column="30" lean-forward="false" selection-start-line="101" selection-start-column="30" selection-end-line="101" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1359#1360#0" expanded="false" />
-            <element signature="e#1387#1388#0" expanded="false" />
-            <element signature="e#1433#1434#0" expanded="false" />
-            <element signature="e#1473#1474#0" expanded="false" />
-            <element signature="e#2962#2963#0" expanded="false" />
-            <element signature="e#2996#2997#0" expanded="false" />
-            <element signature="e#3034#3035#0" expanded="false" />
-            <element signature="e#3070#3071#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -933,58 +1391,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1832">
           <caret line="112" column="21" lean-forward="false" selection-start-line="112" selection-start-column="21" selection-end-line="112" selection-end-column="21" />
-          <folding>
-            <element signature="e#1647#1648#0" expanded="false" />
-            <element signature="e#1672#1673#0" expanded="false" />
-            <element signature="e#1706#1707#0" expanded="false" />
-            <element signature="e#1734#1735#0" expanded="false" />
-            <element signature="e#1767#1768#0" expanded="false" />
-            <element signature="e#1796#1797#0" expanded="false" />
-            <element signature="e#1840#1841#0" expanded="false" />
-            <element signature="e#1876#1877#0" expanded="false" />
-            <element signature="e#1910#1911#0" expanded="false" />
-            <element signature="e#1943#1944#0" expanded="false" />
-            <element signature="e#1992#1993#0" expanded="false" />
-            <element signature="e#2036#2037#0" expanded="false" />
-            <element signature="e#2070#2071#0" expanded="false" />
-            <element signature="e#2103#2104#0" expanded="false" />
-            <element signature="e#2152#2153#0" expanded="false" />
-            <element signature="e#2196#2197#0" expanded="false" />
-            <element signature="e#2226#2227#0" expanded="false" />
-            <element signature="e#2254#2255#0" expanded="false" />
-            <element signature="e#2294#2295#0" expanded="false" />
-            <element signature="e#2328#2329#0" expanded="false" />
-            <element signature="e#2358#2359#0" expanded="false" />
-            <element signature="e#2386#2387#0" expanded="false" />
-            <element signature="e#2426#2427#0" expanded="false" />
-            <element signature="e#2460#2461#0" expanded="false" />
-            <element signature="e#2499#2500#0" expanded="false" />
-            <element signature="e#2531#2532#0" expanded="false" />
-            <element signature="e#2584#2585#0" expanded="false" />
-            <element signature="e#2626#2627#0" expanded="false" />
-            <element signature="e#2667#2668#0" expanded="false" />
-            <element signature="e#2700#2701#0" expanded="false" />
-            <element signature="e#2756#2757#0" expanded="false" />
-            <element signature="e#2800#2801#0" expanded="false" />
-            <element signature="e#2834#2835#0" expanded="false" />
-            <element signature="e#2866#2867#0" expanded="false" />
-            <element signature="e#2914#2915#0" expanded="false" />
-            <element signature="e#2956#2957#0" expanded="false" />
-            <element signature="e#3001#3002#0" expanded="false" />
-            <element signature="e#3086#3087#0" expanded="false" />
-            <element signature="e#3120#3121#0" expanded="false" />
-            <element signature="e#3149#3150#0" expanded="false" />
-            <element signature="e#3194#3195#0" expanded="false" />
-            <element signature="e#3230#3231#0" expanded="false" />
-            <element signature="e#3267#3268#0" expanded="false" />
-            <element signature="e#3300#3301#0" expanded="false" />
-            <element signature="e#3352#3353#0" expanded="false" />
-            <element signature="e#3396#3397#0" expanded="false" />
-            <element signature="e#3433#3434#0" expanded="false" />
-            <element signature="e#3466#3467#0" expanded="false" />
-            <element signature="e#3518#3519#0" expanded="false" />
-            <element signature="e#3562#3563#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -992,7 +1398,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="280">
           <caret line="51" column="18" lean-forward="false" selection-start-line="51" selection-start-column="18" selection-end-line="51" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1072,30 +1477,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1048">
           <caret line="160" column="19" lean-forward="false" selection-start-line="160" selection-start-column="19" selection-end-line="160" selection-end-column="19" />
-          <folding>
-            <element signature="e#2183#2184#0" expanded="true" />
-            <element signature="e#2214#2215#0" expanded="true" />
-            <element signature="e#2262#2263#0" expanded="true" />
-            <element signature="e#2302#2303#0" expanded="true" />
-            <element signature="e#2346#2347#0" expanded="true" />
-            <element signature="e#2385#2386#0" expanded="true" />
-            <element signature="e#2450#2451#0" expanded="true" />
-            <element signature="e#2506#2507#0" expanded="true" />
-            <element signature="e#2544#2545#0" expanded="true" />
-            <element signature="e#2577#2578#0" expanded="true" />
-            <element signature="e#2630#2631#0" expanded="true" />
-            <element signature="e#2674#2675#0" expanded="true" />
-            <element signature="e#2712#2713#0" expanded="true" />
-            <element signature="e#2741#2742#0" expanded="true" />
-            <element signature="e#2790#2791#0" expanded="true" />
-            <element signature="e#2826#2827#0" expanded="true" />
-            <element signature="e#2867#2868#0" expanded="true" />
-            <element signature="e#2905#2906#0" expanded="true" />
-            <element signature="e#3152#3153#0" expanded="true" />
-            <element signature="e#3196#3197#0" expanded="true" />
-            <element signature="e#3388#3389#0" expanded="true" />
-            <element signature="e#3434#3435#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1110,7 +1491,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="223">
           <caret line="81" column="17" lean-forward="false" selection-start-line="81" selection-start-column="17" selection-end-line="81" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1118,10 +1498,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="610">
           <caret line="47" column="19" lean-forward="false" selection-start-line="47" selection-start-column="19" selection-end-line="47" selection-end-column="19" />
-          <folding>
-            <element signature="e#1190#1196#1" expanded="true" />
-            <element signature="e#1220#1226#1" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1129,7 +1505,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
           <caret line="2" column="28" lean-forward="true" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1145,21 +1520,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="157">
           <caret line="27" column="9" lean-forward="false" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tsvw/Start.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="51" column="43" lean-forward="false" selection-start-line="51" selection-start-column="43" selection-end-line="51" selection-end-column="43" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/tsvw/service/UpdateService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
+        <state relative-caret-position="54">
           <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
           <folding />
         </state>
@@ -1170,7 +1536,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
           <caret line="4" column="14" lean-forward="true" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1178,7 +1543,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
           <caret line="23" column="1" lean-forward="false" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1217,16 +1581,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/tsvw/controller/BackendController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="46" column="38" lean-forward="false" selection-start-line="46" selection-start-column="38" selection-end-line="46" selection-end-column="38" />
+        <state relative-caret-position="180">
+          <caret line="25" column="54" lean-forward="false" selection-start-line="25" selection-start-column="54" selection-end-line="25" selection-end-column="54" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/views/backend/matches/index.vm">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="42" column="35" lean-forward="false" selection-start-line="42" selection-start-column="35" selection-end-line="42" selection-end-column="35" />
+        <state relative-caret-position="720">
+          <caret line="40" column="81" lean-forward="false" selection-start-line="40" selection-start-column="81" selection-end-line="40" selection-end-column="81" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8586">
+          <caret line="477" column="32" lean-forward="true" selection-start-line="477" selection-start-column="32" selection-end-line="477" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tsvw/Start.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="29" column="13" lean-forward="false" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
           <folding />
         </state>
       </provider>
