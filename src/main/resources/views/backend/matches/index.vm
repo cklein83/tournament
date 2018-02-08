@@ -85,6 +85,8 @@
         </thead>
         <tbody>
         #foreach($m in $matches)
+        #if(!$showOnlyFinals || $m.matchType != "prelim")
+        #end
         <tr>
             <form action="/backend/matches" method="post">
             <input type="hidden" name="tid" value="$tid"/>
