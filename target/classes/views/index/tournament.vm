@@ -52,7 +52,7 @@
                 reload();
             }
         };
-        //webSocket.onclose = function () { alert("WebSocket connection closed") };
+        webSocket.onclose = function () { console.log("WebSocket connection closed") };
 
         reload();
 

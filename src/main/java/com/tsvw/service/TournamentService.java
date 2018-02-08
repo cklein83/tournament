@@ -401,6 +401,7 @@ public class TournamentService {
         entityManager.persist(t);
 
         entityManager.getTransaction().commit();
+        entityManager.close();
         JPAUtil.shutdown();
     }
 }

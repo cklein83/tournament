@@ -64,7 +64,6 @@ public class BackendController {
             entityManager.getTransaction().begin();
 
             Match match = matchService.getMatch(Long.parseLong(matchId));
-            Hibernate.initialize(match);
 
             // goals
             String goals1 = request.queryParams("goals1");
