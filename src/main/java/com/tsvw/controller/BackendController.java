@@ -1,6 +1,7 @@
 package com.tsvw.controller;
 
 import com.tsvw.model.Match;
+import com.tsvw.model.MatchType;
 import com.tsvw.model.Status;
 import com.tsvw.model.Tournament;
 import com.tsvw.service.MatchService;
@@ -14,6 +15,7 @@ import spark.Response;
 import javax.persistence.EntityManager;
 import java.util.HashMap;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class BackendController {
 
@@ -41,6 +43,7 @@ public class BackendController {
         if (tournament != null) {
             map.put("matches", tournament.getMatches());
             map.put("tid", tournament.getId());
+            map.put("teams", tournament.getAllTeams());
         }
 
         String showOnlyFinals = request.queryParams("showOnlyFinals");
@@ -48,15 +51,26 @@ public class BackendController {
             map.put("showOnlyFinals", true);
         }
 
+        /*
         String finishRound = request.queryParams("finishRound");
-        if (finishRound != null && Boolean.parseBoolean(finishRound)) {
-            /*
-            String alert = "Konnte aktuelle Runde nicht beenden, da noch nicht abgeschlossene Spiele offen sind.";
-            map.put("alert", alert);
-            */
-            String success = "Runde erfolgreich beendet. Nächste Runde wurde automatisch mit Teams befüllt.";
-            map.put("success", success);
+        if (finishRound != null && Boolean.parseBoolean(finishRound) && tournament != null) {
+            if (tournament.isPreliminationDone() == false) {
+                String alert = "Konnte aktuelle Runde nicht beenden, da noch nicht abgeschlossene Spiele offen sind.";
+                map.put("alert", alert);
+            } else {
+                List<Match> matchList = tournament.getMatches().stream()
+                        .filter(m -> m.getMatchType() != MatchType.PRELIM)
+                        .collect(Collectors.toList());
+                for (Match match : matchList) {
+                    if (match.getMatchType() == MatchType.QUARTERFINAL) {
+
+                    }
+                }
+                String success = "Runde erfolgreich beendet. Nächste Runde wurde automatisch mit Teams befüllt.";
+                map.put("success", success);
+            }
         }
+        */
 
         map.put("matchStatusVariants", Status.values());
 

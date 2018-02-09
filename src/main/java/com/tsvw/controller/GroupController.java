@@ -28,8 +28,6 @@ public class GroupController {
 
         map.put("prelimDone", tournament.isPreliminationDone());
 
-        List<Match> matchesPrelim = tournamentService.getMatchesByMatchType(tournament, MatchType.PRELIM);
-
         return new ModelAndView(map, "views/group/_groups.vm");
     }
 }

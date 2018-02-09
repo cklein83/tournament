@@ -25,11 +25,18 @@ public class Group {
     @OneToMany(targetEntity = Team.class)
     private List<Team> teams = new ArrayList<>();
 
+    private Boolean dummyFinalGroup;
+
     // ---------------- constructors ------------------
 
     public Group(String name, Tournament tournament) {
+        this(name, tournament, false);
+    }
+
+    public Group(String name, Tournament tournament, Boolean dummyFinalGroup) {
         this.name = name;
         this.tournament = tournament;
+        this.dummyFinalGroup = dummyFinalGroup;
     }
 
     public Group() {
@@ -117,5 +124,13 @@ public class Group {
 
     public void addTeam(Team team) {
         this.teams.add(team);
+    }
+
+    public Boolean getDummyFinalGroup() {
+        return dummyFinalGroup;
+    }
+
+    public void setDummyFinalGroup(Boolean dummyFinalGroup) {
+        this.dummyFinalGroup = dummyFinalGroup;
     }
 }

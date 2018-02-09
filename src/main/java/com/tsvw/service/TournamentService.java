@@ -37,6 +37,11 @@ public class TournamentService extends Service {
         return matches;
     }
 
+    public List<Team> getAllTournamentTeams() {
+        List<Team> teams = em.createQuery("select t from tournaments as t").getResultList();
+        return teams;
+    }
+
     //
 
     public void createExampleTournament() {
@@ -321,27 +326,89 @@ public class TournamentService extends Service {
         // pause
         workDate = DateUtils.addMinutes(workDate, minsPauseBeforeFinal);
 
+        /**
+         * finals
+         */
+
+        ArrayList<Team> finalTeams = new ArrayList<>();
+
+        Group finalGroup = new Group("-", t, true);
+        entityManager.persist(finalGroup);
+
+        t.addGroup(finalGroup);
+        entityManager.persist(t);
+
+        // quarter-teams
+
+        Team finalTeam1A = new Team("Erster Gruppe A", null);
+        finalTeams.add(finalTeam1A);
+        Team finalTeam2A = new Team("Zweiter Gruppe A", null);
+        finalTeams.add(finalTeam2A);
+
+        Team finalTeam1B = new Team("Erster Gruppe B", null);
+        finalTeams.add(finalTeam1B);
+        Team finalTeam2B = new Team("Zweiter Gruppe B", null);
+        finalTeams.add(finalTeam2B);
+
+        Team finalTeam1C = new Team("Erster Gruppe C", null);
+        finalTeams.add(finalTeam1C);
+        Team finalTeam2C = new Team("Zweiter Gruppe C", null);
+        finalTeams.add(finalTeam2C);
+
+        Team finalTeam1D = new Team("Erster Gruppe D", null);
+        finalTeams.add(finalTeam1D);
+        Team finalTeam2D = new Team("Zweiter Gruppe D", null);
+        finalTeams.add(finalTeam2D);
+
+        // semi-teams
+        Team finalTeamWinner26 = new Team("Sieger 1/4-Finale Spiel 26", null);
+        finalTeams.add(finalTeamWinner26);
+        Team finalTeamWinner27 = new Team("Sieger 1/4-Finale Spiel 27", null);
+        finalTeams.add(finalTeamWinner27);
+        Team finalTeamWinner25 = new Team("Sieger 1/4-Finale Spiel 25", null);
+        finalTeams.add(finalTeamWinner25);
+        Team finalTeamWinner28 = new Team("Sieger 1/4-Finale Spiel 28", null);
+        finalTeams.add(finalTeamWinner28);
+
+        // small final teams
+        Team finalTeamLoser29 = new Team("Verlierer 1/2-Finale Spiel 29", null);
+        finalTeams.add(finalTeamLoser29);
+        Team finalTeamLoser30 = new Team("Verlierer 1/2-Finale Spiel 30", null);
+        finalTeams.add(finalTeamLoser30);
+
+        // final teams
+        Team finalTeamWinner29 = new Team("Sieger 1/2-Finale Spiel 29", null);
+        finalTeams.add(finalTeamWinner29);
+        Team finalTeamWinner30 = new Team("Sieger 1/2-Finale Spiel 30", null);
+        finalTeams.add(finalTeamWinner30);
+
+        for (Team team : finalTeams) {
+            entityManager.persist(team);
+            finalGroup.addTeam(team);
+            entityManager.persist(finalGroup);
+        }
+
         // quarterfinals
         {
-            Match m = new Match(t, ++matchNo, workDate, MatchType.QUARTERFINAL, null, null, "Erster Gruppe B", "Zweiter Gruppe A");
+            Match m = new Match(t, ++matchNo, workDate, MatchType.QUARTERFINAL, finalTeam1B, finalTeam2A);
             entityManager.persist(m);
             t.addMatch(m);
         }
         workDate = DateUtils.addMinutes(workDate, minsToPlayPlusPause);
         {
-            Match m = new Match(t, ++matchNo, workDate, MatchType.QUARTERFINAL, null, null, "Erster Gruppe A", "Zweiter Gruppe B");
+            Match m = new Match(t, ++matchNo, workDate, MatchType.QUARTERFINAL,finalTeam1A, finalTeam2B);
             entityManager.persist(m);
             t.addMatch(m);
         }
         workDate = DateUtils.addMinutes(workDate, minsToPlayPlusPause);
         {
-            Match m = new Match(t, ++matchNo, workDate, MatchType.QUARTERFINAL, null, null, "Erster Gruppe D", "Zweiter Gruppe C");
+            Match m = new Match(t, ++matchNo, workDate, MatchType.QUARTERFINAL, finalTeam1D, finalTeam2C);
             entityManager.persist(m);
             t.addMatch(m);
         }
         workDate = DateUtils.addMinutes(workDate, minsToPlayPlusPause);
         {
-            Match m = new Match(t, ++matchNo, workDate, MatchType.QUARTERFINAL, null, null, "Erster Gruppe C", "Zweiter Gruppe D");
+            Match m = new Match(t, ++matchNo, workDate, MatchType.QUARTERFINAL, finalTeam1C, finalTeam2D);
             entityManager.persist(m);
             t.addMatch(m);
         }
@@ -352,13 +419,13 @@ public class TournamentService extends Service {
 
         // semifinals
         {
-            Match m = new Match(t, ++matchNo, workDate, MatchType.SEMIFINAL, null, null, "Sieger 1/4-Finale Spiel 26", "Sieger 1/4-Finale Spiel 27");
+            Match m = new Match(t, ++matchNo, workDate, MatchType.SEMIFINAL, finalTeamWinner26, finalTeamWinner27);
             entityManager.persist(m);
             t.addMatch(m);
         }
         workDate = DateUtils.addMinutes(workDate, minsToPlayPlusPause);
         {
-            Match m = new Match(t, ++matchNo, workDate, MatchType.SEMIFINAL, null, null, "Sieger 1/4-Finale Spiel 25", "Sieger 1/4-Finale Spiel 28");
+            Match m = new Match(t, ++matchNo, workDate, MatchType.SEMIFINAL, finalTeamWinner25, finalTeamWinner28);
             entityManager.persist(m);
             t.addMatch(m);
         }
@@ -369,13 +436,13 @@ public class TournamentService extends Service {
 
         // smallfinal + final
         {
-            Match m = new Match(t, ++matchNo, workDate, MatchType.SMALLFINAL, null, null, "Verlierer 1/2-Finale Spiel 29", "Verlierer 1/2-Finale Spiel 30");
+            Match m = new Match(t, ++matchNo, workDate, MatchType.SMALLFINAL, finalTeamLoser29, finalTeamLoser30);
             entityManager.persist(m);
             t.addMatch(m);
         }
         workDate = DateUtils.addMinutes(workDate, minsToPlayPlusPause);
         {
-            Match m = new Match(t, ++matchNo, workDate, MatchType.FINAL, null, null, "Sieger 1/2-Finale Spiel 29", "Sieger 1/2-Finale Spiel 30");
+            Match m = new Match(t, ++matchNo, workDate, MatchType.FINAL, finalTeamWinner29, finalTeamWinner30);
             entityManager.persist(m);
             t.addMatch(m);
         }

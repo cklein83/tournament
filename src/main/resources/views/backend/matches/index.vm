@@ -100,7 +100,24 @@
             <td>$m.matchType.toString()</td>
 
             #if($m.team1)
-            <td>$m.team1.name</td>
+            <td>
+                #if($m.matchType.name() == "PRELIM")
+                $m.team1.name
+                #else
+                <div class="form-group row">
+                    <select class="form-control" name="team1" size="1" onchange="$(this).addClass('alert-success');" onfocus="$(this).addClass('alert-info');" onblur="$(this).removeClass('alert-info');">
+                        #foreach($team in $teams)
+                        #if($team.id == $m.team1.id)
+                        #set($team1Selected="selected")
+                        #else
+                        #set($team1Selected="")
+                        #end
+                        <option value="$team.id" $team1Selected>$team.name</option>
+                        #end
+                    </select>
+                </div>
+                #end
+            </td>
             #else
             <td>$m.dummyTeam1</td>
             #end
@@ -134,7 +151,24 @@
             </td>
 
             #if($m.team2)
-            <td>$m.team2.name</td>
+            <td>
+                #if($m.matchType.name() == "PRELIM")
+                $m.team2.name
+                #else
+                <div class="form-group row">
+                    <select class="form-control" name="team2" size="1" onchange="$(this).addClass('alert-success');" onfocus="$(this).addClass('alert-info');" onblur="$(this).removeClass('alert-info');">
+                        #foreach($team in $teams)
+                        #if($team.id == $m.team2.id)
+                        #set($team2Selected="selected")
+                        #else
+                        #set($team2Selected="")
+                        #end
+                        <option value="$team.id" $team2Selected>$team.name</option>
+                        #end
+                    </select>
+                </div>
+                #end
+            </td>
             #else
             <td>$m.dummyTeam2</td>
             #end

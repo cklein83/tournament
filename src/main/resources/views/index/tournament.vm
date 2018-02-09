@@ -96,7 +96,7 @@
                 </div>
 
                 <div data-interval="10000" class="carousel-item slide--advertisment container">
-                    <img class="d-block img-fluid"
+                    <img class="rounded mx-auto d-block"
                          src="/images/flyer.png"
                          alt="Flyer" />
                 </div>

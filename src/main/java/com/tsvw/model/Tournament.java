@@ -8,6 +8,7 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Entity(name = "tournaments")
 public class Tournament {
@@ -123,6 +124,10 @@ public class Tournament {
     }
 
     public List<Group> getGroups() {
+        return groups.stream().filter(g -> g.getDummyFinalGroup() == false).collect(Collectors.toList());
+    }
+
+    public List<Group> getAllGroups() {
         return groups;
     }
 
@@ -135,6 +140,14 @@ public class Tournament {
     }
 
     public List<Team> getTeams() {
+        ArrayList<Team> teams = new ArrayList<>();
+        for (Group g : groups.stream().filter(g -> g.getDummyFinalGroup() == false).collect(Collectors.toList())) {
+            teams.addAll(g.getTeams());
+        }
+        return teams;
+    }
+
+    public List<Team> getAllTeams() {
         ArrayList<Team> teams = new ArrayList<>();
         for (Group g : groups) {
             teams.addAll(g.getTeams());

@@ -19,7 +19,7 @@ public class Team implements Comparable {
     @NotEmpty
     private String name;
 
-    @ManyToOne(optional = false)
+    @ManyToOne(optional = true)
     private Group group;
 
     @ManyToMany(targetEntity = Match.class)
@@ -35,14 +35,22 @@ public class Team implements Comparable {
     @Transient
     private Integer contragoals = null;
 
+    private Boolean finalDummyTeam;
+
     // ---------------- constructors ------------------
 
     public Team(String name, Group group) {
+        this(name, group, false);
+    }
+
+    public Team(String name, Group group, Boolean finalDummyTeam) {
         this.name = name;
         this.group = group;
+        this.finalDummyTeam = finalDummyTeam;
     }
 
     public Team() {
+
     }
 
     // ---------------- getters and setters ------------------
@@ -167,5 +175,13 @@ public class Team implements Comparable {
         return Comparator.comparingInt(Team::getPoints)
                 //.thenComparingInt(t -> getOrZero(t.getGoals()) - getOrZero(t.getContragoals()))
                 .compare(this, t2);
+    }
+
+    public Boolean getFinalDummyTeam() {
+        return finalDummyTeam;
+    }
+
+    public void setFinalDummyTeam(Boolean finalDummyTeam) {
+        this.finalDummyTeam = finalDummyTeam;
     }
 }
