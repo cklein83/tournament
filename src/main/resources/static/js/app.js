@@ -10,3 +10,15 @@ $(document).ready(function () {
         }, duration)
     })
 });
+
+function backend_submitMatchRow(parent) {
+
+alert($(parent));
+
+    console.log("goals1: " + $(parent).children("input[name='goals1']").val());
+    console.log("goals2: " + $(parent).children("input[name='goals2']").val());
+    console.log("status: " + $(parent).children("select[name='status']").val());
+
+    var form = $(parent).children("form");
+    form.submit();
+}

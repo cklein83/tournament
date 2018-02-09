@@ -3,6 +3,9 @@ package com.tsvw;
 import com.tsvw.controller.*;
 import com.tsvw.service.UpdateService;
 import com.tsvw.util.JPAUtil;
+import org.hibernate.Hibernate;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPubSub;
 import spark.ModelAndView;
@@ -19,8 +22,6 @@ public class Start {
 
     public static UpdateService updateService = new UpdateService();
 
-    public static EntityManager em = JPAUtil.getEntityManager();
-
     public static void main(String[] args) {
 
         System.setProperty("hibernate.dialect.storage_engine", "myisam");
@@ -29,8 +30,15 @@ public class Start {
 
         webSocket("/update", UpdateService.class);
 
+        before((request, response) -> {
+            SessionFactory sf = new Configuration().configure().buildSessionFactory();
+            EntityManager session = sf.createEntityManager();
+            request.attribute("em", session);
+        });
+
         after((request, response) -> {
-            //JPAUtil.shutdown();
+            EntityManager session = (EntityManager)request.attribute("em");
+            session.close();
         });
 
         // index
@@ -62,7 +70,6 @@ public class Start {
             get("/matches", BackendController::matchesList, velocityTemplateEngine);
             post("/matches", BackendController::saveListMatch);
             get("/createExampleTournament", BackendController::createExampleTournament);
-
         });
 
     }

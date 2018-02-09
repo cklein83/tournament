@@ -16,8 +16,8 @@
 
     <form action="/backend/matches" method="GET">
         <div class="col-sm-12 form-group row">
-            <label for="tournament" class="col-sm-2 col-form-label">Turnier:</label>
-            <select id="tournament" class="col-sm-5 form-control" name="tid" size="1" onchange="this.form.submit();">
+            <label for="tournament" class="col-sm-1 col-form-label">Turnier:</label>
+            <select id="tournament" class="col-sm-3 form-control" name="tid" size="1" onchange="this.form.submit();">
                 #foreach($t in $tournaments)
                 #if($tid == $t.id)
                 #set($tSelected = "selected")
@@ -27,18 +27,18 @@
                 <option value="$t.id" $tSelected>$t.name</option>
                 #end
             </select>
-            <span class="col-sm-5">
+            <span class="col-sm-2">
                 <input id="finishRound" type="hidden" name="finishRound" value="" />
                 <button type="button" name="finishRound" class="btn btn-warning" data-toggle="modal" data-target="#finishRoundModal">
                     <span class="glyphicon glyphicon-off" aria-hidden="true"></span> Runde beenden
                 </button>
             </span>
-            <label for="showOnlyFinals" class="col-sm-3 col-form-label-sm">Vorrunde ausblenden</label>
-            <span class="col-sm-1">
+            <label for="showOnlyFinals" class="col-sm-2 col-form-label-sm">Vorrunde ausblenden</label>
+            <span class="col-sm-2">
                 #if($showOnlyFinals)
-                  #set($sofChecked=true)
+                  #set($sofChecked="checked")
                 #end
-                <input id="showOnlyFinals" type="checkbox" class="form-control-sm" name="showOnlyFinals" $sofChecked onchange="this.form.submit();" />
+                <input id="showOnlyFinals" type="checkbox" class="form-control-sm" name="showOnlyFinals" $sofChecked onchange="this.form.submit();" value="true" />
             </span>
         </div>
 
@@ -84,10 +84,12 @@
         </tr>
         </thead>
         <tbody>
+
         #foreach($m in $matches)
-        #if(!$showOnlyFinals || $m.matchType != "prelim")
-        #end
+
+        #if(!$showOnlyFinals || $m.matchType.name() != "PRELIM")
         <tr>
+
             <form action="/backend/matches" method="post">
             <input type="hidden" name="tid" value="$tid"/>
             <input type="hidden" name="mid" value="$m.id"/>
@@ -138,7 +140,7 @@
             #end
 
             <td>
-                <select id="matchStatus" class="form-control" name="status" size="1" onchange="$(this).addClass('alert-success');" onfocus="$(this).addClass('alert-info');" onblur="$(this).removeClass('alert-info');">
+                <select class="form-control" name="status" size="1" onchange="$(this).addClass('alert-success');" onfocus="$(this).addClass('alert-info');" onblur="$(this).removeClass('alert-info');">
                     #foreach($matchStatus in $matchStatusVariants)
                     #if($m.status.toString() == $matchStatus.toString())
                     #set($matchStatusSelected="selected")
@@ -151,6 +153,14 @@
             </td>
 
             <td>
+
+                    <!--
+                    <input type="hidden" name="goals1" value=""/>
+                    <input type="hidden" name="goals2" value=""/>
+                    <input type="hidden" name="status" value=""/>
+                    -->
+
+
                 <button type="button" class="btn btn-success" onclick="this.form.submit();">
                     <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
                 </button>
@@ -165,6 +175,9 @@
             </form>
         </tr>
         #end
+
+        #end
+        </tbody>
     </table>
     #end
 

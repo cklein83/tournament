@@ -8,16 +8,18 @@ import spark.ModelAndView;
 import spark.Request;
 import spark.Response;
 
+import javax.persistence.EntityManager;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
 public class MatchController {
 
-    private static final TournamentService tournamentService = new TournamentService();
-
     public static ModelAndView showPrelimMatches(Request request, Response response){
         HashMap<String, Object> map = new HashMap<>();
+
+        EntityManager em = request.attribute("em");
+        TournamentService tournamentService = new TournamentService(em);
 
         final String tournamentId = request.params(":tid");
         Tournament tournament = tournamentService.getTournament(Long.parseLong(tournamentId));
@@ -34,6 +36,9 @@ public class MatchController {
 
     public static ModelAndView showFinalMatches(Request request, Response response){
         HashMap<String, Object> map = new HashMap<>();
+
+        EntityManager em = request.attribute("em");
+        TournamentService tournamentService = new TournamentService(em);
 
         final String tournamentId = request.params(":tid");
         Tournament tournament = tournamentService.getTournament(Long.parseLong(tournamentId));

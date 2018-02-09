@@ -5,6 +5,7 @@ import org.eclipse.jetty.websocket.api.annotations.OnWebSocketClose;
 import org.eclipse.jetty.websocket.api.annotations.OnWebSocketConnect;
 import org.eclipse.jetty.websocket.api.annotations.OnWebSocketMessage;
 import org.eclipse.jetty.websocket.api.annotations.WebSocket;
+import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.Map;
@@ -16,7 +17,6 @@ import java.util.concurrent.ConcurrentLinkedQueue;
 public class UpdateService {
 
     private static final Queue<Session> sessions = new ConcurrentLinkedQueue<>();
-    private static final MatchService matchService = new MatchService();
 
     static Map<Session, String> listeners = new ConcurrentHashMap<>();
 
@@ -57,13 +57,9 @@ public class UpdateService {
             try {
                 if (type.equals("refresh-data")) {
                     session.getRemote().sendString(
-                            /*
                             String.valueOf(new JSONObject()
-                                    .put("goalsTeam1", currentMatch.getGoalsTeam1())
-                                    .put("goalsTeam2", currentMatch.getGoalsTeam2()))
-                                    */
-                            "refresh-data"
-                    );
+                                    .put("cmd", "refresh-data")
+                    ));
                 }
             } catch (Exception e) {
                 e.printStackTrace();

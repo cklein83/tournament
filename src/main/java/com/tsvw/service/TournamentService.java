@@ -1,9 +1,7 @@
 package com.tsvw.service;
 
 
-import com.tsvw.Start;
 import com.tsvw.model.*;
-import com.tsvw.util.JPAUtil;
 import org.apache.commons.lang.time.DateUtils;
 
 import javax.persistence.EntityManager;
@@ -15,31 +13,24 @@ import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class TournamentService {
+public class TournamentService extends Service {
 
-        public List<Tournament> getAllTournaments() {
-        EntityManager entityManager = Start.em;
+    public TournamentService(EntityManager em) {
+        super(em);
+    }
 
-        //entityManager.getTransaction().begin();
-        List<Tournament> tournaments = entityManager.createQuery("select t from tournaments as t").getResultList();
-
-        //entityManager.close();
-
+    public List<Tournament> getAllTournaments() {
+        List<Tournament> tournaments = em.createQuery("select t from tournaments as t").getResultList();
         return tournaments;
     }
 
     public Tournament getTournament(Long id) {
-        EntityManager entityManager = Start.em;
-
-        Tournament tournament = entityManager.find(Tournament.class, id);
-
+        Tournament tournament = em.find(Tournament.class, id);
         return tournament;
     }
 
 
-
     public List<Match> getMatchesByMatchType(Tournament tournament, MatchType matchType) {
-        EntityManager entityManager = Start.em;
         List<Match> matches = tournament.getMatches().stream()
                 .filter(m -> m.getMatchType() == matchType)
                 .collect(Collectors.toList());
@@ -48,11 +39,11 @@ public class TournamentService {
 
     //
 
-    public static void createExampleTournament() {
-        EntityManager entityManager = JPAUtil.getEntityManager();
+    public void createExampleTournament() {
+        EntityManager entityManager = em;
         entityManager.getTransaction().begin();
 
-        SimpleDateFormat df = new SimpleDateFormat( "yyyy-MM-dd HH:mm" );
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm");
 
         Date startDate;
         try {
@@ -69,7 +60,7 @@ public class TournamentService {
         Tournament t = new Tournament(
                 "Hallenzauber 2018",
                 startDate,
-                minsToPlay*60, minsPauseInBetween*60, minsPauseBeforeFinal*60,
+                minsToPlay * 60, minsPauseInBetween * 60, minsPauseBeforeFinal * 60,
                 2);
         t.setSubtitle("Firmenturnier in der Weibertreuhalle Weinsberg");
         entityManager.persist(t);
@@ -405,7 +396,5 @@ public class TournamentService {
         entityManager.persist(t);
 
         entityManager.getTransaction().commit();
-        //entityManager.close();
-        JPAUtil.shutdown();
     }
 }

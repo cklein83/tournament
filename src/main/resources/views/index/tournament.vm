@@ -47,8 +47,10 @@
 
         var webSocket = new WebSocket("ws://" + location.hostname + ":" + location.port + "/update");
         webSocket.onmessage = function (msg) {
-            console.log("MSG: " + msg);
-            if (msg == "refresh-data") {
+            var data = JSON.parse(msg.data);
+            var cmd = data.cmd
+            console.log("CMD: " + cmd);
+            if (cmd == "refresh-data") {
                 reload();
             }
         };

@@ -1,27 +1,21 @@
 package com.tsvw.controller;
 
-import com.tsvw.Start;
 import com.tsvw.model.Match;
 import com.tsvw.model.Status;
 import com.tsvw.model.Tournament;
 import com.tsvw.service.MatchService;
 import com.tsvw.service.TournamentService;
 import com.tsvw.service.UpdateService;
-import com.tsvw.util.JPAUtil;
 import org.hibernate.Hibernate;
 import spark.ModelAndView;
 import spark.Request;
 import spark.Response;
 
 import javax.persistence.EntityManager;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
 public class BackendController {
-
-    private static final TournamentService tournamentService = new TournamentService();
-    private static final MatchService matchService = new MatchService();
 
     public static ModelAndView index(Request request, Response response) {
         HashMap<String, Object> map = new HashMap<>();
@@ -31,16 +25,22 @@ public class BackendController {
     public static ModelAndView matchesList(Request request, Response response) {
         HashMap<String, Object> map = new HashMap<>();
 
+        EntityManager em = request.attribute("em");
+        TournamentService tournamentService = new TournamentService(em);
+
         List<Tournament> tournaments = tournamentService.getAllTournaments();
         map.put("tournaments", tournaments);
 
+        Tournament tournament = null;
         String tournamentId = request.queryParams("tid");
-        if (tournamentId == null && tournaments != null && tournaments.size() > 0) {
-            tournamentId = Long.toString(tournaments.get(0).getId());
+        if (tournamentId != null) {
+            tournament = tournamentService.getTournament(Long.parseLong(tournamentId));
+        } else if (tournaments != null && tournaments.size() > 0) {
+            tournament = tournaments.get(0);
         }
-        Tournament tournament = tournamentService.getTournament(Long.parseLong(tournamentId));
         if (tournament != null) {
             map.put("matches", tournament.getMatches());
+            map.put("tid", tournament.getId());
         }
 
         String showOnlyFinals = request.queryParams("showOnlyFinals");
@@ -58,8 +58,6 @@ public class BackendController {
             map.put("success", success);
         }
 
-        map.put("tid", tournamentId);
-
         map.put("matchStatusVariants", Status.values());
 
         map.put("isMatch", true);
@@ -70,11 +68,11 @@ public class BackendController {
     public static String saveListMatch(Request request, Response response) {
         String matchId = request.queryParams("mid");
         if (matchId != null && matchId.isEmpty() == false) {
-            //EntityManager entityManager = JPAUtil.getEntityManager();
 
-            EntityManager entityManager = Start.em;
-            entityManager.getTransaction().begin();
+            EntityManager em = request.attribute("em");
+            em.getTransaction().begin();
 
+            MatchService matchService = new MatchService(em);
             Match match = matchService.getMatch(Long.parseLong(matchId));
             Hibernate.initialize(match);
 
@@ -109,16 +107,26 @@ public class BackendController {
                 match.setStatus(matchStatus);
             }
 
-            entityManager.merge(match);
-            entityManager.getTransaction().commit();
+            em.merge(match);
+            em.getTransaction().commit();
 
-            //UpdateService.broadcastMessage("refresh-data", "");
+            UpdateService.broadcastMessage("refresh-data", "");
         }
-        response.redirect("/backend/matches");
+
+        String redirectUrl = "/backend/matches";
+
+        String tournamentId = request.queryParams("tid");
+        if (tournamentId != null) {
+            redirectUrl += "?tid=" + tournamentId;
+        }
+
+        response.redirect(redirectUrl);
         return "OK";
     }
 
     public static String createExampleTournament(Request request, Response response) {
+        EntityManager em = request.attribute("em");
+        TournamentService tournamentService = new TournamentService(em);
         tournamentService.createExampleTournament();
         return "OK";
     }
