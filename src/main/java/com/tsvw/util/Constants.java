@@ -17,4 +17,8 @@ public class Constants {
     public static final String LOKSAFE = "loksafe";
 
     public static final String MATCH_TYPES = "matchTypes";
+
+
+    public static String ADMIN = "chris";
+    public static String ADMIN_PW = "!chris2018";
 }

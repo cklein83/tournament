@@ -1,10 +1,14 @@
 package com.tsvw.controller;
 
-import com.tsvw.model.*;
+import com.tsvw.model.Match;
+import com.tsvw.model.Status;
+import com.tsvw.model.Team;
+import com.tsvw.model.Tournament;
 import com.tsvw.service.MatchService;
 import com.tsvw.service.TeamService;
 import com.tsvw.service.TournamentService;
 import com.tsvw.service.UpdateService;
+import com.tsvw.util.Constants;
 import org.hibernate.Hibernate;
 import spark.ModelAndView;
 import spark.Request;
@@ -13,13 +17,55 @@ import spark.Response;
 import javax.persistence.EntityManager;
 import java.util.HashMap;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class BackendController {
+
 
     public static ModelAndView index(Request request, Response response) {
         HashMap<String, Object> map = new HashMap<>();
         return new ModelAndView(map, "views/backend/index.vm");
+    }
+
+    public static ModelAndView loginForm(Request request, Response response) {
+        HashMap<String, Object> map = new HashMap<>();
+        final Boolean loggedin = (Boolean) request.session().attribute("loggedin");
+        if(loggedin != null  && loggedin == true){
+            response.redirect("/backend");
+        }
+        return new ModelAndView(map, "views/backend/login/login.vm");
+    }
+
+    public static ModelAndView logout(Request request, Response response) {
+        HashMap<String, Object> map = new HashMap<>();
+        request.session().removeAttribute("loggedin");
+        request.session().removeAttribute("username");
+        response.redirect("/backend/login");
+        return new ModelAndView(map, "views/backend/login/login.vm");
+    }
+
+    public static String login(Request request, Response response) {
+        final String username = request.queryParams("username");
+        final String password = request.queryParams("password");
+
+        if (username != null && password != null &&
+            username.toLowerCase().trim().equals(Constants.ADMIN) &&
+            password.toLowerCase().trim().equals(Constants.ADMIN_PW)) {
+
+            request.session().attribute("loggedin", true);
+            request.session().attribute("username", "chris");
+            response.redirect("/backend/matches");
+        }
+        response.redirect("/backend/login");
+        return "logged in";
+    }
+
+    public static String logMeIn(Request request, Response response) {
+        request.session().attribute("loggedin", true);
+        request.session().attribute("username", "chris");
+
+        response.redirect("/backend/matches");
+
+        return "logged in";
     }
 
     public static ModelAndView matchesList(Request request, Response response) {

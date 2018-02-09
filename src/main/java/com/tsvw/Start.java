@@ -10,6 +10,7 @@ import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPubSub;
 import spark.ModelAndView;
 
+import spark.Request;
 import spark.template.velocity.VelocityTemplateEngine;
 
 import javax.persistence.EntityManager;
@@ -34,6 +35,20 @@ public class Start {
             SessionFactory sf = new Configuration().configure().buildSessionFactory();
             EntityManager session = sf.createEntityManager();
             request.attribute("em", session);
+        });
+
+        before((request, response) -> {
+            //todo: geht safe eleganter ... aber gerade kein bock agj
+            final String uri = request.uri();
+            if(uri.contains("/backend")){
+                if(!uri.contains("/backend/login")){
+                    final Boolean loggedin = (Boolean) request.session().attribute("loggedin");
+                    if(loggedin == null  || loggedin == false){
+                        response.redirect("/backend/login");
+                    }
+                }
+            }
+
         });
 
         after((request, response) -> {
@@ -69,6 +84,9 @@ public class Start {
             get("/", BackendController::index, velocityTemplateEngine);
             get("/matches", BackendController::matchesList, velocityTemplateEngine);
             post("/matches", BackendController::saveListMatch);
+            get("/login", BackendController::loginForm, velocityTemplateEngine);
+            get("/logout", BackendController::logout, velocityTemplateEngine);
+            post("/login", BackendController::login);
             get("/createExampleTournament", BackendController::createExampleTournament);
         });
 
