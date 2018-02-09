@@ -78,9 +78,9 @@
 
 #if($prelimDone)
   #set($prelimSlideInterval=10000)
-  #set($finalSlideInterval=30000)
+  #set($finalSlideInterval=20000)
 #else
-  #set($prelimSlideInterval=30000)
+  #set($prelimSlideInterval=20000)
   #set($finalSlideInterval=10000)
 #end
 
@@ -95,7 +95,7 @@
                     </div>
                 </div>
 
-                <div data-interval="10000" class="carousel-item slide--advertisment container">
+                <div data-interval="100" class="carousel-item slide--advertisment container">
                     <img class="rounded mx-auto d-block"
                          src="/images/flyer.png"
                          alt="Flyer" />
@@ -106,7 +106,7 @@
                     </div>
                 </div>
 
-                <div data-interval="10000" class="carousel-item slide--advertisment container">
+                <div data-interval="100" class="carousel-item slide--advertisment container">
                     <img class="rounded mx-auto d-block"
                          src="/images/ads/Advertisement-Grid-Lightgrey.jpg"
                          alt="Ads" />

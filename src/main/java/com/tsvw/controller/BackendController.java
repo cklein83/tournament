@@ -1,10 +1,8 @@
 package com.tsvw.controller;
 
-import com.tsvw.model.Match;
-import com.tsvw.model.MatchType;
-import com.tsvw.model.Status;
-import com.tsvw.model.Tournament;
+import com.tsvw.model.*;
 import com.tsvw.service.MatchService;
+import com.tsvw.service.TeamService;
 import com.tsvw.service.TournamentService;
 import com.tsvw.service.UpdateService;
 import org.hibernate.Hibernate;
@@ -121,6 +119,19 @@ public class BackendController {
                 match.setStatus(matchStatus);
             }
 
+            // teams
+            TeamService teamService = new TeamService(em);
+            String idTeam1 = request.queryParams("team1");
+            if (idTeam1 != null) {
+                Team team1 = teamService.getTeam(Long.parseLong(idTeam1));
+                match.setTeam1(team1);
+            }
+            String idTeam2 = request.queryParams("team2");
+            if (idTeam2 != null) {
+                Team team2 = teamService.getTeam(Long.parseLong(idTeam2));
+                match.setTeam2(team2);
+            }
+
             em.merge(match);
             em.getTransaction().commit();
 
@@ -132,6 +143,11 @@ public class BackendController {
         String tournamentId = request.queryParams("tid");
         if (tournamentId != null) {
             redirectUrl += "?tid=" + tournamentId;
+
+            String showOnlyFinals = request.queryParams("showOnlyFinals");
+            if (showOnlyFinals != null) {
+                redirectUrl += "&showOnlyFinals=" + showOnlyFinals;
+            }
         }
 
         response.redirect(redirectUrl);

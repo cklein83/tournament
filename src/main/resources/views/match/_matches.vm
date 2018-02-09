@@ -19,7 +19,7 @@
     <tr>
         <th scope="row">$m.number</th>
         <td>$m.startTimeFormatted</td>
-        #if($m.team1 && $m.team1.group)
+        #if($m.team1 && $m.team1.group && $m.matchType.name() == "PRELIM")
         <td>$m.team1.group.name</td>
         #else
         <td>-</td>

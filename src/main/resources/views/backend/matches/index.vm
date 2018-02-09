@@ -27,12 +27,14 @@
                 <option value="$t.id" $tSelected>$t.name</option>
                 #end
             </select>
+            <!--
             <span class="col-sm-2">
                 <input id="finishRound" type="hidden" name="finishRound" value="" />
                 <button type="button" name="finishRound" class="btn btn-warning" data-toggle="modal" data-target="#finishRoundModal">
                     <span class="glyphicon glyphicon-off" aria-hidden="true"></span> Runde beenden
                 </button>
             </span>
+            -->
             <label for="showOnlyFinals" class="col-sm-2 col-form-label-sm">Vorrunde ausblenden</label>
             <span class="col-sm-2">
                 #if($showOnlyFinals)
@@ -43,6 +45,7 @@
         </div>
 
         <!-- Modal -->
+        <!--
         <div class="modal fade" id="finishRoundModal" tabindex="-1" role="dialog" aria-labelledby="finishRoundModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -64,6 +67,7 @@
                 </div>
             </div>
         </div>
+        -->
     </form>
 
     <div class="row">&nbsp;</div>
@@ -93,6 +97,7 @@
             <form action="/backend/matches" method="post">
             <input type="hidden" name="tid" value="$tid"/>
             <input type="hidden" name="mid" value="$m.id"/>
+            <input type="hidden" name="showOnlyFinals" value="$showOnlyFinals"/>
 
             <th scope="row">$m.number</th>
             <td>$m.startTimeFormatted</td>
