@@ -14,6 +14,7 @@ import spark.Request;
 import spark.template.velocity.VelocityTemplateEngine;
 
 import javax.persistence.EntityManager;
+import javax.persistence.Persistence;
 import java.util.HashMap;
 
 import static spark.Spark.*;
@@ -32,8 +33,10 @@ public class Start {
         webSocket("/update", UpdateService.class);
 
         before((request, response) -> {
-            SessionFactory sf = new Configuration().configure().buildSessionFactory();
-            EntityManager session = sf.createEntityManager();
+//            SessionFactory sf = new Configuration().configure().buildSessionFactory();
+//            EntityManager session = sf.createEntityManager();
+            final String PERSISTENCE_UNIT_NAME = "TournamentPersistence";
+            EntityManager session = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME).createEntityManager();
             request.attribute("em", session);
         });
 
