@@ -13,6 +13,7 @@ import spark.ModelAndView;
 import spark.Request;
 import spark.template.velocity.VelocityTemplateEngine;
 
+import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
 import java.util.HashMap;
@@ -36,7 +37,9 @@ public class Start {
 //            SessionFactory sf = new Configuration().configure().buildSessionFactory();
 //            EntityManager session = sf.createEntityManager();
             final String PERSISTENCE_UNIT_NAME = "TournamentPersistence";
-            EntityManager session = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME).createEntityManager();
+            EntityManagerFactory emf = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
+            EntityManager session = emf.createEntityManager();
+            request.attribute("emf", emf);
             request.attribute("em", session);
         });
 
@@ -57,6 +60,8 @@ public class Start {
         after((request, response) -> {
             EntityManager session = (EntityManager)request.attribute("em");
             session.close();
+            EntityManagerFactory emf = (EntityManagerFactory)request.attribute("emf");
+            emf.close();
         });
 
         // index
