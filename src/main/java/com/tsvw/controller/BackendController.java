@@ -200,10 +200,17 @@ public class BackendController {
         return "OK";
     }
 
-    public static String createExampleTournament(Request request, Response response) {
+    public static String createExampleTournament2018(Request request, Response response) {
         EntityManager em = request.attribute("em");
         TournamentService tournamentService = new TournamentService(em);
-        tournamentService.createExampleTournament();
+        tournamentService.createTournament2018();
+        return "OK";
+    }
+
+    public static String createExampleTournament2019(Request request, Response response) {
+        EntityManager em = request.attribute("em");
+        TournamentService tournamentService = new TournamentService(em);
+        tournamentService.createTournament2019();
         return "OK";
     }
 

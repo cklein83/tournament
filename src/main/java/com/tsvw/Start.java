@@ -2,21 +2,12 @@ package com.tsvw;
 
 import com.tsvw.controller.*;
 import com.tsvw.service.UpdateService;
-import com.tsvw.util.JPAUtil;
-import org.hibernate.Hibernate;
-import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
-import redis.clients.jedis.Jedis;
-import redis.clients.jedis.JedisPubSub;
-import spark.ModelAndView;
 
-import spark.Request;
 import spark.template.velocity.VelocityTemplateEngine;
 
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
-import java.util.HashMap;
 
 import static spark.Spark.*;
 
@@ -95,7 +86,8 @@ public class Start {
             get("/login", BackendController::loginForm, velocityTemplateEngine);
             get("/logout", BackendController::logout, velocityTemplateEngine);
             post("/login", BackendController::login);
-            get("/createExampleTournament", BackendController::createExampleTournament);
+            get("/createTournament2018", BackendController::createExampleTournament2018);
+            get("/createTournament2019", BackendController::createExampleTournament2019);
         });
 
     }
