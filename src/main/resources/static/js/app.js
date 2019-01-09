@@ -13,7 +13,7 @@ $(document).ready(function () {
 
 function backend_submitMatchRow(parent) {
 
-alert($(parent));
+//alert($(parent));
 
     console.log("goals1: " + $(parent).children("input[name='goals1']").val());
     console.log("goals2: " + $(parent).children("input[name='goals2']").val());

@@ -23,15 +23,35 @@
 
 @media only screen and (max-width: 400px) {
 
+    .blog-header {
+      padding-left: 0.1rem !important;
+    }
+
+    .blog-header .lead {
+      font-size: 0.7rem !important;
+    }
+
+    .blog-header .blog-title {
+      font-size: 1.3rem !important;
+    }
+
+    .blog-header img {
+      width: 75px;
+    }
+
     .table {
       font-size: x-small !important;
     }
 
     .table td, .table th {
-      padding: 1px !important;
+      padding: 0.1rem !important;
     }
 
     .slide--game-table {
       padding: 1px !important;
+    }
+
+    .row {
+      margin-right: 0px !important;
     }
 }

@@ -76,6 +76,7 @@
     </div>
 </div>
 
+
 #if($prelimDone)
   #set($prelimSlideInterval=10000)
   #set($finalSlideInterval=30000)
@@ -95,21 +96,24 @@
                     </div>
                 </div>
 
+                <!--
                 <div data-interval="10000" class="carousel-item slide--advertisment container">
                     <img class="rounded mx-auto d-block"
                          src="/images/flyer.png"
                          alt="Flyer" width="100%" />
                 </div>
+                -->
+
 
                 <div data-interval="$finalSlideInterval" class="carousel-item slide--game-table">
                     <div id="finalMatches">
                     </div>
                 </div>
 
-                <div data-interval="10000" class="carousel-item slide--advertisment container">
+                <div data-interval="5000" class="carousel-item slide--advertisment container">
                     <img class="rounded mx-auto d-block"
                          src="/images/ads/Advertisement-Grid-Lightgrey.jpg"
-                         alt="Ads" height="800px" width="100%" />
+                         alt="Ads" width="100%" />
                 </div>
 
                 <div data-interval="5000" class="carousel-item slide--advertisment container">
@@ -119,6 +123,17 @@
                 </div>
 
             </div>
+
+            <!--
+            <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev" onclick="$('#myCarousel').carousel('prev')">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next" onclick="$('#myCarousel').carousel('next')">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+            -->
 
         </div>
     </div>
