@@ -20,3 +20,18 @@
     padding-right: 10px !important;
     float: right
 }
+
+@media only screen and (max-width: 400px) {
+
+    .table {
+      font-size: x-small !important;
+    }
+
+    .table td, .table th {
+      padding: 1px !important;
+    }
+
+    .slide--game-table {
+      padding: 1px !important;
+    }
+}

@@ -98,7 +98,7 @@
                 <div data-interval="10000" class="carousel-item slide--advertisment container">
                     <img class="rounded mx-auto d-block"
                          src="/images/flyer.png"
-                         alt="Flyer" />
+                         alt="Flyer" width="100%" />
                 </div>
 
                 <div data-interval="$finalSlideInterval" class="carousel-item slide--game-table">
@@ -109,13 +109,13 @@
                 <div data-interval="10000" class="carousel-item slide--advertisment container">
                     <img class="rounded mx-auto d-block"
                          src="/images/ads/Advertisement-Grid-Lightgrey.jpg"
-                         alt="Ads" height="800px" />
+                         alt="Ads" height="800px" width="100%" />
                 </div>
 
                 <div data-interval="5000" class="carousel-item slide--advertisment container">
                     <img class="rounded mx-auto d-block"
                          src="/images/ads/thera.png"
-                         alt="Ads" />
+                         alt="Ads" width="100%" />
                 </div>
 
             </div>
