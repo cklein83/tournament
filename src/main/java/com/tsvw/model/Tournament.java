@@ -1,6 +1,5 @@
 package com.tsvw.model;
 
-import jdk.nashorn.internal.ir.annotations.Ignore;
 import net.formio.binding.Ignored;
 import net.formio.validation.constraints.NotEmpty;
 import org.hibernate.Hibernate;
@@ -124,14 +123,8 @@ public class Tournament {
         this.qualiCount = qualiCount;
     }
 
-    @Transient
-    List<Group> cachedGroups = new ArrayList<>();
-
     public List<Group> getGroups() {
-        if (cachedGroups == null) {
-            cachedGroups = groups.stream().filter(g -> g.getDummyFinalGroup() == false).collect(Collectors.toList());
-        }
-        return cachedGroups;
+        return groups.stream().filter(g -> g.getDummyFinalGroup() == false).collect(Collectors.toList());
     }
 
     public List<Group> getAllGroups() {
@@ -148,7 +141,7 @@ public class Tournament {
 
     public List<Team> getTeams() {
         ArrayList<Team> teams = new ArrayList<>();
-        for (Group g : getGroups()) {
+        for (Group g : groups.stream().filter(g -> g.getDummyFinalGroup() == false).collect(Collectors.toList())) {
             teams.addAll(g.getTeams());
         }
         return teams;

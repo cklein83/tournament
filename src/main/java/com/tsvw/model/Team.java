@@ -101,16 +101,15 @@ public class Team implements Comparable {
 
     public Integer getPoints() {
         if (points == null && hasStartedMatches()) {
-            final List<Match> matchesByMatchType = getMatchesByMatchType(MatchType.PRELIM);
             points = 0;
-            List<Match> wins = matchesByMatchType.stream().filter(
+            List<Match> wins = getMatchesByMatchType(MatchType.PRELIM).stream().filter(
                     m ->
                             m.getStatus() != Status.NEW && (
                                 m.getTeam1().getId() == id && m.getGoalsTeam1() > m.getGoalsTeam2() ||
                                     m.getTeam2().getId() == id && m.getGoalsTeam2() > m.getGoalsTeam1())
 
             ).collect(Collectors.toList());
-            List<Match> remis = matchesByMatchType.stream().filter(
+            List<Match> remis = getMatchesByMatchType(MatchType.PRELIM).stream().filter(
                     m ->
                             m.getStatus() != Status.NEW &&
                                 (m.getTeam1().getId() == id || m.getTeam2().getId() == id) &&
@@ -130,12 +129,11 @@ public class Team implements Comparable {
 
     public Integer getGoals() {
         if (goals == null && hasStartedMatches()) {
-            final List<Match> matchesByMatchType = getMatchesByMatchType(MatchType.PRELIM);
             goals = 0;
-            goals += matchesByMatchType.stream()
+            goals += getMatchesByMatchType(MatchType.PRELIM).stream()
                     .filter(m -> m.getStatus() != Status.NEW && (m.getTeam1().getId() == id))
                     .mapToInt(m -> m.getGoalsTeam1()).sum();
-            goals += matchesByMatchType.stream()
+            goals += getMatchesByMatchType(MatchType.PRELIM).stream()
                     .filter(m -> m.getStatus() != Status.NEW && (m.getTeam2().getId() == id))
                     .mapToInt(m -> m.getGoalsTeam2()).sum();
         }
@@ -144,12 +142,11 @@ public class Team implements Comparable {
 
     public Integer getContragoals() {
         if (contragoals == null && hasStartedMatches()) {
-            final List<Match> matchesByMatchType = getMatchesByMatchType(MatchType.PRELIM);
             contragoals = 0;
-            contragoals += matchesByMatchType.stream()
+            contragoals += getMatchesByMatchType(MatchType.PRELIM).stream()
                     .filter(m -> m.getStatus() != Status.NEW && (m.getTeam1().getId() == id))
                     .mapToInt(m -> m.getGoalsTeam2()).sum();
-            contragoals += matchesByMatchType.stream()
+            contragoals += getMatchesByMatchType(MatchType.PRELIM).stream()
                     .filter(m -> m.getStatus() != Status.NEW && (m.getTeam2().getId() == id))
                     .mapToInt(m -> m.getGoalsTeam1()).sum();
         }
