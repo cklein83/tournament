@@ -16,6 +16,9 @@ public class Start {
 
     public static UpdateService updateService = new UpdateService();
 
+    static final String PERSISTENCE_UNIT_NAME = "TournamentPersistence";
+    static EntityManagerFactory emf = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
+
     public static void main(String[] args) {
 
         System.setProperty("hibernate.dialect.storage_engine", "myisam");
@@ -27,11 +30,15 @@ public class Start {
         before((request, response) -> {
 //            SessionFactory sf = new Configuration().configure().buildSessionFactory();
 //            EntityManager session = sf.createEntityManager();
-            final String PERSISTENCE_UNIT_NAME = "TournamentPersistence";
-            EntityManagerFactory emf = Persistence.createEntityManagerFactory(PERSISTENCE_UNIT_NAME);
+
+            final long t1 = System.currentTimeMillis();
+
+
             EntityManager session = emf.createEntityManager();
             request.attribute("emf", emf);
             request.attribute("em", session);
+
+            System.out.println("time: " + (System.currentTimeMillis() - t1));
         });
 
         before((request, response) -> {
@@ -51,8 +58,8 @@ public class Start {
         after((request, response) -> {
             EntityManager session = (EntityManager)request.attribute("em");
             session.close();
-            EntityManagerFactory emf = (EntityManagerFactory)request.attribute("emf");
-            emf.close();
+            //EntityManagerFactory emf = (EntityManagerFactory)request.attribute("emf");
+            //emf.close();
         });
 
         // index
