@@ -40,6 +40,18 @@
                     console.log("Error fetching finalMatches via XHR");
                 }
             });
+
+            $.ajax({
+                type: "GET",
+                url: "/match/current/" + tid,
+                data: "",
+                success: function(data, textStatus) {
+                    $("#currentMatch").html(data);
+                },
+                error: function() {
+                    console.log("Error fetching currentMatch via XHR");
+                }
+            });
         }
 
 
@@ -79,13 +91,15 @@
 
 #if($prelimDone)
   #set($prelimSlideInterval=10000)
-  #set($finalSlideInterval=30000)
+  #set($finalSlideInterval=15000)
 #else
-  #set($prelimSlideInterval=30000)
+  #set($prelimSlideInterval=15000)
   #set($finalSlideInterval=10000)
 #end
 
 <div class="row">
+
+    #if($beamerMode)
 
     <div class="carousel-slider col-sm-9 blog-main">
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -104,6 +118,10 @@
                 </div>
                 -->
 
+                <div data-interval="10000" class="carousel-item">
+                    <div id="currentMatch">
+                    </div>
+                </div>
 
                 <div data-interval="$finalSlideInterval" class="carousel-item slide--game-table">
                     <div id="finalMatches">
@@ -137,6 +155,22 @@
 
         </div>
     </div>
+
+    #else
+    <div class="col-sm-9 blog-main">
+        <div data-interval="$prelimSlideInterval">
+            <div id="prelimMatches">
+            </div>
+            <div>
+                <img class="rounded mx-auto d-block"
+                     src="/images/ads/Advertisement-Grid-Lightgrey.jpg"
+                     alt="Ads" width="100%" />
+            </div>
+            <div id="finalMatches">
+            </div>
+        </div>
+    </div>
+    #end
 
     <div class="col-sm-3 blog-sidebar">
         <div id="groups">

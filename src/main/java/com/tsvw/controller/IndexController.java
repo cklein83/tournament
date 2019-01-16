@@ -35,6 +35,11 @@ public class IndexController {
         Tournament tournament = tournamentService.getTournament(Long.parseLong(tournamentId));
         map.put("t", tournament);
 
+        String beamerMode = request.queryParams("beamer");
+        if (beamerMode != null && Boolean.parseBoolean(beamerMode)) {
+            map.put("beamerMode", true);
+        }
+
         /*
         map.put("prelimDone", tournament.isPreliminationDone());
         */

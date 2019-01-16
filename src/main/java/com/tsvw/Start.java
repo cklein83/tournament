@@ -42,6 +42,7 @@ public class Start {
         });
 
         before((request, response) -> {
+            request.session().maxInactiveInterval(60*60); // 1 hour
             //todo: geht safe eleganter ... aber gerade kein bock agj
             final String uri = request.uri();
             if(uri.contains("/backend")){
@@ -77,6 +78,7 @@ public class Start {
         path("/match", () -> {
             get("/prelimMatches/:tid", MatchController::showPrelimMatches, velocityTemplateEngine);
             get("/finalMatches/:tid", MatchController::showFinalMatches, velocityTemplateEngine);
+            get("/current/:tid", MatchController::showCurrentMatch, velocityTemplateEngine);
         });
 
         // match

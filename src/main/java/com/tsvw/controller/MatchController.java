@@ -59,4 +59,21 @@ public class MatchController {
 
         return new ModelAndView(map, "views/match/_matches.vm");
     }
+
+    public static ModelAndView showCurrentMatch(Request request, Response response){
+        HashMap<String, Object> map = new HashMap<>();
+
+        EntityManager em = request.attribute("em");
+        TournamentService tournamentService = new TournamentService(em);
+
+        final String tournamentId = request.params(":tid");
+        Tournament tournament = tournamentService.getTournament(Long.parseLong(tournamentId));
+        //map.put("t", tournament);
+
+        Match currentMatch = tournamentService.getCurrentMatch(tournament).orElse(null);
+
+        map.put("m", currentMatch);
+
+        return new ModelAndView(map, "views/match/_current.vm");
+    }
 }

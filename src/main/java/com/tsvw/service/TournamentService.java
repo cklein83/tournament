@@ -11,6 +11,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class TournamentService extends Service {
@@ -35,6 +36,11 @@ public class TournamentService extends Service {
                 .filter(m -> m.getMatchType() == matchType)
                 .collect(Collectors.toList());
         return matches;
+    }
+
+    public Optional<Match> getCurrentMatch(Tournament tournament) {
+        return tournament.getMatches().stream()
+                .filter(m -> m.getStatus() == Status.STARTED).findFirst();
     }
 
     public List<Team> getAllTournamentTeams() {

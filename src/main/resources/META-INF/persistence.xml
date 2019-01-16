@@ -14,7 +14,7 @@
             <property name="javax.persistence.jdbc.user" value="tsvw" />
             <property name="javax.persistence.jdbc.password" value="tsvw" />
 
-            <property name="hibernate.generate_statistics" value="true" />
+            <property name="hibernate.generate_statistics" value="false" />
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect"/>
             <property name="hibernate.show_sql" value="true" />
             <!--

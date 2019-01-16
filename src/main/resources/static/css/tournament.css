@@ -21,6 +21,35 @@
     float: right
 }
 
+#currentMatch {
+    width: 100%;
+    line-height:1.2;
+}
+
+.current-match-container {
+    /*margin-left: 30%;*/
+    /*margin-right: 30%;*/
+    padding-top: 10px;
+    text-align: center;
+}
+
+.current-match-number {
+    font-size: 2.25rem;
+    text-align: center;
+}
+
+.current-match-team {
+    font-size: 5rem;
+    text-align: center;
+}
+
+.current-match-status {
+    font-size: 9rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+
 @media only screen and (max-width: 400px) {
 
     .blog-header {

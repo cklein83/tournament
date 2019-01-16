@@ -1,0 +1,37 @@
+
+#if($m)
+<div class="current-match-container">
+
+<div class="current-match-number">
+    Match No.: # $m.number
+</div>
+
+<div class="current-match-team">
+    #if($m.team1)
+        $m.team1.name
+    #else
+        $m.dummyTeam1
+    #end
+</div>
+
+<div class="current-match-status">
+#if($m.status.toString() != "new")
+    $m.goalsTeam1 : $m.goalsTeam2
+#else
+- : -
+#end
+</div>
+
+<div class="current-match-team">
+    #if($m.team2)
+        $m.team2.name
+    #else
+        $m.dummyTeam2
+    #end
+</div>
+
+</div>
+#end
+
+
+
