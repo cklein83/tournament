@@ -78,6 +78,9 @@ public class Start {
         path("/match", () -> {
             get("/prelimMatches/:tid", MatchController::showPrelimMatches, velocityTemplateEngine);
             get("/finalMatches/:tid", MatchController::showFinalMatches, velocityTemplateEngine);
+            get("/quarterFinalMatches/:tid", MatchController::showQuarterFinalMatches, velocityTemplateEngine);
+            get("/semiFinalMatches/:tid", MatchController::showSemiFinalMatches, velocityTemplateEngine);
+            get("/realFinalMatches/:tid", MatchController::showRealFinalMatches, velocityTemplateEngine);
             get("/current/:tid", MatchController::showCurrentMatch, velocityTemplateEngine);
         });
 

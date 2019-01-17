@@ -181,6 +181,7 @@ public class BackendController {
             em.merge(match);
             em.getTransaction().commit();
 
+            //TODO use the mid to determine match details?
             UpdateService.broadcastMessage("refresh-data", "");
         }
 

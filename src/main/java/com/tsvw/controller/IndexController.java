@@ -13,7 +13,7 @@ import java.util.List;
 public class IndexController {
 
 
-    public static ModelAndView index(Request request, Response response){
+    public static ModelAndView index(Request request, Response response) {
         HashMap<String, Object> map = new HashMap<>();
 
         EntityManager em = request.attribute("em");
@@ -25,7 +25,7 @@ public class IndexController {
         return new ModelAndView(map, "views/index/index.vm");
     }
 
-    public static ModelAndView showTournament(Request request, Response response){
+    public static ModelAndView showTournament(Request request, Response response) {
         HashMap<String, Object> map = new HashMap<>();
 
         EntityManager em = request.attribute("em");

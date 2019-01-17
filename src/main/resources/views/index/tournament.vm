@@ -5,17 +5,102 @@
     $(function() {
 
         function reload() {
-            $.ajax({
-                type: "GET",
-                url: "/match/prelimMatches/" + tid,
-                data: "",
-                success: function(data, textStatus) {
-                    $("#prelimMatches").html(data);
-                },
-                error: function() {
-                    console.log("Error fetching prelimMatches via XHR");
+
+            #if($beamerMode)
+
+                for (i = 0; i <= 4; i++) {
+                    const id = "#prelimMatches" + i;
+                    $.ajax({
+                        type: "GET",
+                        url: "/match/prelimMatches/" + tid + "?page=" + i,
+                        data: "",
+                        success: function (data, textStatus) {
+                            //console.log(data);
+                            $(id).html(data);
+                        },
+                        error: function () {
+                            console.log("Error fetching prelimMatches via XHR");
+                        }
+                    });
                 }
-            });
+
+                $.ajax({
+                    type: "GET",
+                    url: "/match/quarterFinalMatches/" + tid,
+                    data: "",
+                    success: function(data, textStatus) {
+                        $("#quarterFinalMatches").html(data);
+                    },
+                    error: function() {
+                        console.log("Error fetching finalMatches via XHR");
+                    }
+                });
+
+                $.ajax({
+                    type: "GET",
+                    url: "/match/semiFinalMatches/" + tid,
+                    data: "",
+                    success: function(data, textStatus) {
+                        $("#quarterFinalMatches").html(data);
+                    },
+                    error: function() {
+                        console.log("Error fetching finalMatches via XHR");
+                    }
+                });
+
+                $.ajax({
+                    type: "GET",
+                    url: "/match/realFinalMatches/" + tid,
+                    data: "",
+                    success: function(data, textStatus) {
+                        $("#quarterFinalMatches").html(data);
+                    },
+                    error: function() {
+                        console.log("Error fetching finalMatches via XHR");
+                    }
+                });
+
+                $.ajax({
+                    type: "GET",
+                    url: "/match/current/" + tid,
+                    data: "",
+                    success: function(data, textStatus) {
+                        $("#currentMatch").html(data);
+                    },
+                    error: function() {
+                        console.log("Error fetching currentMatch via XHR");
+                    }
+                });
+
+                $('#myCarousel').carousel(0)
+
+            #else
+
+                $.ajax({
+                    type: "GET",
+                    url: "/match/prelimMatches/" + tid,
+                    data: "",
+                    success: function(data, textStatus) {
+                        $("#prelimMatches").html(data);
+                    },
+                    error: function() {
+                        console.log("Error fetching prelimMatches via XHR");
+                    }
+                });
+
+                $.ajax({
+                    type: "GET",
+                    url: "/match/finalMatches/" + tid,
+                    data: "",
+                    success: function(data, textStatus) {
+                        $("#finalMatches").html(data);
+                    },
+                    error: function() {
+                        console.log("Error fetching finalMatches via XHR");
+                    }
+                });
+
+            #end
 
             $.ajax({
                 type: "GET",
@@ -29,29 +114,6 @@
                 }
             });
 
-            $.ajax({
-                type: "GET",
-                url: "/match/finalMatches/" + tid,
-                data: "",
-                success: function(data, textStatus) {
-                    $("#finalMatches").html(data);
-                },
-                error: function() {
-                    console.log("Error fetching finalMatches via XHR");
-                }
-            });
-
-            $.ajax({
-                type: "GET",
-                url: "/match/current/" + tid,
-                data: "",
-                success: function(data, textStatus) {
-                    $("#currentMatch").html(data);
-                },
-                error: function() {
-                    console.log("Error fetching currentMatch via XHR");
-                }
-            });
         }
 
 
@@ -90,11 +152,11 @@
 
 
 #if($prelimDone)
-  #set($prelimSlideInterval=10000)
-  #set($finalSlideInterval=15000)
-#else
-  #set($prelimSlideInterval=15000)
+  #set($prelimSlideInterval=7000)
   #set($finalSlideInterval=10000)
+#else
+  #set($prelimSlideInterval=10000)
+  #set($finalSlideInterval=7000)
 #end
 
 <div class="row">
@@ -105,8 +167,33 @@
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner" role="listbox">
 
+                <div data-interval="10000" class="carousel-item">
+                    <div id="currentMatch">
+                    </div>
+                </div>
+
                 <div data-interval="$prelimSlideInterval" class="carousel-item active slide--game-table">
-                    <div id="prelimMatches">
+                    <div id="prelimMatches0">
+                    </div>
+                </div>
+
+                <div data-interval="$prelimSlideInterval" class="carousel-item slide--game-table">
+                    <div id="prelimMatches1">
+                    </div>
+                </div>
+
+                <div data-interval="$prelimSlideInterval" class="carousel-item slide--game-table">
+                    <div id="prelimMatches2">
+                    </div>
+                </div>
+
+                <div data-interval="$prelimSlideInterval" class="carousel-item slide--game-table">
+                    <div id="prelimMatches3">
+                    </div>
+                </div>
+
+                <div data-interval="$prelimSlideInterval" class="carousel-item slide--game-table">
+                    <div id="prelimMatches4">
                     </div>
                 </div>
 
@@ -118,13 +205,18 @@
                 </div>
                 -->
 
-                <div data-interval="10000" class="carousel-item">
-                    <div id="currentMatch">
+                <div data-interval="$finalSlideInterval" class="carousel-item slide--game-table">
+                    <div id="quarterFinalMatches">
                     </div>
                 </div>
 
                 <div data-interval="$finalSlideInterval" class="carousel-item slide--game-table">
-                    <div id="finalMatches">
+                    <div id="semiFinalMatches">
+                    </div>
+                </div>
+
+                <div data-interval="$finalSlideInterval" class="carousel-item slide--game-table">
+                    <div id="realFinalMatches">
                     </div>
                 </div>
 
@@ -157,6 +249,7 @@
     </div>
 
     #else
+
     <div class="col-sm-9 blog-main">
         <div data-interval="$prelimSlideInterval">
             <div id="prelimMatches">
@@ -170,6 +263,7 @@
             </div>
         </div>
     </div>
+
     #end
 
     <div class="col-sm-3 blog-sidebar">
