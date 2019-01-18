@@ -109,6 +109,7 @@ h6, .h6 {
 .sidebar-module {
   padding: 1rem;
   /*margin: 0 -1rem 1rem;*/
+  display: inline;
 }
 .sidebar-module-inset {
   padding: 1rem;

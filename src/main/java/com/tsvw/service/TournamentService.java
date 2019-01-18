@@ -80,7 +80,7 @@ public class TournamentService extends Service {
 
         ArrayList<Team> teams = new ArrayList<>();
 
-        Group groupA = new Group("Gruppe A", t);
+        Group groupA = new Group("A", t);
         entityManager.persist(groupA);
 
         Team teamA1 = new Team("FC Bierdurst", groupA);
@@ -98,7 +98,7 @@ public class TournamentService extends Service {
 
         t.addGroup(groupA);
 
-        Group groupB = new Group("Gruppe B", t);
+        Group groupB = new Group("B", t);
         entityManager.persist(groupB);
 
         Team teamB1 = new Team("Therapiezentrum", groupB);
@@ -116,7 +116,7 @@ public class TournamentService extends Service {
 
         t.addGroup(groupB);
 
-        Group groupC = new Group("Gruppe C", t);
+        Group groupC = new Group("C", t);
         entityManager.persist(groupC);
 
         Team teamC1 = new Team("Campina", groupC);
@@ -134,7 +134,7 @@ public class TournamentService extends Service {
 
         t.addGroup(groupC);
 
-        Group groupD = new Group("Gruppe D", t);
+        Group groupD = new Group("D", t);
         entityManager.persist(groupD);
 
         Team teamD1 = new Team("El Fuego", groupD);
@@ -346,24 +346,24 @@ public class TournamentService extends Service {
 
         // quarter-teams
 
-        Team finalTeam1A = new Team("Erster Gruppe A", null);
+        Team finalTeam1A = new Team("Erster A", null);
         finalTeams.add(finalTeam1A);
-        Team finalTeam2A = new Team("Zweiter Gruppe A", null);
+        Team finalTeam2A = new Team("Zweiter A", null);
         finalTeams.add(finalTeam2A);
 
-        Team finalTeam1B = new Team("Erster Gruppe B", null);
+        Team finalTeam1B = new Team("Erster B", null);
         finalTeams.add(finalTeam1B);
-        Team finalTeam2B = new Team("Zweiter Gruppe B", null);
+        Team finalTeam2B = new Team("Zweiter B", null);
         finalTeams.add(finalTeam2B);
 
-        Team finalTeam1C = new Team("Erster Gruppe C", null);
+        Team finalTeam1C = new Team("Erster C", null);
         finalTeams.add(finalTeam1C);
-        Team finalTeam2C = new Team("Zweiter Gruppe C", null);
+        Team finalTeam2C = new Team("Zweiter C", null);
         finalTeams.add(finalTeam2C);
 
-        Team finalTeam1D = new Team("Erster Gruppe D", null);
+        Team finalTeam1D = new Team("Erster D", null);
         finalTeams.add(finalTeam1D);
-        Team finalTeam2D = new Team("Zweiter Gruppe D", null);
+        Team finalTeam2D = new Team("Zweiter D", null);
         finalTeams.add(finalTeam2D);
 
         // semi-teams
@@ -503,7 +503,7 @@ public class TournamentService extends Service {
 
         ArrayList<Team> teams = new ArrayList<>();
 
-        Group groupA = new Group("Gruppe A", t);
+        Group groupA = new Group("A", t);
         entityManager.persist(groupA);
 
         Team teamA1 = new Team("IT Works", groupA);
@@ -521,7 +521,7 @@ public class TournamentService extends Service {
 
         t.addGroup(groupA);
 
-        Group groupB = new Group("Gruppe B", t);
+        Group groupB = new Group("B", t);
         entityManager.persist(groupB);
 
         Team teamB1 = new Team("Reisebüro Dogru I", groupB);
@@ -539,10 +539,10 @@ public class TournamentService extends Service {
 
         t.addGroup(groupB);
 
-        Group groupC = new Group("Gruppe C", t);
+        Group groupC = new Group("C", t);
         entityManager.persist(groupC);
 
-        Team teamC1 = new Team("Therapiezentrum", groupC);
+        Team teamC1 = new Team("Therapie Zentrum", groupC);
         teams.add(teamC1);
         groupC.addTeam(teamC1);
         Team teamC2 = new Team("mybet", groupC);
@@ -557,7 +557,7 @@ public class TournamentService extends Service {
 
         t.addGroup(groupC);
 
-        Group groupD = new Group("Gruppe D", t);
+        Group groupD = new Group("D", t);
         entityManager.persist(groupD);
 
         Team teamD1 = new Team("Kohler GmbH", groupD);
@@ -769,24 +769,24 @@ public class TournamentService extends Service {
 
         // quarter-teams
 
-        Team finalTeam1A = new Team("Erster Gruppe A", null);
+        Team finalTeam1A = new Team("Erster A", null);
         finalTeams.add(finalTeam1A);
-        Team finalTeam2A = new Team("Zweiter Gruppe A", null);
+        Team finalTeam2A = new Team("Zweiter A", null);
         finalTeams.add(finalTeam2A);
 
-        Team finalTeam1B = new Team("Erster Gruppe B", null);
+        Team finalTeam1B = new Team("Erster B", null);
         finalTeams.add(finalTeam1B);
-        Team finalTeam2B = new Team("Zweiter Gruppe B", null);
+        Team finalTeam2B = new Team("Zweiter B", null);
         finalTeams.add(finalTeam2B);
 
-        Team finalTeam1C = new Team("Erster Gruppe C", null);
+        Team finalTeam1C = new Team("Erster C", null);
         finalTeams.add(finalTeam1C);
-        Team finalTeam2C = new Team("Zweiter Gruppe C", null);
+        Team finalTeam2C = new Team("Zweiter C", null);
         finalTeams.add(finalTeam2C);
 
-        Team finalTeam1D = new Team("Erster Gruppe D", null);
+        Team finalTeam1D = new Team("Erster D", null);
         finalTeams.add(finalTeam1D);
-        Team finalTeam2D = new Team("Zweiter Gruppe D", null);
+        Team finalTeam2D = new Team("Zweiter D", null);
         finalTeams.add(finalTeam2D);
 
         // semi-teams

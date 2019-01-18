@@ -1,9 +1,12 @@
+
+<div class="row" style="width:100%;">
 #foreach($g in $t.groups)
-<div class="sidebar-module">
-    <table class="table-sm">
+
+<div class="sidebar-module col-xs-6">
+    <table class="table-sm" style="">
         <thead class="thead-dark">
         <tr>
-            <th scope="col" colspan="4">$g.name</th>
+            <th scope="col" colspan="4">Gruppe $g.name</th>
         </tr>
         </thead>
         <tbody>
@@ -15,21 +18,23 @@
             #else
         <tr>
             #end
-            <th scope="row" class="col-md-1">$foreach.count.</th>
-            <td class="col-md-3">$team.name</td>
+            <th scope="row" class="">$foreach.count.</th>
+            <td class="">$team.name</td>
             #if($team.goals && $team.contragoals)
-            <td class="col-md-2">$team.goals:$team.contragoals</td>
+            <td class="">$team.goals:$team.contragoals</td>
             #else
-            <td class="col-md-2">-:-</td>
+            <td class="">-:-</td>
             #end
             #if($team.points)
-            <td class="col-md-2">$team.points</td>
+            <td class="">$team.points</td>
             #else
-            <td class="col-md-2">-</td>
+            <td class="">-</td>
             #end
         </tr>
         #end
         </tbody>
     </table>
 </div>
+
 #end
+</div>

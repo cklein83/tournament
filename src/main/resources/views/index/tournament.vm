@@ -3,6 +3,7 @@
 #@mainLayout()
 
 <script>
+    var firstLoad = true;
     var tid = $t.id
     $(function() {
 
@@ -43,7 +44,7 @@
                     url: "/match/semiFinalMatches/" + tid,
                     data: "",
                     success: function(data, textStatus) {
-                        $("#quarterFinalMatches").html(data);
+                        $("#semiFinalMatches").html(data);
                     },
                     error: function() {
                         console.log("Error fetching finalMatches via XHR");
@@ -55,7 +56,7 @@
                     url: "/match/realFinalMatches/" + tid,
                     data: "",
                     success: function(data, textStatus) {
-                        $("#quarterFinalMatches").html(data);
+                        $("#realFinalMatches").html(data);
                     },
                     error: function() {
                         console.log("Error fetching finalMatches via XHR");
@@ -67,14 +68,24 @@
                     url: "/match/current/" + tid,
                     data: "",
                     success: function(data, textStatus) {
-                        $("#currentMatch").html(data);
+                        if (data.length !== 0 && data.trim()) {
+                            if (!firstLoad) {
+                                $("#currentMatch").html(data);
+                                $("#currentMatchPopup").modal("toggle");
+
+                                setTimeout(function () {
+                                    $('#currentMatchPopup').modal("hide");
+                                }, 1000*5)
+                            }
+                            firstLoad = false;
+                        }
                     },
                     error: function() {
                         console.log("Error fetching currentMatch via XHR");
                     }
                 });
 
-                $('#myCarousel').carousel(0)
+                //$('#myCarousel').carousel(0)
 
             #else
 
@@ -165,18 +176,16 @@
 
     #if($beamerMode)
 
-    <div class="carousel-slider col-sm-9 blog-main">
+    <div class="carousel-slider col-sm-12 blog-main">
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner" role="listbox">
 
-                <!--
-                <div data-interval="10000" class="carousel-item">
-                    <div id="currentMatch">
+                <div data-interval="7000" class="blog-sidebar carousel-item slide--advertisment container active">
+                    <div id="groups" style="width:100%">
                     </div>
                 </div>
-                -->
 
-                <div data-interval="$prelimSlideInterval" class="carousel-item active slide--game-table">
+                <div data-interval="$prelimSlideInterval" class="carousel-item slide--game-table">
                     <div id="prelimMatches0">
                     </div>
                 </div>
@@ -201,14 +210,6 @@
                     </div>
                 </div>
 
-                <!--
-                <div data-interval="10000" class="carousel-item slide--advertisment container">
-                    <img class="rounded mx-auto d-block"
-                         src="/images/flyer.png"
-                         alt="Flyer" width="100%" />
-                </div>
-                -->
-
                 <div data-interval="$finalSlideInterval" class="carousel-item slide--game-table">
                     <div id="quarterFinalMatches">
                     </div>
@@ -224,17 +225,19 @@
                     </div>
                 </div>
 
-                <div data-interval="5000" class="carousel-item slide--advertisment container">
+                <div data-interval="7000" class="carousel-item slide--advertisment container">
                     <img class="rounded mx-auto d-block"
                          src="/images/ads/Advertisement-Grid-Lightgrey.jpg"
                          alt="Ads" width="100%" />
                 </div>
 
+                <!--
                 <div data-interval="5000" class="carousel-item slide--advertisment container">
                     <img class="rounded mx-auto d-block"
                          src="/images/ads/thera.png"
                          alt="Ads" width="100%" />
                 </div>
+                -->
 
             </div>
 
@@ -249,6 +252,23 @@
             </a>
             -->
 
+        </div>
+    </div>
+
+    <div class="modal fade" id="currentMatchPopup" tabindex="-1" role="dialog" aria-labelledby="currentMatchPopupTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="currentMatchPopupTitle">Neuer Spielstand</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div id="currentMatch">
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -268,12 +288,12 @@
         </div>
     </div>
 
-    #end
-
     <div class="col-sm-3 blog-sidebar">
         <div id="groups">
         </div>
-
     </div>
+
+    #end
+
 </div>
 #end

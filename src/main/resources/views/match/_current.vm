@@ -1,4 +1,3 @@
-
 #if($m)
 <div class="current-match-container">
 
@@ -32,6 +31,4 @@
 
 </div>
 #end
-
-
 
