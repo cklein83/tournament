@@ -18,6 +18,10 @@
     <link href="/css/print.css" rel="stylesheet" type="text/css" media="print">
     <link href="/css/tournament.css" rel="stylesheet" type="text/css">
 
+    #if($beamerMode)
+        <link href="/css/beamer.css" rel="stylesheet" type="text/css">
+    #end
+
     <!-- Bootstrap core CSS -->
     <!--
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"
