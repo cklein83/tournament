@@ -182,7 +182,7 @@ public class BackendController {
             em.getTransaction().commit();
 
             //TODO use the mid to determine match details?
-            UpdateService.broadcastMessage("refresh-data", "");
+            //UpdateService.broadcastMessage("refresh-data", "");
         }
 
         String redirectUrl = "/backend/matches";
@@ -205,6 +205,13 @@ public class BackendController {
         EntityManager em = request.attribute("em");
         TournamentService tournamentService = new TournamentService(em);
         tournamentService.createTournament2018();
+        return "OK";
+    }
+
+    public static String deleteExampleTournament2018(Request request, Response response) {
+        EntityManager em = request.attribute("em");
+        TournamentService tournamentService = new TournamentService(em);
+        tournamentService.deleteTournament2018();
         return "OK";
     }
 

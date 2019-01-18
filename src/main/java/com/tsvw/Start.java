@@ -42,7 +42,7 @@ public class Start {
         });
 
         before((request, response) -> {
-            request.session().maxInactiveInterval(60*60); // 1 hour
+            request.session().maxInactiveInterval(Integer.MAX_VALUE); // 1 hour
             //todo: geht safe eleganter ... aber gerade kein bock agj
             final String uri = request.uri();
             if(uri.contains("/backend")){
@@ -99,6 +99,7 @@ public class Start {
             get("/logout", BackendController::logout, velocityTemplateEngine);
             post("/login", BackendController::login);
             get("/createTournament2018", BackendController::createExampleTournament2018);
+            get("/deleteTournament2018", BackendController::deleteExampleTournament2018);
             get("/createTournament2019", BackendController::createExampleTournament2019);
         });
 

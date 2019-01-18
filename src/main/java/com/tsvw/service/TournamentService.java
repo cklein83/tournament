@@ -471,6 +471,13 @@ public class TournamentService extends Service {
         entityManager.getTransaction().commit();
     }
 
+    public void deleteTournament2018() {
+        em.getTransaction().begin();
+        em.remove(getTournament(1L));
+        em.flush();
+        em.getTransaction().commit();
+    }
+
     //
 
     public void createTournament2019() {
@@ -893,4 +900,12 @@ public class TournamentService extends Service {
 
         entityManager.getTransaction().commit();
     }
+
+    public void deleteTournament2019() {
+        em.getTransaction().begin();
+        em.remove(getTournament(71L));
+        em.flush();
+        em.getTransaction().commit();
+    }
+
 }
