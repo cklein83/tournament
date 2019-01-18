@@ -101,6 +101,7 @@ public class Start {
             get("/createTournament2018", BackendController::createExampleTournament2018);
             get("/deleteTournament2018", BackendController::deleteExampleTournament2018);
             get("/createTournament2019", BackendController::createExampleTournament2019);
+            get("/deleteTournament2019", BackendController::deleteExampleTournament2019);
         });
 
     }
