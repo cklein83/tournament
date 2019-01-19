@@ -2,7 +2,7 @@
 <div class="current-match-container">
 
 <div class="current-match-number">
-    Match No.: # $m.number
+    Spiel Nr. # $m.number
 </div>
 
 <div class="current-match-team">
