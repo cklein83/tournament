@@ -922,16 +922,15 @@ public class TournamentService extends Service {
         });
 
         // fix therapiezentrum
-        tournament.getTeams().stream().filter(t -> {
-            if (t.getName().startsWith("Therapiezentrum")) {
-                em.getTransaction().begin();
-                t.setName("Therapie Zentrum");
-                em.persist(t);
-                em.flush();
-                em.getTransaction().commit();
-            }
-            return true;
-        });
+        final Optional<Team> therapiezentrum = tournament.getTeams().stream().filter(t -> t.getName().startsWith("Therapiezentrum")).findFirst();
+        if (therapiezentrum.isPresent()) {
+            em.getTransaction().begin();
+            therapiezentrum.get().setName("Therapie Zentrum");
+            em.persist(therapiezentrum.get());
+            em.flush();
+            em.getTransaction().commit();
+        }
+
     }
 
 }
