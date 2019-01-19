@@ -149,9 +149,15 @@
 
         reload();
 
-        setInterval(function() {
-          reload();
-        }, 15000);
+        #if($beamerMode)
+            setInterval(function() {
+              reload();
+            }, 5000);
+        #else
+            setInterval(function() {
+              reload();
+            }, 15000);
+        #end
 
     });
 
