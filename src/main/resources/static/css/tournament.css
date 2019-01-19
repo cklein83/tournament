@@ -49,6 +49,9 @@
     text-align: center;
 }
 
+h4 {
+  padding-top: 15px;
+}
 
 @media only screen and (max-width: 400px) {
 
