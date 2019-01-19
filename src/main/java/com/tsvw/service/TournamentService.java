@@ -916,6 +916,7 @@ public class TournamentService extends Service {
         tournament.getGroups().stream().forEach(g -> {
             g.setName(g.getName().replace("Gruppe ", ""));
             em.persist(g);
+            em.flush();
         });
 
         // fix therapiezentrum
@@ -923,6 +924,7 @@ public class TournamentService extends Service {
             if (t.getName().startsWith("Therapiezentrum")) {
                 t.setName("Therapie Zentrum");
                 em.persist(t);
+                em.flush();
             }
             return true;
         });
