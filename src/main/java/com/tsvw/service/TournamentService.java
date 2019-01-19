@@ -914,17 +914,21 @@ public class TournamentService extends Service {
 
         // fix group names
         tournament.getGroups().stream().forEach(g -> {
+            em.getTransaction().begin();
             g.setName(g.getName().replace("Gruppe ", ""));
             em.persist(g);
             em.flush();
+            em.getTransaction().commit();
         });
 
         // fix therapiezentrum
         tournament.getTeams().stream().filter(t -> {
             if (t.getName().startsWith("Therapiezentrum")) {
+                em.getTransaction().begin();
                 t.setName("Therapie Zentrum");
                 em.persist(t);
                 em.flush();
+                em.getTransaction().commit();
             }
             return true;
         });
