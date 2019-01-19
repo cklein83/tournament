@@ -222,6 +222,13 @@ public class BackendController {
         return "OK";
     }
 
+    public static String cleanupTournament2019(Request request, Response response) {
+        EntityManager em = request.attribute("em");
+        TournamentService tournamentService = new TournamentService(em);
+        tournamentService.cleanupTournament2019();
+        return "OK";
+    }
+
     public static String deleteExampleTournament2019(Request request, Response response) {
         EntityManager em = request.attribute("em");
         TournamentService tournamentService = new TournamentService(em);

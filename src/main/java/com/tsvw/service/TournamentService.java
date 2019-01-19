@@ -908,4 +908,24 @@ public class TournamentService extends Service {
         em.getTransaction().commit();
     }
 
+    public void cleanupTournament2019() {
+
+        final Tournament tournament = getTournament(71L);
+
+        // fix group names
+        tournament.getGroups().stream().forEach(g -> {
+            g.setName(g.getName().replace("Gruppe ", ""));
+            em.persist(g);
+        });
+
+        // fix therapiezentrum
+        tournament.getTeams().stream().filter(t -> {
+            if (t.getName().startsWith("Therapiezentrum")) {
+                t.setName("Therapie Zentrum");
+                em.persist(t);
+            }
+            return true;
+        });
+    }
+
 }
