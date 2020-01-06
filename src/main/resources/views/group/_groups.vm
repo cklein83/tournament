@@ -2,7 +2,7 @@
 <div class="row" style="width:100%;">
 #foreach($g in $t.groups)
 
-<div class="sidebar-module col-xs-6">
+<div class="sidebar-module col-lg-6">
     <table class="table-sm" style="">
         <thead class="thead-dark">
         <tr>

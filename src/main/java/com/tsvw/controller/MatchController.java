@@ -44,7 +44,7 @@ public class MatchController {
         String page = request.queryParams("page");
         if (page != null) {
             final int totalCount = matchesPrelim.size();
-            final int resultsPerPage = 5;
+            final int resultsPerPage = 6;
 
             int pageNo = Integer.parseInt(page);
 

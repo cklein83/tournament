@@ -98,11 +98,16 @@ public class Start {
             get("/login", BackendController::loginForm, velocityTemplateEngine);
             get("/logout", BackendController::logout, velocityTemplateEngine);
             post("/login", BackendController::login);
+
             get("/createTournament2018", BackendController::createExampleTournament2018);
             get("/deleteTournament2018", BackendController::deleteExampleTournament2018);
+
             get("/createTournament2019", BackendController::createExampleTournament2019);
             get("/deleteTournament2019", BackendController::deleteExampleTournament2019);
             get("/cleanupTournament2019", BackendController::cleanupTournament2019);
+
+            get("/createTournament2020", BackendController::createExampleTournament2020);
+            get("/deleteTournament2020", BackendController::deleteExampleTournament2020);
         });
 
     }

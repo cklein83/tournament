@@ -54,9 +54,11 @@ public class BackendController {
             request.session().attribute("loggedin", true);
             request.session().attribute("username", "chris");
             response.redirect("/backend/matches");
+            return "logged in";
+        } else {
+            response.redirect("/backend/login");
+            return "";
         }
-        response.redirect("/backend/login");
-        return "logged in";
     }
 
     public static String logMeIn(Request request, Response response) {
@@ -201,6 +203,8 @@ public class BackendController {
         return "OK";
     }
 
+    //
+
     public static String createExampleTournament2018(Request request, Response response) {
         EntityManager em = request.attribute("em");
         TournamentService tournamentService = new TournamentService(em);
@@ -214,6 +218,8 @@ public class BackendController {
         tournamentService.deleteTournament2018();
         return "OK";
     }
+
+    //
 
     public static String createExampleTournament2019(Request request, Response response) {
         EntityManager em = request.attribute("em");
@@ -233,6 +239,22 @@ public class BackendController {
         EntityManager em = request.attribute("em");
         TournamentService tournamentService = new TournamentService(em);
         tournamentService.deleteTournament2019();
+        return "OK";
+    }
+
+    //
+
+    public static String createExampleTournament2020(Request request, Response response) {
+        EntityManager em = request.attribute("em");
+        TournamentService tournamentService = new TournamentService(em);
+        tournamentService.createTournament2020();
+        return "OK";
+    }
+
+    public static String deleteExampleTournament2020(Request request, Response response) {
+        EntityManager em = request.attribute("em");
+        TournamentService tournamentService = new TournamentService(em);
+        tournamentService.deleteTournament2020();
         return "OK";
     }
 }

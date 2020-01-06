@@ -26,3 +26,28 @@ function backend_submitMatchRow(parent) {
     var form = $(parent).children("form");
     form.submit();
 }
+
+function backend_incGoal(elem) {
+    var i = $(elem).val();
+    $(elem).val(++i);
+}
+
+function backend_decGoal(elem) {
+  var i = $(elem).val();
+  if (i > 0) {
+      $(elem).val(--i);
+  }
+}
+
+function backend_ajaxSubmit(form) {
+    $.post("/backend/matches", $(form).serialize())
+}
+
+function backend_highlightByStatus(elem) {
+    $(elem).parents("tr").removeClass();
+    if ($(elem).val() == "started") {
+        $(elem).parents("tr").addClass("bg-info");
+    } else if ($(elem).val() == "finished") {
+        $(elem).parents("tr").addClass("bg-warning");
+    }
+}

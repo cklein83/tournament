@@ -14,7 +14,7 @@
     </div>
     #end
 
-    <form action="/backend/matches" method="GET">
+    <form id="matches" action="/backend/matches">
         <div class="col-sm-12 form-group row">
             <label for="tournament" class="col-sm-1 col-form-label">Turnier:</label>
             <select id="tournament" class="col-sm-3 form-control" name="tid" size="1" onchange="this.form.submit();">
@@ -84,7 +84,9 @@
             <th>Tore T2</th>
             <th>Team 2</th>
             <th>Status</th>
-            <th style="width: 15%;">Aktion</th>
+            <!--
+            <th>Aktion</th>
+            -->
         </tr>
         </thead>
         <tbody>
@@ -92,7 +94,14 @@
         #foreach($m in $matches)
 
         #if(!$showOnlyFinals || $m.matchType.name() != "PRELIM")
+
+        #if($m.status.toString() == "started")
+        <tr class="bg-info">
+        #elseif($m.status.toString() == "finished")
+        <tr class="bg-warning">
+        #else
         <tr>
+        #end
 
             <form action="/backend/matches" method="post">
             <input type="hidden" name="tid" value="$tid"/>
@@ -110,7 +119,11 @@
                 $m.team1.name
                 #else
                 <div class="form-group row">
-                    <select class="form-control" name="team1" size="1" onchange="$(this).addClass('alert-success');" onfocus="$(this).addClass('alert-info');" onblur="$(this).removeClass('alert-info');">
+                    <select class="form-control"
+                            style="width:auto !important;" name="team1" size="1"
+                            onchange="$(this).addClass('alert-success'); backend_ajaxSubmit(this.form);"
+                            onfocus="$(this).addClass('alert-info');"
+                            onblur="$(this).removeClass('alert-info');">
                         #foreach($team in $teams)
                         #if($team.id == $m.team1.id)
                         #set($team1Selected="selected")
@@ -140,18 +153,37 @@
                         <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Save
                     </button>
                     -->
+
+                    <button type="button" class="btn btn-success btn spinner-border spinner-border-sm"
+                            style="margin-right: 3px; padding: 10px;"
+                            onclick="backend_incGoal($(this).next('input[name=goals1]')); backend_ajaxSubmit(this.form);">
+                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                    </button>
+
                     <input class="col-sm-3 form-control" name="goals1" type="text" value="$m.goalsTeam1" $disabled onchange="$(this).addClass('alert-success');" onfocus="$(this).addClass('alert-info');" onblur="$(this).removeClass('alert-info');" />
+
+                    <button type="button" class="btn btn-danger btn"
+                            style="margin-left: 3px; padding: 10px;"
+                            onclick="backend_decGoal($(this).prev('input[name=goals1]')); backend_ajaxSubmit(this.form);">
+                        <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+                    </button>
                 </div>
             </td>
             <td>
                 <div class="form-group row">
-                    <!--
-                    <input class="col-sm-3 form-control" name="goals-t2-$m.id" type="text" value="$m.goalsTeam2" $disabled onchange="$(this).next('button').css('display', 'block'); $(this).addClass('alert-success');" onfocus="$(this).addClass('alert-info');" onblur="$(this).removeClass('alert-info');" />
-                    <button type="button" class="btn btn-success btn" style="display: none !important; margin-left: 3px;" onclick="this.form.submit();">
-                        <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Save
+                    <button type="button" class="btn btn-success btn"
+                            style="margin-right: 3px; padding: 10px;"
+                            onclick="backend_incGoal($(this).next('input[name=goals2]')); backend_ajaxSubmit(this.form);">
+                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                     </button>
-                    -->
+
                     <input class="col-sm-3 form-control" name="goals2" type="text" value="$m.goalsTeam2" $disabled onchange="$(this).addClass('alert-success');" onfocus="$(this).addClass('alert-info');" onblur="$(this).removeClass('alert-info');" />
+
+                    <button type="button" class="btn btn-danger btn"
+                            style="margin-left: 3px; padding: 10px;"
+                            onclick="backend_decGoal($(this).prev('input[name=goals2]')); backend_ajaxSubmit(this.form);">
+                        <span class="glyphicon glyphicon-minus" aria-hidden="true"></span>
+                    </button>
                 </div>
             </td>
 
@@ -161,7 +193,11 @@
                 $m.team2.name
                 #else
                 <div class="form-group row">
-                    <select class="form-control" name="team2" size="1" onchange="$(this).addClass('alert-success');" onfocus="$(this).addClass('alert-info');" onblur="$(this).removeClass('alert-info');">
+                    <select class="form-control"
+                            style="width:auto !important;" name="team2" size="1"
+                            onchange="$(this).addClass('alert-success'); backend_ajaxSubmit(this.form);"
+                            onfocus="$(this).addClass('alert-info');"
+                            onblur="$(this).removeClass('alert-info');">
                         #foreach($team in $teams)
                         #if($team.id == $m.team2.id)
                         #set($team2Selected="selected")
@@ -179,7 +215,10 @@
             #end
 
             <td>
-                <select class="form-control" name="status" size="1" onchange="$(this).addClass('alert-success');" onfocus="$(this).addClass('alert-info');" onblur="$(this).removeClass('alert-info');">
+                <select class="form-control" name="status" size="1"
+                        onchange="$(this).addClass('alert-success'); backend_highlightByStatus(this); backend_ajaxSubmit(this.form);"
+                        onfocus="$(this).addClass('alert-info');"
+                        onblur="$(this).removeClass('alert-info');">
                     #foreach($matchStatus in $matchStatusVariants)
                     #if($m.status.toString() == $matchStatus.toString())
                     #set($matchStatusSelected="selected")
@@ -191,15 +230,8 @@
                 </select>
             </td>
 
+            <!--
             <td>
-
-                    <!--
-                    <input type="hidden" name="goals1" value=""/>
-                    <input type="hidden" name="goals2" value=""/>
-                    <input type="hidden" name="status" value=""/>
-                    -->
-
-
                 <button type="button" class="btn btn-success" onclick="this.form.submit();">
                     <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
                 </button>
@@ -210,6 +242,7 @@
                     <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
                 </button>
             </td>
+            -->
 
             </form>
         </tr>
@@ -224,7 +257,7 @@
     <div class="alert alert-danger" role="alert">
         <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
         <span class="sr-only">Error:</span>
-        Enter a valid email address
+        This is some error...
     </div>
     -->
 </div>

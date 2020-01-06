@@ -4,7 +4,7 @@ body {
     background-blend-mode: overlay;
     /*bechtle green color code ;)*/
     color: #008854;
-    margin: 0;
+    margin: auto !important;
 }
 
 .content-container{

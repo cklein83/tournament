@@ -10,7 +10,7 @@ import java.util.Comparator;
 import java.util.List;
 
 @Entity(name = "groups")
-public class Group {
+public class Group implements Comparable {
 
     @Id
     @GeneratedValue(strategy= GenerationType.SEQUENCE)
@@ -133,4 +133,12 @@ public class Group {
     public void setDummyFinalGroup(Boolean dummyFinalGroup) {
         this.dummyFinalGroup = dummyFinalGroup;
     }
+
+    @Override
+    public int compareTo(Object o) {
+        Group g2 = (Group)o;
+        return getName().compareTo(g2.getName());
+    }
+
+
 }

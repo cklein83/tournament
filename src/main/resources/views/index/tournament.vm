@@ -64,22 +64,27 @@
                     }
                 });
 
+                var timeout;
+
                 $.ajax({
                     type: "GET",
                     url: "/match/current/" + tid,
                     data: "",
                     success: function(data, textStatus) {
-                        if (data.length !== 0 && data.trim()) {
-                            if (!firstLoad && data !== lastCurMatch) {
-                                $("#currentMatch").html(data);
-                                $("#currentMatchPopup").modal("toggle");
+                        //console.log("\n\n\ncur: " + data);
+                        //console.log("last: " + lastCurMatch);
+                        if (data.trim().length !== 0) {
+                            $("#currentMatch").html(data);
+                            if (!firstLoad && data != lastCurMatch) {
 
-                                setTimeout(function () {
-                                    $('#currentMatchPopup').modal("hide");
-                                }, 1000*5)
+                                $("#currentMatchPopup").modal("show");
 
                                 lastCurMatch = data;
+
+                            } else {
+                                $('#currentMatchPopup').modal("hide");
                             }
+
                             firstLoad = false;
                         }
                     },
@@ -133,6 +138,7 @@
         }
 
 
+        /*
         // Websockets
 
         var webSocket = new WebSocket("ws://" + location.hostname + ":" + location.port + "/update");
@@ -146,7 +152,9 @@
         };
         webSocket.onclose = function () { console.log("WebSocket connection closed") };
         webSocket.onerror = function (e) { console.log("WebSocket connection error: " + e) };
+        */
 
+        // first load
         reload();
 
         #if($beamerMode)
@@ -166,7 +174,7 @@
 <div class="blog-header">
     <div>
         <div class="row">
-            <div class="col-sm-6">
+            <div class="col-sm-8">
                 <h1 class="blog-title">$t.name</h1>
                 <p class="lead blog-description">$t.subtitle</p>
             </div>
@@ -239,7 +247,7 @@
                     </div>
                 </div>
 
-                <div data-interval="7000" class="carousel-item slide--advertisment container">
+                <div data-interval="10000" class="carousel-item slide--advertisment container">
                     <img class="rounded mx-auto d-block"
                          src="/images/ads/Advertisement-Grid-Lightgrey.jpg"
                          alt="Ads" width="100%" />
@@ -288,22 +296,22 @@
 
     #else
 
+    <div class="col-lg-12 blog-sidebar">
+        <div id="groups">
+        </div>
+    </div>
+
     <div class="col-sm-9 blog-main">
         <div data-interval="$prelimSlideInterval">
             <div id="prelimMatches">
             </div>
-            <div>
+            <div id="ads">
                 <img class="rounded mx-auto d-block"
                      src="/images/ads/Advertisement-Grid-Lightgrey.jpg"
                      alt="Ads" width="100%" />
             </div>
             <div id="finalMatches">
             </div>
-        </div>
-    </div>
-
-    <div class="col-sm-3 blog-sidebar">
-        <div id="groups">
         </div>
     </div>
 

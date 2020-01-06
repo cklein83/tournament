@@ -124,7 +124,7 @@ public class Tournament {
     }
 
     public List<Group> getGroups() {
-        return groups.stream().filter(g -> g.getDummyFinalGroup() == false).collect(Collectors.toList());
+        return groups.stream().filter(g -> g.getDummyFinalGroup() == false).sorted().collect(Collectors.toList());
     }
 
     public List<Group> getAllGroups() {
