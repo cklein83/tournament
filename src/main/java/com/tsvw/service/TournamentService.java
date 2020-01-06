@@ -1365,7 +1365,7 @@ public class TournamentService extends Service {
 
     public void deleteTournament2020() {
         em.getTransaction().begin();
-        em.remove(getTournament(211L));
+        em.remove(getTournament(141L));
         em.flush();
         em.getTransaction().commit();
     }
