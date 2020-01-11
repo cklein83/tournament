@@ -257,4 +257,19 @@ public class BackendController {
         tournamentService.deleteTournament2020();
         return "OK";
     }
+
+
+    public static String createExampleTournamentAH2020(Request request, Response response) {
+        EntityManager em = request.attribute("em");
+        TournamentService tournamentService = new TournamentService(em);
+        tournamentService.createTournamentAH2020();
+        return "OK";
+    }
+
+    public static String deleteExampleTournamentAH2020(Request request, Response response) {
+        EntityManager em = request.attribute("em");
+        TournamentService tournamentService = new TournamentService(em);
+        tournamentService.deleteTournamentAH2020();
+        return "OK";
+    }
 }

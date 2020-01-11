@@ -1369,4 +1369,281 @@ public class TournamentService extends Service {
         em.flush();
         em.getTransaction().commit();
     }
+
+    //
+
+    public void createTournamentAH2020() {
+        EntityManager entityManager = em;
+        entityManager.getTransaction().begin();
+
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+
+        Date startDate;
+        try {
+            startDate = df.parse("2020-01-24 18:00");
+        } catch (ParseException e) {
+            throw new InvalidParameterException("Wrong date format: " + e.getMessage());
+        }
+
+        int minsToPlay = 8;
+        int minsPauseInBetween = 1;
+        int minsToPlayPlusPause = minsToPlay + minsPauseInBetween;
+
+        Tournament t = new Tournament(
+                "Frank Baumgärtel Gedächtnisturnier 2020",
+                startDate,
+                minsToPlay * 60, minsPauseInBetween * 60, 0,
+                2);
+        t.setSubtitle("Senioren-Turnier in der Weibertreuhalle Weinsberg");
+        entityManager.persist(t);
+
+        // groups + teams
+
+        ArrayList<Team> teams = new ArrayList<>();
+
+        Group groupA = new Group("1", t);
+        entityManager.persist(groupA);
+
+        Team teamA1 = new Team("CVJM", groupA);
+        teams.add(teamA1);
+        groupA.addTeam(teamA1);
+        Team teamA2 = new Team("SV Sülzbach", groupA);
+        teams.add(teamA2);
+        groupA.addTeam(teamA2);
+        Team teamA3 = new Team("TSV Weinsberg", groupA);
+        teams.add(teamA3);
+        groupA.addTeam(teamA3);
+        Team teamA4 = new Team("VfL Eberstadt", groupA);
+        teams.add(teamA4);
+        groupA.addTeam(teamA4);
+        Team teamA5 = new Team("TSV Neuenstein", groupA);
+        teams.add(teamA5);
+        groupA.addTeam(teamA5);
+        Team teamA6 = new Team("Old Boys Weinsberg", groupA);
+        teams.add(teamA6);
+        groupA.addTeam(teamA6);
+        Team teamA7 = new Team("Friedrichshaller Kicker", groupA);
+        teams.add(teamA7);
+        groupA.addTeam(teamA7);
+        Team teamA8 = new Team("Mannschaft 8", groupA);
+        teams.add(teamA8);
+        groupA.addTeam(teamA8);
+
+        t.addGroup(groupA);
+
+        for (Team team : teams) {
+            entityManager.persist(team);
+        }
+
+        // matches
+
+        Integer matchNo = 0;
+
+        Date workDate = startDate;
+
+        // round 1
+        {
+            Match m = new Match(t, ++matchNo, workDate, MatchType.PRELIM, teamA1, teamA2);
+            entityManager.persist(m);
+            t.addMatch(m);
+        }
+        workDate = DateUtils.addMinutes(workDate, minsToPlayPlusPause);
+        {
+            Match m = new Match(t, ++matchNo, workDate, MatchType.PRELIM, teamA3, teamA4);
+            entityManager.persist(m);
+            t.addMatch(m);
+        }
+        workDate = DateUtils.addMinutes(workDate, minsToPlayPlusPause);
+        {
+            Match m = new Match(t, ++matchNo, workDate, MatchType.PRELIM, teamA5, teamA6);
+            entityManager.persist(m);
+            t.addMatch(m);
+        }
+        workDate = DateUtils.addMinutes(workDate, minsToPlayPlusPause);
+        {
+            Match m = new Match(t, ++matchNo, workDate, MatchType.PRELIM, teamA7, teamA8);
+            entityManager.persist(m);
+            t.addMatch(m);
+        }
+        workDate = DateUtils.addMinutes(workDate, minsToPlayPlusPause);
+
+        // round 2
+        {
+            Match m = new Match(t, ++matchNo, workDate, MatchType.PRELIM, teamA4, teamA1);
+            entityManager.persist(m);
+            t.addMatch(m);
+        }
+        workDate = DateUtils.addMinutes(workDate, minsToPlayPlusPause);
+        {
+            Match m = new Match(t, ++matchNo, workDate, MatchType.PRELIM, teamA2, teamA3);
+            entityManager.persist(m);
+            t.addMatch(m);
+        }
+        workDate = DateUtils.addMinutes(workDate, minsToPlayPlusPause);
+        {
+            Match m = new Match(t, ++matchNo, workDate, MatchType.PRELIM, teamA8, teamA5);
+            entityManager.persist(m);
+            t.addMatch(m);
+        }
+        workDate = DateUtils.addMinutes(workDate, minsToPlayPlusPause);
+        {
+            Match m = new Match(t, ++matchNo, workDate, MatchType.PRELIM, teamA6, teamA7);
+            entityManager.persist(m);
+            t.addMatch(m);
+        }
+        workDate = DateUtils.addMinutes(workDate, minsToPlayPlusPause);
+
+        // round 3
+        {
+            Match m = new Match(t, ++matchNo, workDate, MatchType.PRELIM, teamA5, teamA4);
+            entityManager.persist(m);
+            t.addMatch(m);
+        }
+        workDate = DateUtils.addMinutes(workDate, minsToPlayPlusPause);
+        {
+            Match m = new Match(t, ++matchNo, workDate, MatchType.PRELIM, teamA1, teamA3);
+            entityManager.persist(m);
+            t.addMatch(m);
+        }
+        workDate = DateUtils.addMinutes(workDate, minsToPlayPlusPause);
+        {
+            Match m = new Match(t, ++matchNo, workDate, MatchType.PRELIM, teamA2, teamA7);
+            entityManager.persist(m);
+            t.addMatch(m);
+        }
+        workDate = DateUtils.addMinutes(workDate, minsToPlayPlusPause);
+        {
+            Match m = new Match(t, ++matchNo, workDate, MatchType.PRELIM, teamA6, teamA8);
+            entityManager.persist(m);
+            t.addMatch(m);
+        }
+        workDate = DateUtils.addMinutes(workDate, minsToPlayPlusPause);
+
+        // round 4
+        {
+            Match m = new Match(t, ++matchNo, workDate, MatchType.PRELIM, teamA4, teamA2);
+            entityManager.persist(m);
+            t.addMatch(m);
+        }
+        workDate = DateUtils.addMinutes(workDate, minsToPlayPlusPause);
+        {
+            Match m = new Match(t, ++matchNo, workDate, MatchType.PRELIM, teamA7, teamA5);
+            entityManager.persist(m);
+            t.addMatch(m);
+        }
+        workDate = DateUtils.addMinutes(workDate, minsToPlayPlusPause);
+        {
+            Match m = new Match(t, ++matchNo, workDate, MatchType.PRELIM, teamA8, teamA1);
+            entityManager.persist(m);
+            t.addMatch(m);
+        }
+        workDate = DateUtils.addMinutes(workDate, minsToPlayPlusPause);
+        {
+            Match m = new Match(t, ++matchNo, workDate, MatchType.PRELIM, teamA3, teamA6);
+            entityManager.persist(m);
+            t.addMatch(m);
+        }
+        workDate = DateUtils.addMinutes(workDate, minsToPlayPlusPause);
+
+        // round 5
+        {
+            Match m = new Match(t, ++matchNo, workDate, MatchType.PRELIM, teamA4, teamA7);
+            entityManager.persist(m);
+            t.addMatch(m);
+        }
+        workDate = DateUtils.addMinutes(workDate, minsToPlayPlusPause);
+        {
+            Match m = new Match(t, ++matchNo, workDate, MatchType.PRELIM, teamA2, teamA8);
+            entityManager.persist(m);
+            t.addMatch(m);
+        }
+        workDate = DateUtils.addMinutes(workDate, minsToPlayPlusPause);
+        {
+            Match m = new Match(t, ++matchNo, workDate, MatchType.PRELIM, teamA1, teamA6);
+            entityManager.persist(m);
+            t.addMatch(m);
+        }
+        workDate = DateUtils.addMinutes(workDate, minsToPlayPlusPause);
+        {
+            Match m = new Match(t, ++matchNo, workDate, MatchType.PRELIM, teamA5, teamA3);
+            entityManager.persist(m);
+            t.addMatch(m);
+        }
+        workDate = DateUtils.addMinutes(workDate, minsToPlayPlusPause);
+
+        // round 6
+        {
+            Match m = new Match(t, ++matchNo, workDate, MatchType.PRELIM, teamA8, teamA4);
+            entityManager.persist(m);
+            t.addMatch(m);
+        }
+        workDate = DateUtils.addMinutes(workDate, minsToPlayPlusPause);
+        {
+            Match m = new Match(t, ++matchNo, workDate, MatchType.PRELIM, teamA6, teamA2);
+            entityManager.persist(m);
+            t.addMatch(m);
+        }
+        workDate = DateUtils.addMinutes(workDate, minsToPlayPlusPause);
+        {
+            Match m = new Match(t, ++matchNo, workDate, MatchType.PRELIM, teamA7, teamA3);
+            entityManager.persist(m);
+            t.addMatch(m);
+        }
+        workDate = DateUtils.addMinutes(workDate, minsToPlayPlusPause);
+        {
+            Match m = new Match(t, ++matchNo, workDate, MatchType.PRELIM, teamA5, teamA1);
+            entityManager.persist(m);
+            t.addMatch(m);
+        }
+        workDate = DateUtils.addMinutes(workDate, minsToPlayPlusPause);
+
+        // round 7
+        {
+            Match m = new Match(t, ++matchNo, workDate, MatchType.PRELIM, teamA4, teamA6);
+            entityManager.persist(m);
+            t.addMatch(m);
+        }
+        workDate = DateUtils.addMinutes(workDate, minsToPlayPlusPause);
+        {
+            Match m = new Match(t, ++matchNo, workDate, MatchType.PRELIM, teamA3, teamA8);
+            entityManager.persist(m);
+            t.addMatch(m);
+        }
+        workDate = DateUtils.addMinutes(workDate, minsToPlayPlusPause);
+        {
+            Match m = new Match(t, ++matchNo, workDate, MatchType.PRELIM, teamA2, teamA5);
+            entityManager.persist(m);
+            t.addMatch(m);
+        }
+        workDate = DateUtils.addMinutes(workDate, minsToPlayPlusPause);
+        {
+            Match m = new Match(t, ++matchNo, workDate, MatchType.PRELIM, teamA1, teamA7);
+            entityManager.persist(m);
+            t.addMatch(m);
+        }
+
+        //
+
+        for (Team team : teams) {
+            team.setMatches(
+                    t.getMatches().stream()
+                            .filter(
+                                    m -> m.getTeam1() == team || m.getTeam2() == team)
+                            .collect(Collectors.toList()));
+            entityManager.persist(team);
+        }
+
+        //
+
+        entityManager.persist(t);
+
+        entityManager.getTransaction().commit();
+    }
+
+    public void deleteTournamentAH2020() {
+        em.getTransaction().begin();
+        em.remove(getTournament(351L));
+        em.flush();
+        em.getTransaction().commit();
+    }
 }
