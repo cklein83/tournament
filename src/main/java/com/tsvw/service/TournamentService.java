@@ -945,7 +945,7 @@ public class TournamentService extends Service {
         int minsPauseInBetween = 2;
         int minsToPlayPlusPause = minsToPlay + minsPauseInBetween;
         int minsPauseBeforeSemiFinal = 15;
-        int minsPauseBeforeFinal = 30;
+        int minsPauseBeforeFinal = 15;
 
         Tournament t = new Tournament(
                 "Hallenzauber 2020",
