@@ -203,19 +203,22 @@ public class BackendController {
         return "OK";
     }
 
+    public static String deleteTournamentById(Request request, Response response) {
+        String tournamentId = request.params(":tid");;
+        if (tournamentId != null) {
+            EntityManager em = request.attribute("em");
+            TournamentService tournamentService = new TournamentService(em);
+            tournamentService.deleteTournamentById(Long.parseLong(tournamentId));
+        }
+        return "OK";
+    }
+
     //
 
     public static String createExampleTournament2018(Request request, Response response) {
         EntityManager em = request.attribute("em");
         TournamentService tournamentService = new TournamentService(em);
         tournamentService.createTournament2018();
-        return "OK";
-    }
-
-    public static String deleteExampleTournament2018(Request request, Response response) {
-        EntityManager em = request.attribute("em");
-        TournamentService tournamentService = new TournamentService(em);
-        tournamentService.deleteTournament2018();
         return "OK";
     }
 
@@ -235,13 +238,6 @@ public class BackendController {
         return "OK";
     }
 
-    public static String deleteExampleTournament2019(Request request, Response response) {
-        EntityManager em = request.attribute("em");
-        TournamentService tournamentService = new TournamentService(em);
-        tournamentService.deleteTournament2019();
-        return "OK";
-    }
-
     //
 
     public static String createExampleTournament2020(Request request, Response response) {
@@ -251,14 +247,6 @@ public class BackendController {
         return "OK";
     }
 
-    public static String deleteExampleTournament2020(Request request, Response response) {
-        EntityManager em = request.attribute("em");
-        TournamentService tournamentService = new TournamentService(em);
-        tournamentService.deleteTournament2020();
-        return "OK";
-    }
-
-
     public static String createExampleTournamentAH2020(Request request, Response response) {
         EntityManager em = request.attribute("em");
         TournamentService tournamentService = new TournamentService(em);
@@ -266,10 +254,4 @@ public class BackendController {
         return "OK";
     }
 
-    public static String deleteExampleTournamentAH2020(Request request, Response response) {
-        EntityManager em = request.attribute("em");
-        TournamentService tournamentService = new TournamentService(em);
-        tournamentService.deleteTournamentAH2020();
-        return "OK";
-    }
 }

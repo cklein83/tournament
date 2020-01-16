@@ -48,6 +48,13 @@ public class TournamentService extends Service {
         return teams;
     }
 
+    public void deleteTournamentById(Long id) {
+        em.getTransaction().begin();
+        em.remove(getTournament(id));
+        em.flush();
+        em.getTransaction().commit();
+    }
+
     //
 
     public void createTournament2018() {
@@ -469,13 +476,6 @@ public class TournamentService extends Service {
         entityManager.persist(t);
 
         entityManager.getTransaction().commit();
-    }
-
-    public void deleteTournament2018() {
-        em.getTransaction().begin();
-        em.remove(getTournament(1L));
-        em.flush();
-        em.getTransaction().commit();
     }
 
     //
@@ -901,13 +901,6 @@ public class TournamentService extends Service {
         entityManager.getTransaction().commit();
     }
 
-    public void deleteTournament2019() {
-        em.getTransaction().begin();
-        em.remove(getTournament(71L));
-        em.flush();
-        em.getTransaction().commit();
-    }
-
     public void cleanupTournament2019() {
 
         final Tournament tournament = getTournament(71L);
@@ -943,16 +936,15 @@ public class TournamentService extends Service {
 
         Date startDate;
         try {
-            startDate = df.parse("2020-01-25 17:00");
+            startDate = df.parse("2020-01-25 17:30");
         } catch (ParseException e) {
             throw new InvalidParameterException("Wrong date format: " + e.getMessage());
         }
 
-        int minsToPlay = 9;
-        int minsPauseInBetween = 1;
+        int minsToPlay = 12;
+        int minsPauseInBetween = 2;
         int minsToPlayPlusPause = minsToPlay + minsPauseInBetween;
-        int minsPauseInBetweenFinals = 2;
-        int minsToPlayPlusPauseFinals = minsToPlay + minsPauseInBetweenFinals;
+        int minsPauseBeforeSemiFinal = 15;
         int minsPauseBeforeFinal = 30;
 
         Tournament t = new Tournament(
@@ -970,50 +962,53 @@ public class TournamentService extends Service {
         Group groupA = new Group("A", t);
         entityManager.persist(groupA);
 
-        Team teamA1 = new Team("Clean Service", groupA);
+        Team teamA1 = new Team("Kardex Mlog I", groupA);
         teams.add(teamA1);
         groupA.addTeam(teamA1);
-        Team teamA2 = new Team("Kardex II", groupA);
+        Team teamA2 = new Team("Magna Steyr", groupA);
         teams.add(teamA2);
         groupA.addTeam(teamA2);
-        Team teamA3 = new Team("Magna", groupA);
+        Team teamA3 = new Team("Gienger & Renz KG", groupA);
         teams.add(teamA3);
         groupA.addTeam(teamA3);
-        Team teamA4 = new Team("Bechtle AG", groupA);
+        Team teamA4 = new Team("C.R. Laurence of Europe", groupA);
         teams.add(teamA4);
         groupA.addTeam(teamA4);
-        Team teamA5 = new Team("Laurence of Europe GmbH", groupA);
-        teams.add(teamA5);
-        groupA.addTeam(teamA5);
-        Team teamA6 = new Team("A6 - ???", groupA);
-        teams.add(teamA6);
-        groupA.addTeam(teamA6);
 
         t.addGroup(groupA);
 
         Group groupB = new Group("B", t);
         entityManager.persist(groupB);
 
-        Team teamB1 = new Team("Tennis Academy", groupB);
+        Team teamB1 = new Team("Kardex Mlog II", groupB);
         teams.add(teamB1);
         groupB.addTeam(teamB1);
-        Team teamB2 = new Team("Kohler GmbH", groupB);
+        Team teamB2 = new Team("Bechtle AG", groupB);
         teams.add(teamB2);
         groupB.addTeam(teamB2);
-        Team teamB3 = new Team("IT Works GmbH", groupB);
+        Team teamB3 = new Team("IT.Works GmbH", groupB);
         teams.add(teamB3);
         groupB.addTeam(teamB3);
-        Team teamB4 = new Team("Kardex Mlog", groupB);
+        Team teamB4 = new Team("Tennis Academy Sica/Wunder", groupB);
         teams.add(teamB4);
         groupB.addTeam(teamB4);
-        Team teamB5 = new Team("Schweikert GmbH", groupB);
-        teams.add(teamB5);
-        groupB.addTeam(teamB5);
-        Team teamB6 = new Team("Magna II", groupB);
-        teams.add(teamB6);
-        groupB.addTeam(teamB6);
 
         t.addGroup(groupB);
+
+        Group groupC = new Group("C", t);
+        entityManager.persist(groupC);
+
+        Team teamC1 = new Team("Hornung GmbH", groupC);
+        teams.add(teamC1);
+        groupC.addTeam(teamC1);
+        Team teamC2 = new Team("Clean Service", groupC);
+        teams.add(teamC2);
+        groupC.addTeam(teamC2);
+        Team teamC3 = new Team("Schweikert GmbH", groupC);
+        teams.add(teamC3);
+        groupC.addTeam(teamC3);
+
+        t.addGroup(groupC);
 
         for (Team team : teams) {
             entityManager.persist(team);
@@ -1025,201 +1020,121 @@ public class TournamentService extends Service {
 
         Date workDate = startDate;
 
-        // round 1a
+        // #1 A
         {
             Match m = new Match(t, ++matchNo, workDate, MatchType.PRELIM, teamA1, teamA2);
             entityManager.persist(m);
             t.addMatch(m);
         }
         workDate = DateUtils.addMinutes(workDate, minsToPlayPlusPause);
+
+        // #2 A
         {
             Match m = new Match(t, ++matchNo, workDate, MatchType.PRELIM, teamA3, teamA4);
             entityManager.persist(m);
             t.addMatch(m);
         }
         workDate = DateUtils.addMinutes(workDate, minsToPlayPlusPause);
+
+        // #3 C
         {
-            Match m = new Match(t, ++matchNo, workDate, MatchType.PRELIM, teamA6, teamA5);
+            Match m = new Match(t, ++matchNo, workDate, MatchType.PRELIM, teamC1, teamC2);
             entityManager.persist(m);
             t.addMatch(m);
         }
         workDate = DateUtils.addMinutes(workDate, minsToPlayPlusPause);
 
-        // round 1b
+        // #4 B
         {
-            Match m = new Match(t, ++matchNo, workDate, MatchType.PRELIM, teamB2, teamB1);
-            entityManager.persist(m);
-            t.addMatch(m);
-        }
-        workDate = DateUtils.addMinutes(workDate, minsToPlayPlusPause);
-        {
-            Match m = new Match(t, ++matchNo, workDate, MatchType.PRELIM, teamB4, teamB3);
-            entityManager.persist(m);
-            t.addMatch(m);
-        }
-        workDate = DateUtils.addMinutes(workDate, minsToPlayPlusPause);
-        {
-            Match m = new Match(t, ++matchNo, workDate, MatchType.PRELIM, teamB6, teamB5);
+            Match m = new Match(t, ++matchNo, workDate, MatchType.PRELIM, teamB1, teamB2);
             entityManager.persist(m);
             t.addMatch(m);
         }
         workDate = DateUtils.addMinutes(workDate, minsToPlayPlusPause);
 
-        // round 2a
+        // #5 B
+        {
+            Match m = new Match(t, ++matchNo, workDate, MatchType.PRELIM, teamB3, teamB4);
+            entityManager.persist(m);
+            t.addMatch(m);
+        }
+        workDate = DateUtils.addMinutes(workDate, minsToPlayPlusPause);
+
+        // #6 C
+        {
+            Match m = new Match(t, ++matchNo, workDate, MatchType.PRELIM, teamC2, teamC3);
+            entityManager.persist(m);
+            t.addMatch(m);
+        }
+        workDate = DateUtils.addMinutes(workDate, minsToPlayPlusPause);
+
+        // #7 A
+        {
+            Match m = new Match(t, ++matchNo, workDate, MatchType.PRELIM, teamA4, teamA1);
+            entityManager.persist(m);
+            t.addMatch(m);
+        }
+        workDate = DateUtils.addMinutes(workDate, minsToPlayPlusPause);
+
+        // #8 A
         {
             Match m = new Match(t, ++matchNo, workDate, MatchType.PRELIM, teamA2, teamA3);
             entityManager.persist(m);
             t.addMatch(m);
         }
         workDate = DateUtils.addMinutes(workDate, minsToPlayPlusPause);
+
+        // #9 C
         {
-            Match m = new Match(t, ++matchNo, workDate, MatchType.PRELIM, teamA4, teamA5);
-            entityManager.persist(m);
-            t.addMatch(m);
-        }
-        workDate = DateUtils.addMinutes(workDate, minsToPlayPlusPause);
-        {
-            Match m = new Match(t, ++matchNo, workDate, MatchType.PRELIM, teamA6, teamA1);
+            Match m = new Match(t, ++matchNo, workDate, MatchType.PRELIM, teamC3, teamC1);
             entityManager.persist(m);
             t.addMatch(m);
         }
         workDate = DateUtils.addMinutes(workDate, minsToPlayPlusPause);
 
-        // round 2b
+        // #10 B
+        {
+            Match m = new Match(t, ++matchNo, workDate, MatchType.PRELIM, teamB4, teamB1);
+            entityManager.persist(m);
+            t.addMatch(m);
+        }
+        workDate = DateUtils.addMinutes(workDate, minsToPlayPlusPause);
+
+        // #11 B
         {
             Match m = new Match(t, ++matchNo, workDate, MatchType.PRELIM, teamB2, teamB3);
             entityManager.persist(m);
             t.addMatch(m);
         }
         workDate = DateUtils.addMinutes(workDate, minsToPlayPlusPause);
-        {
-            Match m = new Match(t, ++matchNo, workDate, MatchType.PRELIM, teamB1, teamB6);
-            entityManager.persist(m);
-            t.addMatch(m);
-        }
-        workDate = DateUtils.addMinutes(workDate, minsToPlayPlusPause);
-        {
-            Match m = new Match(t, ++matchNo, workDate, MatchType.PRELIM, teamB4, teamB5);
-            entityManager.persist(m);
-            t.addMatch(m);
-        }
-        workDate = DateUtils.addMinutes(workDate, minsToPlayPlusPause);
 
-        // round 3a
-        {
-            Match m = new Match(t, ++matchNo, workDate, MatchType.PRELIM, teamA1, teamA5);
-            entityManager.persist(m);
-            t.addMatch(m);
-        }
-        workDate = DateUtils.addMinutes(workDate, minsToPlayPlusPause);
-        {
-            Match m = new Match(t, ++matchNo, workDate, MatchType.PRELIM, teamA6, teamA3);
-            entityManager.persist(m);
-            t.addMatch(m);
-        }
-        workDate = DateUtils.addMinutes(workDate, minsToPlayPlusPause);
-        {
-            Match m = new Match(t, ++matchNo, workDate, MatchType.PRELIM, teamA4, teamA2);
-            entityManager.persist(m);
-            t.addMatch(m);
-        }
-        workDate = DateUtils.addMinutes(workDate, minsToPlayPlusPause);
-
-        // round 3b
-        {
-            Match m = new Match(t, ++matchNo, workDate, MatchType.PRELIM, teamB5, teamB1);
-            entityManager.persist(m);
-            t.addMatch(m);
-        }
-        workDate = DateUtils.addMinutes(workDate, minsToPlayPlusPause);
-        {
-            Match m = new Match(t, ++matchNo, workDate, MatchType.PRELIM, teamB3, teamB6);
-            entityManager.persist(m);
-            t.addMatch(m);
-        }
-        workDate = DateUtils.addMinutes(workDate, minsToPlayPlusPause);
-        {
-            Match m = new Match(t, ++matchNo, workDate, MatchType.PRELIM, teamB2, teamB4);
-            entityManager.persist(m);
-            t.addMatch(m);
-        }
-        workDate = DateUtils.addMinutes(workDate, minsToPlayPlusPause);
-
-        // round 4a
-        {
-            Match m = new Match(t, ++matchNo, workDate, MatchType.PRELIM, teamA3, teamA5);
-            entityManager.persist(m);
-            t.addMatch(m);
-        }
-        workDate = DateUtils.addMinutes(workDate, minsToPlayPlusPause);
-        {
-            Match m = new Match(t, ++matchNo, workDate, MatchType.PRELIM, teamA2, teamA6);
-            entityManager.persist(m);
-            t.addMatch(m);
-        }
-        workDate = DateUtils.addMinutes(workDate, minsToPlayPlusPause);
-        {
-            Match m = new Match(t, ++matchNo, workDate, MatchType.PRELIM, teamA1, teamA4);
-            entityManager.persist(m);
-            t.addMatch(m);
-        }
-        workDate = DateUtils.addMinutes(workDate, minsToPlayPlusPause);
-
-        // round 4b
-        {
-            Match m = new Match(t, ++matchNo, workDate, MatchType.PRELIM, teamB3, teamB5);
-            entityManager.persist(m);
-            t.addMatch(m);
-        }
-        workDate = DateUtils.addMinutes(workDate, minsToPlayPlusPause);
-        {
-            Match m = new Match(t, ++matchNo, workDate, MatchType.PRELIM, teamB6, teamB2);
-            entityManager.persist(m);
-            t.addMatch(m);
-        }
-        workDate = DateUtils.addMinutes(workDate, minsToPlayPlusPause);
-        {
-            Match m = new Match(t, ++matchNo, workDate, MatchType.PRELIM, teamB1, teamB4);
-            entityManager.persist(m);
-            t.addMatch(m);
-        }
-        workDate = DateUtils.addMinutes(workDate, minsToPlayPlusPause);
-
-        // round 5a
+        // #12 A
         {
             Match m = new Match(t, ++matchNo, workDate, MatchType.PRELIM, teamA1, teamA3);
             entityManager.persist(m);
             t.addMatch(m);
         }
         workDate = DateUtils.addMinutes(workDate, minsToPlayPlusPause);
+
+        // #13 A
         {
-            Match m = new Match(t, ++matchNo, workDate, MatchType.PRELIM, teamA5, teamA2);
-            entityManager.persist(m);
-            t.addMatch(m);
-        }
-        workDate = DateUtils.addMinutes(workDate, minsToPlayPlusPause);
-        {
-            Match m = new Match(t, ++matchNo, workDate, MatchType.PRELIM, teamA6, teamA4);
+            Match m = new Match(t, ++matchNo, workDate, MatchType.PRELIM, teamA2, teamA4);
             entityManager.persist(m);
             t.addMatch(m);
         }
         workDate = DateUtils.addMinutes(workDate, minsToPlayPlusPause);
 
-        // round 5b
+        // #14 B
         {
-            Match m = new Match(t, ++matchNo, workDate, MatchType.PRELIM, teamB3, teamB1);
+            Match m = new Match(t, ++matchNo, workDate, MatchType.PRELIM, teamB1, teamB3);
             entityManager.persist(m);
             t.addMatch(m);
         }
         workDate = DateUtils.addMinutes(workDate, minsToPlayPlusPause);
+
+        // #15 B
         {
-            Match m = new Match(t, ++matchNo, workDate, MatchType.PRELIM, teamB5, teamB2);
-            entityManager.persist(m);
-            t.addMatch(m);
-        }
-        workDate = DateUtils.addMinutes(workDate, minsToPlayPlusPause);
-        {
-            Match m = new Match(t, ++matchNo, workDate, MatchType.PRELIM, teamB6, teamB4);
+            Match m = new Match(t, ++matchNo, workDate, MatchType.PRELIM, teamB2, teamB4);
             entityManager.persist(m);
             t.addMatch(m);
         }
@@ -1240,51 +1155,50 @@ public class TournamentService extends Service {
         t.addGroup(finalGroup);
         entityManager.persist(t);
 
-        // final teams: semi
+        // quarter-teams
 
         Team finalTeam1A = new Team("Erster A", null);
         finalTeams.add(finalTeam1A);
-        Team finalTeam2B = new Team("Zweiter B", null);
-        finalTeams.add(finalTeam2B);
+        Team finalTeam2A = new Team("Zweiter A", null);
+        finalTeams.add(finalTeam2A);
+        Team finalTeam3A = new Team("Dritter A", null);
+        finalTeams.add(finalTeam3A);
 
         Team finalTeam1B = new Team("Erster B", null);
         finalTeams.add(finalTeam1B);
-        Team finalTeam2A = new Team("Zweiter A", null);
-        finalTeams.add(finalTeam2A);
-
-        // final teams: others
-
-        Team finalTeam6A = new Team("Sechster A", null);
-        finalTeams.add(finalTeam6A);
-        Team finalTeam6B = new Team("Sechster B", null);
-        finalTeams.add(finalTeam6B);
-
-        Team finalTeam5A = new Team("Fünfter A", null);
-        finalTeams.add(finalTeam5A);
-        Team finalTeam5B = new Team("Fünfter B", null);
-        finalTeams.add(finalTeam5B);
-
-        Team finalTeam4A = new Team("Vierter A", null);
-        finalTeams.add(finalTeam4A);
-        Team finalTeam4B = new Team("Vierter B", null);
-        finalTeams.add(finalTeam4B);
-
-        Team finalTeam3A = new Team("Dritter A", null);
-        finalTeams.add(finalTeam3A);
+        Team finalTeam2B = new Team("Zweiter B", null);
+        finalTeams.add(finalTeam2B);
         Team finalTeam3B = new Team("Dritter B", null);
         finalTeams.add(finalTeam3B);
 
+        Team finalTeam1C = new Team("Erster C", null);
+        finalTeams.add(finalTeam1C);
+        Team finalTeam2C = new Team("Zweiter C", null);
+        finalTeams.add(finalTeam2C);
+        Team finalTeam3C = new Team("Dritter C", null);
+        finalTeams.add(finalTeam3C);
+
+        // semi-teams
+        Team finalTeamWinner16 = new Team("Sieger 1/4-Finale Spiel 16", null);
+        finalTeams.add(finalTeamWinner16);
+        Team finalTeamWinner17 = new Team("Sieger 1/4-Finale Spiel 17", null);
+        finalTeams.add(finalTeamWinner17);
+        Team finalTeamWinner18 = new Team("Sieger 1/4-Finale Spiel 18", null);
+        finalTeams.add(finalTeamWinner18);
+        Team finalTeamWinner19 = new Team("Sieger 1/4-Finale Spiel 19", null);
+        finalTeams.add(finalTeamWinner19);
+
         // small final teams
-        Team finalTeamLoser31 = new Team("Verlierer 1/2-Finale Spiel 31", null);
-        finalTeams.add(finalTeamLoser31);
-        Team finalTeamLoser32 = new Team("Verlierer 1/2-Finale Spiel 32", null);
-        finalTeams.add(finalTeamLoser32);
+        Team finalTeamLoser20 = new Team("Verlierer 1/2-Finale Spiel 20", null);
+        finalTeams.add(finalTeamLoser20);
+        Team finalTeamLoser21 = new Team("Verlierer 1/2-Finale Spiel 21", null);
+        finalTeams.add(finalTeamLoser21);
 
         // final teams
-        Team finalTeamWinner31 = new Team("Sieger 1/2-Finale Spiel 31", null);
-        finalTeams.add(finalTeamWinner31);
-        Team finalTeamWinner32 = new Team("Sieger 1/2-Finale Spiel 32", null);
-        finalTeams.add(finalTeamWinner32);
+        Team finalTeamWinner20 = new Team("Sieger 1/2-Finale Spiel 20", null);
+        finalTeams.add(finalTeamWinner20);
+        Team finalTeamWinner21 = new Team("Sieger 1/2-Finale Spiel 21", null);
+        finalTeams.add(finalTeamWinner21);
 
         for (Team team : finalTeams) {
             entityManager.persist(team);
@@ -1292,55 +1206,61 @@ public class TournamentService extends Service {
             entityManager.persist(finalGroup);
         }
 
-        // semi finals
+        // quarterfinals
         {
-            Match m = new Match(t, ++matchNo, workDate, MatchType.SEMIFINAL, finalTeam1A, finalTeam2B);
+            Match m = new Match(t, ++matchNo, workDate, MatchType.QUARTERFINAL, finalTeam3A, finalTeam2C);
             entityManager.persist(m);
             t.addMatch(m);
         }
-        workDate = DateUtils.addMinutes(workDate, minsToPlayPlusPauseFinals);
+        workDate = DateUtils.addMinutes(workDate, minsToPlayPlusPause);
         {
-            Match m = new Match(t, ++matchNo, workDate, MatchType.SEMIFINAL,finalTeam1B, finalTeam2A);
+            Match m = new Match(t, ++matchNo, workDate, MatchType.QUARTERFINAL,finalTeam3B, finalTeam2A);
             entityManager.persist(m);
             t.addMatch(m);
         }
-        workDate = DateUtils.addMinutes(workDate, minsToPlayPlusPauseFinals);
+        workDate = DateUtils.addMinutes(workDate, minsToPlayPlusPause);
+        {
+            Match m = new Match(t, ++matchNo, workDate, MatchType.QUARTERFINAL, finalTeam2B, finalTeam1A);
+            entityManager.persist(m);
+            t.addMatch(m);
+        }
+        workDate = DateUtils.addMinutes(workDate, minsToPlayPlusPause);
+        {
+            Match m = new Match(t, ++matchNo, workDate, MatchType.QUARTERFINAL, finalTeam1B, finalTeam1C);
+            entityManager.persist(m);
+            t.addMatch(m);
+        }
+        workDate = DateUtils.addMinutes(workDate, minsToPlay);
 
-        // tiny finals
+        // pause
+        workDate = DateUtils.addMinutes(workDate, minsPauseBeforeSemiFinal);
+
+        // semifinals
         {
-            Match m = new Match(t, ++matchNo, workDate, MatchType.QUARTERFINAL, finalTeam6A, finalTeam6B);
+            Match m = new Match(t, ++matchNo, workDate, MatchType.SEMIFINAL, finalTeamWinner16, finalTeamWinner18);
             entityManager.persist(m);
             t.addMatch(m);
         }
-        workDate = DateUtils.addMinutes(workDate, minsToPlayPlusPauseFinals);
+        workDate = DateUtils.addMinutes(workDate, minsToPlayPlusPause);
         {
-            Match m = new Match(t, ++matchNo, workDate, MatchType.QUARTERFINAL,finalTeam5A, finalTeam5B);
+            Match m = new Match(t, ++matchNo, workDate, MatchType.SEMIFINAL, finalTeamWinner17, finalTeamWinner19);
             entityManager.persist(m);
             t.addMatch(m);
         }
-        workDate = DateUtils.addMinutes(workDate, minsToPlayPlusPauseFinals);
-        {
-            Match m = new Match(t, ++matchNo, workDate, MatchType.QUARTERFINAL,finalTeam4A, finalTeam4B);
-            entityManager.persist(m);
-            t.addMatch(m);
-        }
-        workDate = DateUtils.addMinutes(workDate, minsToPlayPlusPauseFinals);
-        {
-            Match m = new Match(t, ++matchNo, workDate, MatchType.QUARTERFINAL,finalTeam3A, finalTeam3B);
-            entityManager.persist(m);
-            t.addMatch(m);
-        }
-        workDate = DateUtils.addMinutes(workDate, minsToPlayPlusPauseFinals);
+        workDate = DateUtils.addMinutes(workDate, minsToPlay);
+
+        // pause
+        workDate = DateUtils.addMinutes(workDate, minsPauseBeforeFinal);
 
         // smallfinal + final
         {
-            Match m = new Match(t, ++matchNo, workDate, MatchType.SMALLFINAL, finalTeamLoser31, finalTeamLoser32);
+            Match m = new Match(t, ++matchNo, workDate, MatchType.SMALLFINAL, finalTeamLoser20, finalTeamLoser21);
             entityManager.persist(m);
             t.addMatch(m);
         }
-        workDate = DateUtils.addMinutes(workDate, minsToPlayPlusPauseFinals);
+        workDate = DateUtils.addMinutes(workDate, minsToPlayPlusPause);
         {
-            Match m = new Match(t, ++matchNo, workDate, MatchType.FINAL, finalTeamWinner31, finalTeamWinner32);
+            Match m = new Match(t, ++matchNo, workDate, MatchType.FINAL, finalTeamWinner20, finalTeamWinner21);
             entityManager.persist(m);
             t.addMatch(m);
         }
@@ -1361,13 +1281,6 @@ public class TournamentService extends Service {
         entityManager.persist(t);
 
         entityManager.getTransaction().commit();
-    }
-
-    public void deleteTournament2020() {
-        em.getTransaction().begin();
-        em.remove(getTournament(141L));
-        em.flush();
-        em.getTransaction().commit();
     }
 
     //
@@ -1404,7 +1317,7 @@ public class TournamentService extends Service {
         Group groupA = new Group("1", t);
         entityManager.persist(groupA);
 
-        Team teamA1 = new Team("CVJM", groupA);
+        Team teamA1 = new Team("Mannschaft 8", groupA);
         teams.add(teamA1);
         groupA.addTeam(teamA1);
         Team teamA2 = new Team("SV Sülzbach", groupA);
@@ -1425,7 +1338,7 @@ public class TournamentService extends Service {
         Team teamA7 = new Team("Friedrichshaller Kicker", groupA);
         teams.add(teamA7);
         groupA.addTeam(teamA7);
-        Team teamA8 = new Team("Mannschaft 8", groupA);
+        Team teamA8 = new Team("CVJM", groupA);
         teams.add(teamA8);
         groupA.addTeam(teamA8);
 
@@ -1638,12 +1551,5 @@ public class TournamentService extends Service {
         entityManager.persist(t);
 
         entityManager.getTransaction().commit();
-    }
-
-    public void deleteTournamentAH2020() {
-        em.getTransaction().begin();
-        em.remove(getTournament(351L));
-        em.flush();
-        em.getTransaction().commit();
     }
 }

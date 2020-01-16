@@ -6,19 +6,40 @@
     <bookmark url="file://$PROJECT_DIR$/src/main/resources/views/index/tournament.vm" line="70" mnemonic="2" />
   </component>
   <component name="ChangeListManager">
-    <list id="565686d9-c6f7-41d0-85e9-71e8fdb5e735" name="DoNotCommit" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/turnierplaner.iml" afterPath="$PROJECT_DIR$/turnierplaner.iml" />
-    </list>
+    <list id="565686d9-c6f7-41d0-85e9-71e8fdb5e735" name="DoNotCommit" comment="" />
     <list default="true" id="44baac04-c398-407d-94af-04204f6aa6c1" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/images/ads/RnJhbmsgQmF1bWfDpHJ0ZWwgR2Vkw6RjaHRuaXN0dXJuaWVyIDIwMjA=.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/images/ads/SGFsbGVuemF1YmVyIDIwMjA=.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/images/ads/archive/11teamsports.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/images/ads/archive/Advertisement-Grid-Black.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/images/ads/archive/Advertisement-Grid.psd" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/images/ads/archive/amos.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/images/ads/archive/el-fuego.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/images/ads/archive/mlog-kardex.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/images/ads/archive/mybet-ka-sports.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/images/ads/archive/mybet.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/images/ads/archive/thera.png" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/tsvw/Start.java" afterPath="$PROJECT_DIR$/src/main/java/com/tsvw/Start.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/tsvw/controller/BackendController.java" afterPath="$PROJECT_DIR$/src/main/java/com/tsvw/controller/BackendController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tsvw/controller/MatchController.java" afterPath="$PROJECT_DIR$/src/main/java/com/tsvw/controller/MatchController.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tsvw/model/Tournament.java" afterPath="$PROJECT_DIR$/src/main/java/com/tsvw/model/Tournament.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/tsvw/service/TournamentService.java" afterPath="$PROJECT_DIR$/src/main/java/com/tsvw/service/TournamentService.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/blog.css" afterPath="$PROJECT_DIR$/src/main/resources/static/css/blog.css" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/ads/11teamsports.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/ads/Advertisement-Grid-Black.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/ads/Advertisement-Grid-Lightgrey.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/ads/Advertisement-Grid.psd" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/ads/amos.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/ads/el-fuego.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/ads/mlog-kardex.jpg" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/ads/mybet-ka-sports.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/ads/mybet.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/ads/thera.png" afterPath="" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/views/index/tournament.vm" afterPath="$PROJECT_DIR$/src/main/resources/views/index/tournament.vm" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <file path="$PROJECT_DIR$/.idea/workspace.xml" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,8 +59,8 @@
       <file leaf-file-name="BackendController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/tsvw/controller/BackendController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="604">
-              <caret line="260" column="0" lean-forward="true" selection-start-line="260" selection-start-column="0" selection-end-line="260" selection-end-column="0" />
+            <state relative-caret-position="18">
+              <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -48,13 +69,15 @@
       <file leaf-file-name="Tournament.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/tsvw/model/Tournament.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="838">
-              <caret line="153" column="0" lean-forward="true" selection-start-line="153" selection-start-column="0" selection-end-line="153" selection-end-column="0" />
+            <state relative-caret-position="502">
+              <caret line="170" column="41" lean-forward="false" selection-start-line="170" selection-start-column="41" selection-end-line="170" selection-end-column="41" />
               <folding>
-                <element signature="e#3634#3635#0" expanded="true" />
-                <element signature="e#3678#3679#0" expanded="true" />
-                <element signature="e#3870#3871#0" expanded="true" />
-                <element signature="e#3916#3917#0" expanded="true" />
+                <element signature="e#3659#3660#0" expanded="true" />
+                <element signature="e#3703#3704#0" expanded="true" />
+                <element signature="e#3895#3896#0" expanded="true" />
+                <element signature="e#3941#3942#0" expanded="true" />
+                <element signature="e#4134#4135#0" expanded="true" />
+                <element signature="e#4162#4163#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -107,16 +130,27 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TournamentService.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="TournamentService.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/tsvw/service/TournamentService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="616">
-              <caret line="1403" column="35" lean-forward="false" selection-start-line="1403" selection-start-column="35" selection-end-line="1403" selection-end-column="35" />
+            <state relative-caret-position="288">
+              <caret line="1239" column="40" lean-forward="true" selection-start-line="1239" selection-start-column="40" selection-end-line="1239" selection-end-column="40" />
               <folding>
                 <element signature="method#createTournament2018#0;class#TournamentService#0" expanded="false" />
                 <element signature="method#createTournament2019#0;class#TournamentService#0" expanded="false" />
                 <element signature="method#cleanupTournament2019#0;class#TournamentService#0" expanded="false" />
+                <element signature="method#createTournamentAH2020#0;class#TournamentService#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Team.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/tsvw/model/Team.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1386">
+              <caret line="102" column="0" lean-forward="false" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -124,8 +158,8 @@
       <file leaf-file-name="MatchController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/tsvw/controller/MatchController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2368">
-              <caret line="160" column="57" lean-forward="true" selection-start-line="160" selection-start-column="57" selection-end-line="160" selection-end-column="57" />
+            <state relative-caret-position="212">
+              <caret line="96" column="0" lean-forward="true" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -134,8 +168,8 @@
       <file leaf-file-name="Start.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/tsvw/Start.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
-              <caret line="88" column="43" lean-forward="true" selection-start-line="88" selection-start-column="43" selection-end-line="88" selection-end-column="43" />
+            <state relative-caret-position="322">
+              <caret line="88" column="62" lean-forward="true" selection-start-line="88" selection-start-column="62" selection-end-line="88" selection-end-column="62" />
               <folding />
             </state>
           </provider>
@@ -151,25 +185,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tournament.vm" pinned="false" current-in-tab="true">
+      <file leaf-file-name="tournament.vm" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/views/index/tournament.vm">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="215" column="26" lean-forward="true" selection-start-line="215" selection-start-column="26" selection-end-line="215" selection-end-column="26" />
+            <state relative-caret-position="558">
+              <caret line="273" column="25" lean-forward="false" selection-start-line="273" selection-start-column="25" selection-end-line="273" selection-end-column="25" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-                <element signature="e#10061#10068#1" expanded="true" />
+                <element signature="e#10030#10037#1" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MatchService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/tsvw/service/MatchService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="14" column="47" lean-forward="false" selection-start-line="14" selection-start-column="47" selection-end-line="14" selection-end-column="47" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -177,8 +201,8 @@
       <file leaf-file-name="_matches.vm" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/views/match/_matches.vm">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="32" column="13" lean-forward="true" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
+            <state relative-caret-position="576">
+              <caret line="32" column="13" lean-forward="false" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -188,7 +212,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/tournament.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="234">
-              <caret line="13" column="21" lean-forward="true" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
+              <caret line="13" column="21" lean-forward="false" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -197,8 +221,8 @@
       <file leaf-file-name="app.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/app.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="1" column="27" lean-forward="false" selection-start-line="1" selection-start-column="27" selection-end-line="1" selection-end-column="60" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -207,8 +231,8 @@
       <file leaf-file-name="blog.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/blog.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+            <state relative-caret-position="108">
+              <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -218,7 +242,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/resources/views/group/_groups.vm">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="162">
-              <caret line="9" column="13" lean-forward="true" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+              <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
               </folding>
@@ -229,8 +253,8 @@
       <file leaf-file-name="print.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/print.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="72" column="5" lean-forward="true" selection-start-line="72" selection-start-column="5" selection-end-line="72" selection-end-column="5" />
+            <state relative-caret-position="1296">
+              <caret line="72" column="5" lean-forward="false" selection-start-line="72" selection-start-column="5" selection-end-line="72" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -248,8 +272,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>method</find>
-      <find>exampleModal</find>
       <find>header</find>
       <find>someone</find>
       <find>Start.em</find>
@@ -278,6 +300,8 @@
       <find>backend_submitMatchRow</find>
       <find>backendLayout</find>
       <find>flush</find>
+      <find>17px</find>
+      <find>groups()</find>
     </findStrings>
     <replaceStrings>
       <replace>));</replace>
@@ -338,9 +362,6 @@
         <option value="$PROJECT_DIR$/src/main/resources/static/css/beamer.css" />
         <option value="$PROJECT_DIR$/src/main/resources/views/match/_current.vm" />
         <option value="$PROJECT_DIR$/src/main/java/com/tsvw/model/Group.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/tsvw/model/Tournament.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/tsvw/controller/MatchController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/css/blog.css" />
         <option value="$PROJECT_DIR$/src/main/resources/views/group/_groups.vm" />
         <option value="$PROJECT_DIR$/src/main/resources/static/css/app.css" />
         <option value="$PROJECT_DIR$/src/main/resources/static/css/tournament.css" />
@@ -348,18 +369,21 @@
         <option value="$PROJECT_DIR$/src/main/resources/views/backend/matches/index.vm" />
         <option value="$PROJECT_DIR$/src/main/resources/VM_global_library.vm" />
         <option value="$PROJECT_DIR$/src/main/resources/static/js/app.js" />
+        <option value="$PROJECT_DIR$/src/main/java/com/tsvw/model/Tournament.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/tsvw/Start.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/tsvw/controller/BackendController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/tsvw/service/TournamentService.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/css/blog.css" />
+        <option value="$PROJECT_DIR$/src/main/java/com/tsvw/controller/MatchController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/views/index/tournament.vm" />
+        <option value="$PROJECT_DIR$/src/main/java/com/tsvw/service/TournamentService.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="53" />
-    <option name="y" value="25" />
-    <option name="width" value="1155" />
-    <option name="height" value="1055" />
+    <option name="x" value="1920" />
+    <option name="y" value="-2" />
+    <option name="width" value="1680" />
+    <option name="height" value="1052" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -477,6 +501,25 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="turnierplaner" type="b2602c69:ProjectViewProjectNode" />
+              <item name="turnierplaner" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="turnierplaner" type="b2602c69:ProjectViewProjectNode" />
+              <item name="turnierplaner" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+              <item name="ads" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="turnierplaner" type="b2602c69:ProjectViewProjectNode" />
@@ -948,29 +991,28 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="53" y="25" width="1867" height="1055" extended-state="6" />
-    <editor active="true" />
+    <frame x="1920" y="-2" width="1627" height="1025" extended-state="6" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297062" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33147943" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26028922" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827324" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4510932" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.44188723" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32925472" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22734761" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18406072" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32911393" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37514386" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37514386" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827324" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24931356" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
     </layout>
     <layout-to-restore>
@@ -983,18 +1025,18 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33147943" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26028922" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4510932" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.44188723" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827324" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32925472" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22734761" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18406072" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24931356" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32911393" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37514386" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37514386" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="UnknownFeatures">
@@ -1063,43 +1105,43 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/tsvw/model/Team.java</url>
-          <line>102</line>
-          <properties />
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/tsvw/controller/MatchController.java</url>
-          <line>65</line>
-          <properties />
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/tsvw/controller/BackendController.java</url>
           <line>33</line>
           <properties />
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/tsvw/controller/MatchController.java</url>
-          <line>160</line>
-          <properties />
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/tsvw/service/TournamentService.java</url>
-          <line>41</line>
-          <properties />
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/tsvw/service/TournamentService.java</url>
-          <line>926</line>
+          <line>919</line>
           <properties />
           <option name="timeStamp" value="16" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/tsvw/model/Tournament.java</url>
+          <line>180</line>
+          <properties />
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/tsvw/controller/BackendController.java</url>
+          <line>207</line>
+          <properties />
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/tsvw/controller/MatchController.java</url>
+          <line>71</line>
+          <properties />
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/tsvw/controller/MatchController.java</url>
+          <line>96</line>
+          <properties />
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="17" />
+      <option name="time" value="23" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1146,27 +1188,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/org/hibernate/javax/persistence/hibernate-jpa-2.1-api/1.0.0.Final/hibernate-jpa-2.1-api-1.0.0.Final.jar!/javax/persistence/Persistence.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="778">
-          <caret line="74" column="39" lean-forward="false" selection-start-line="74" selection-start-column="39" selection-end-line="74" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tsvw/service/Service.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="20" lean-forward="false" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tsvw/controller/GroupController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/mixpanel-2-latest.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1221,7 +1242,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="469">
           <caret line="60" column="0" lean-forward="false" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1236,7 +1256,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="504">
           <caret line="28" column="76" lean-forward="false" selection-start-line="28" selection-start-column="76" selection-end-line="28" selection-end-column="76" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1244,7 +1263,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="432">
           <caret line="37" column="29" lean-forward="false" selection-start-line="37" selection-start-column="29" selection-end-line="37" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1252,7 +1270,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="468">
           <caret line="26" column="31" lean-forward="false" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1305,7 +1322,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="10" column="9" lean-forward="true" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1313,7 +1329,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="193">
           <caret line="106" column="17" lean-forward="true" selection-start-line="106" selection-start-column="17" selection-end-line="106" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1321,40 +1336,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-35">
           <caret line="11" column="25" lean-forward="false" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/blog.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/views/group/_groups.vm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="13" lean-forward="true" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/app.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="27" lean-forward="false" selection-start-line="1" selection-start-column="27" selection-end-line="1" selection-end-column="60" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/print.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="72" column="5" lean-forward="true" selection-start-line="72" selection-start-column="5" selection-end-line="72" selection-end-column="5" />
+        <state relative-caret-position="1296">
+          <caret line="72" column="5" lean-forward="false" selection-start-line="72" selection-start-column="5" selection-end-line="72" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -1363,7 +1351,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="15" lean-forward="false" selection-start-line="0" selection-start-column="2" selection-end-line="0" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1371,15 +1358,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
           <caret line="607" column="0" lean-forward="false" selection-start-line="607" selection-start-column="0" selection-end-line="607" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/sparkjava/spark-core/2.7.1/spark-core-2.7.1.jar!/spark/RouteImpl.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1387,7 +1365,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
           <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1395,7 +1372,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
           <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1403,27 +1379,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
           <caret line="519" column="0" lean-forward="false" selection-start-line="519" selection-start-column="0" selection-end-line="519" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tsvw/model/Team.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="101" column="19" lean-forward="false" selection-start-line="101" selection-start-column="19" selection-end-line="101" selection-end-column="19" />
-          <folding>
-            <element signature="e#1374#1375#0" expanded="true" />
-            <element signature="e#1401#1402#0" expanded="true" />
-            <element signature="e#5574#5575#0" expanded="true" />
-            <element signature="e#5611#5612#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/views/match/_matches.vm">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="32" column="13" lean-forward="true" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
+        <state relative-caret-position="576">
+          <caret line="32" column="13" lean-forward="false" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -1431,7 +1393,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/tournament.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
-          <caret line="13" column="21" lean-forward="true" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
+          <caret line="13" column="21" lean-forward="false" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
           <folding />
         </state>
       </provider>
@@ -1452,34 +1414,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tsvw/service/MatchService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="14" column="47" lean-forward="false" selection-start-line="14" selection-start-column="47" selection-end-line="14" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/VM_global_library.vm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="21" column="69" lean-forward="false" selection-start-line="21" selection-start-column="69" selection-end-line="21" selection-end-column="69" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
           <caret line="13" column="35" lean-forward="false" selection-start-line="13" selection-start-column="35" selection-end-line="13" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tsvw/Start.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="88" column="43" lean-forward="true" selection-start-line="88" selection-start-column="43" selection-end-line="88" selection-end-column="43" />
           <folding />
         </state>
       </provider>
@@ -1489,18 +1427,6 @@
         <state relative-caret-position="378">
           <caret line="21" column="25" lean-forward="false" selection-start-line="21" selection-start-column="25" selection-end-line="21" selection-end-column="25" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tsvw/service/TournamentService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="616">
-          <caret line="1403" column="35" lean-forward="false" selection-start-line="1403" selection-start-column="35" selection-end-line="1403" selection-end-column="35" />
-          <folding>
-            <element signature="method#createTournament2018#0;class#TournamentService#0" expanded="false" />
-            <element signature="method#createTournament2019#0;class#TournamentService#0" expanded="false" />
-            <element signature="method#cleanupTournament2019#0;class#TournamentService#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1519,42 +1445,133 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/images/ads/b683f1ed-b1d9-40e3-8b9d-cd62f80c04ff.jpeg" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/images/ads/ca1a75be-e3f9-4fd7-a7cc-6fc5404a71cb.jpeg" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/VM_global_library.vm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="21" column="69" lean-forward="false" selection-start-line="21" selection-start-column="69" selection-end-line="21" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tsvw/model/Team.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1386">
+          <caret line="102" column="0" lean-forward="false" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/sparkjava/spark-core/2.7.1/spark-core-2.7.1.jar!/spark/RouteImpl.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="68" column="0" lean-forward="false" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tsvw/Start.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="88" column="62" lean-forward="true" selection-start-line="88" selection-start-column="62" selection-end-line="88" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tsvw/controller/GroupController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="23" column="36" lean-forward="false" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/app.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/blog.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/tsvw/model/Tournament.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="838">
-          <caret line="153" column="0" lean-forward="true" selection-start-line="153" selection-start-column="0" selection-end-line="153" selection-end-column="0" />
+        <state relative-caret-position="502">
+          <caret line="170" column="41" lean-forward="false" selection-start-line="170" selection-start-column="41" selection-end-line="170" selection-end-column="41" />
           <folding>
-            <element signature="e#3634#3635#0" expanded="true" />
-            <element signature="e#3678#3679#0" expanded="true" />
-            <element signature="e#3870#3871#0" expanded="true" />
-            <element signature="e#3916#3917#0" expanded="true" />
+            <element signature="e#3659#3660#0" expanded="true" />
+            <element signature="e#3703#3704#0" expanded="true" />
+            <element signature="e#3895#3896#0" expanded="true" />
+            <element signature="e#3941#3942#0" expanded="true" />
+            <element signature="e#4134#4135#0" expanded="true" />
+            <element signature="e#4162#4163#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tsvw/controller/BackendController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tsvw/service/MatchService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="604">
-          <caret line="260" column="0" lean-forward="true" selection-start-line="260" selection-start-column="0" selection-end-line="260" selection-end-column="0" />
+        <state relative-caret-position="180">
+          <caret line="14" column="47" lean-forward="false" selection-start-line="14" selection-start-column="47" selection-end-line="14" selection-end-column="47" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/tsvw/controller/MatchController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2368">
-          <caret line="160" column="57" lean-forward="true" selection-start-line="160" selection-start-column="57" selection-end-line="160" selection-end-column="57" />
+        <state relative-caret-position="212">
+          <caret line="96" column="0" lean-forward="true" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/views/group/_groups.vm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/views/index/tournament.vm">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="215" column="26" lean-forward="true" selection-start-line="215" selection-start-column="26" selection-end-line="215" selection-end-column="26" />
+        <state relative-caret-position="558">
+          <caret line="273" column="25" lean-forward="false" selection-start-line="273" selection-start-column="25" selection-end-line="273" selection-end-column="25" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="e#10061#10068#1" expanded="true" />
+            <element signature="e#10030#10037#1" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tsvw/controller/BackendController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tsvw/service/TournamentService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="1239" column="40" lean-forward="true" selection-start-line="1239" selection-start-column="40" selection-end-line="1239" selection-end-column="40" />
+          <folding>
+            <element signature="method#createTournament2018#0;class#TournamentService#0" expanded="false" />
+            <element signature="method#createTournament2019#0;class#TournamentService#0" expanded="false" />
+            <element signature="method#cleanupTournament2019#0;class#TournamentService#0" expanded="false" />
+            <element signature="method#createTournamentAH2020#0;class#TournamentService#0" expanded="false" />
           </folding>
         </state>
       </provider>

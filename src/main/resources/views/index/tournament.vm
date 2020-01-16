@@ -28,7 +28,7 @@
                     });
                 }
 
-                #if($t.groups().size() > 1)
+                #if($t.groups.size() > 1)
                 $.ajax({
                     type: "GET",
                     url: "/match/quarterFinalMatches/" + tid,
@@ -111,7 +111,7 @@
                     }
                 });
 
-                #if($t.groups().size() > 1)
+                #if($t.groups.size() > 1)
                 $.ajax({
                     type: "GET",
                     url: "/match/finalMatches/" + tid,
@@ -236,7 +236,7 @@
                     </div>
                 </div>
 
-                #if($t.groups().size() > 1)
+                #if($t.groups.size() > 1)
 
                 <div data-interval="$finalSlideInterval" class="carousel-item slide--game-table">
                     <div id="quarterFinalMatches">
@@ -253,12 +253,6 @@
                     </div>
                 </div>
 
-                <div data-interval="10000" class="carousel-item slide--advertisment container">
-                    <img class="rounded mx-auto d-block"
-                         src="/images/ads/Advertisement-Grid-Lightgrey.jpg"
-                         alt="Ads" width="100%" />
-                </div>
-
                 <!--
                 <div data-interval="5000" class="carousel-item slide--advertisment container">
                     <img class="rounded mx-auto d-block"
@@ -268,6 +262,12 @@
                 -->
 
                 #end
+
+                <div data-interval="10000" class="carousel-item slide--advertisment container">
+                    <img class="rounded mx-auto d-block"
+                         src="${t.getImagePath()}"
+                         alt="Ads" width="100%" />
+                </div>
             </div>
 
             <!--
@@ -312,12 +312,12 @@
         <div data-interval="$prelimSlideInterval">
             <div id="prelimMatches">
             </div>
-            #if($t.groups().size() > 1)
             <div id="ads">
                 <img class="rounded mx-auto d-block"
-                     src="/images/ads/Advertisement-Grid-Lightgrey.jpg"
+                     src="${t.getImagePath()}"
                      alt="Ads" width="100%" />
             </div>
+            #if($t.groups.size() > 1)
             <div id="finalMatches">
             </div>
             #end

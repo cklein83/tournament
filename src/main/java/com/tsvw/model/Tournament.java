@@ -6,6 +6,7 @@ import org.hibernate.Hibernate;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -172,7 +173,11 @@ public class Tournament {
     }
 
     public boolean isPreliminationDone() {
-
         return false;
+    }
+
+    public String getImagePath() {
+        final String encodedName = Base64.getEncoder().encodeToString(getName().getBytes());
+        return "/images/ads/" + encodedName + ".jpg";
     }
 }
