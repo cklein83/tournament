@@ -944,7 +944,7 @@ public class TournamentService extends Service {
         int minsToPlay = 12;
         int minsPauseInBetween = 2;
         int minsToPlayPlusPause = minsToPlay + minsPauseInBetween;
-        int minsPauseBeforeFinals = 30;
+        int minsPauseBeforeFinals = 32;
         int minsPauseInBetweenFinals = 15;
 
         Tournament t = new Tournament(
@@ -1233,7 +1233,7 @@ public class TournamentService extends Service {
         workDate = DateUtils.addMinutes(workDate, minsToPlay);
 
         // pause
-        workDate = DateUtils.addMinutes(workDate, minsPauseInBetweenFinals);
+        workDate = DateUtils.addMinutes(workDate, minsPauseInBetweenFinals + 1);
 
         // semifinals
         {
