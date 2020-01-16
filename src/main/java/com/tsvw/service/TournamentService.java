@@ -944,13 +944,13 @@ public class TournamentService extends Service {
         int minsToPlay = 12;
         int minsPauseInBetween = 2;
         int minsToPlayPlusPause = minsToPlay + minsPauseInBetween;
-        int minsPauseBeforeSemiFinal = 15;
-        int minsPauseBeforeFinal = 15;
+        int minsPauseBeforeFinals = 30;
+        int minsPauseInBetweenFinals = 15;
 
         Tournament t = new Tournament(
                 "Hallenzauber 2020",
                 startDate,
-                minsToPlay * 60, minsPauseInBetween * 60, minsPauseBeforeFinal * 60,
+                minsToPlay * 60, minsPauseInBetween * 60, minsPauseInBetweenFinals * 60,
                 2);
         t.setSubtitle("Firmenturnier in der Weibertreuhalle Weinsberg");
         entityManager.persist(t);
@@ -1141,7 +1141,7 @@ public class TournamentService extends Service {
         workDate = DateUtils.addMinutes(workDate, minsToPlay);
 
         // pause before final
-        workDate = DateUtils.addMinutes(workDate, minsPauseBeforeFinal);
+        workDate = DateUtils.addMinutes(workDate, minsPauseBeforeFinals);
 
         /**
          * finals
@@ -1233,7 +1233,7 @@ public class TournamentService extends Service {
         workDate = DateUtils.addMinutes(workDate, minsToPlay);
 
         // pause
-        workDate = DateUtils.addMinutes(workDate, minsPauseBeforeSemiFinal);
+        workDate = DateUtils.addMinutes(workDate, minsPauseInBetweenFinals);
 
         // semifinals
         {
@@ -1250,7 +1250,7 @@ public class TournamentService extends Service {
         workDate = DateUtils.addMinutes(workDate, minsToPlay);
 
         // pause
-        workDate = DateUtils.addMinutes(workDate, minsPauseBeforeFinal);
+        workDate = DateUtils.addMinutes(workDate, minsPauseInBetweenFinals);
 
         // smallfinal + final
         {
