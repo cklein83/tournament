@@ -7,7 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="44baac04-c398-407d-94af-04204f6aa6c1" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tsvw/controller/MatchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tsvw/controller/MatchController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/tsvw/service/TournamentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tsvw/service/TournamentService.java" afterDir="false" />
     </list>
     <list id="565686d9-c6f7-41d0-85e9-71e8fdb5e735" name="DoNotCommit" comment="" />
@@ -44,8 +44,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/views/match/_matches.vm">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="32" column="13" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
+            <state relative-caret-position="315">
+              <caret line="21" column="8" lean-forward="true" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -112,8 +112,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/tsvw/controller/MatchController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1275">
-              <caret line="96" selection-start-line="96" selection-end-line="96" />
+            <state relative-caret-position="296">
+              <caret line="46" column="40" selection-start-line="46" selection-start-column="40" selection-end-line="46" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -174,7 +174,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/views/index/tournament.vm">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4095">
+            <state relative-caret-position="-124">
               <caret line="273" column="25" selection-start-line="273" selection-start-column="25" selection-end-line="273" selection-end-column="25" />
             </state>
           </provider>
@@ -183,8 +183,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/tsvw/service/TournamentService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="1166" column="33" lean-forward="true" selection-start-line="1166" selection-start-column="33" selection-end-line="1166" selection-end-column="33" />
+            <state relative-caret-position="476">
+              <caret line="1256" lean-forward="true" selection-start-line="1256" selection-end-line="1256" />
               <folding>
                 <element signature="e#0#30#1" expanded="true" />
                 <element signature="e#0#30#1" expanded="true" />
@@ -314,8 +314,8 @@
         <option value="$PROJECT_DIR$/src/main/java/com/tsvw/Start.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/tsvw/controller/BackendController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/static/css/blog.css" />
-        <option value="$PROJECT_DIR$/src/main/java/com/tsvw/controller/MatchController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/views/index/tournament.vm" />
+        <option value="$PROJECT_DIR$/src/main/java/com/tsvw/controller/MatchController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/tsvw/service/TournamentService.java" />
       </list>
     </option>
@@ -472,7 +472,7 @@
       <updated>1517513922880</updated>
       <workItem from="1579165225980" duration="1220000" />
       <workItem from="1579169666994" duration="2913000" />
-      <workItem from="1579273713546" duration="1827000" />
+      <workItem from="1579273713546" duration="2711000" />
     </task>
     <task id="LOCAL-00001" summary="removed garbage line">
       <created>1517658553712</created>
@@ -674,7 +674,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5960000" />
+    <option name="totallyTimeSpent" value="6844000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1979" y="-3" width="1861" height="1083" extended-state="6" />
@@ -1067,13 +1067,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/views/match/_matches.vm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" column="13" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/app.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1119,13 +1112,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/tsvw/controller/MatchController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1275">
-          <caret line="96" selection-start-line="96" selection-end-line="96" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/print.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1080">
@@ -1147,13 +1133,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/tournament.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="21" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/tsvw/model/Tournament.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="600">
@@ -1169,13 +1148,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/views/index/tournament.vm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4095">
-          <caret line="273" column="25" selection-start-line="273" selection-start-column="25" selection-end-line="273" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/VM_global_library.vm">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -1183,10 +1155,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/tournament.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="21" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/views/match/_matches.vm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="8" lean-forward="true" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/tsvw/controller/MatchController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="46" column="40" selection-start-line="46" selection-start-column="40" selection-end-line="46" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/views/index/tournament.vm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-124">
+          <caret line="273" column="25" selection-start-line="273" selection-start-column="25" selection-end-line="273" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/tsvw/service/TournamentService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="1166" column="33" lean-forward="true" selection-start-line="1166" selection-start-column="33" selection-end-line="1166" selection-end-column="33" />
+        <state relative-caret-position="476">
+          <caret line="1256" lean-forward="true" selection-start-line="1256" selection-end-line="1256" />
           <folding>
             <element signature="e#0#30#1" expanded="true" />
             <element signature="e#0#30#1" expanded="true" />

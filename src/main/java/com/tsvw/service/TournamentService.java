@@ -1218,9 +1218,21 @@ public class TournamentService extends Service {
             entityManager.persist(finalGroup);
         }
 
-        // tiniest final first
+        // tiny finals
         {
             Match m = new Match(t, ++matchNo, workDate, MatchType.QUARTERFINAL,finalTeam5A, finalTeam5B);
+            entityManager.persist(m);
+            t.addMatch(m);
+        }
+        workDate = DateUtils.addMinutes(workDate, minsToPlayPlusPause);
+        {
+            Match m = new Match(t, ++matchNo, workDate, MatchType.QUARTERFINAL,finalTeam4A, finalTeam4B);
+            entityManager.persist(m);
+            t.addMatch(m);
+        }
+        workDate = DateUtils.addMinutes(workDate, minsToPlayPlusPause);
+        {
+            Match m = new Match(t, ++matchNo, workDate, MatchType.QUARTERFINAL,finalTeam3A, finalTeam3B);
             entityManager.persist(m);
             t.addMatch(m);
         }
@@ -1239,20 +1251,6 @@ public class TournamentService extends Service {
             t.addMatch(m);
         }
         workDate = DateUtils.addMinutes(workDate, minsToPlayPlusPause);
-
-        // tiny finals
-        {
-            Match m = new Match(t, ++matchNo, workDate, MatchType.QUARTERFINAL,finalTeam4A, finalTeam4B);
-            entityManager.persist(m);
-            t.addMatch(m);
-        }
-        workDate = DateUtils.addMinutes(workDate, minsToPlayPlusPause);
-        {
-            Match m = new Match(t, ++matchNo, workDate, MatchType.QUARTERFINAL,finalTeam3A, finalTeam3B);
-            entityManager.persist(m);
-            t.addMatch(m);
-        }
-        workDate = DateUtils.addMinutes(workDate, minsToPlay);
 
         // ===> longer pause
         workDate = DateUtils.addMinutes(workDate, minsPauseInBetweenFinals);
