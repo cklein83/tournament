@@ -945,7 +945,7 @@ public class TournamentService extends Service {
         int minsPauseInBetween = 2;
         int minsToPlayPlusPause = minsToPlay + minsPauseInBetween;
         int minsPauseBeforeFinals = 27;
-        int minsPauseInBetweenFinals = 12;
+        int minsPauseInBetweenFinals = 15;
 
         Tournament t = new Tournament(
                 "Hallenzauber 2020",
@@ -1201,16 +1201,16 @@ public class TournamentService extends Service {
         finalTeams.add(finalTeam3B);
 
         // small final teams
-        Team finalTeamLoser22 = new Team("Verlierer 1/2-Finale Spiel 22", null);
-        finalTeams.add(finalTeamLoser22);
-        Team finalTeamLoser23 = new Team("Verlierer 1/2-Finale Spiel 23", null);
-        finalTeams.add(finalTeamLoser23);
+        Team finalTeamLoser1 = new Team("Verlierer 1/2-Finale Spiel 24", null);
+        finalTeams.add(finalTeamLoser1);
+        Team finalTeamLoser2 = new Team("Verlierer 1/2-Finale Spiel 25", null);
+        finalTeams.add(finalTeamLoser2);
 
         // final teams
-        Team finalTeamWinner22 = new Team("Sieger 1/2-Finale Spiel 22", null);
-        finalTeams.add(finalTeamWinner22);
-        Team finalTeamWinner23 = new Team("Sieger 1/2-Finale Spiel 23", null);
-        finalTeams.add(finalTeamWinner23);
+        Team finalTeamWinner1 = new Team("Sieger 1/2-Finale Spiel 24", null);
+        finalTeams.add(finalTeamWinner1);
+        Team finalTeamWinner2 = new Team("Sieger 1/2-Finale Spiel 25", null);
+        finalTeams.add(finalTeamWinner2);
 
         for (Team team : finalTeams) {
             entityManager.persist(team);
@@ -1253,17 +1253,17 @@ public class TournamentService extends Service {
         workDate = DateUtils.addMinutes(workDate, minsToPlayPlusPause);
 
         // ===> longer pause
-        workDate = DateUtils.addMinutes(workDate, minsPauseInBetweenFinals);
+        workDate = DateUtils.addMinutes(workDate, minsPauseInBetweenFinals); // => 00:00
 
         // smallfinal + final
         {
-            Match m = new Match(t, ++matchNo, workDate, MatchType.SMALLFINAL, finalTeamLoser22, finalTeamLoser23);
+            Match m = new Match(t, ++matchNo, workDate, MatchType.SMALLFINAL, finalTeamLoser1, finalTeamLoser2);
             entityManager.persist(m);
             t.addMatch(m);
         }
-        workDate = DateUtils.addMinutes(workDate, minsToPlayPlusPause);
+        workDate = DateUtils.addMinutes(workDate, minsToPlayPlusPause + 1); // 15min
         {
-            Match m = new Match(t, ++matchNo, workDate, MatchType.FINAL, finalTeamWinner22, finalTeamWinner23);
+            Match m = new Match(t, ++matchNo, workDate, MatchType.FINAL, finalTeamWinner1, finalTeamWinner2);
             entityManager.persist(m);
             t.addMatch(m);
         }
