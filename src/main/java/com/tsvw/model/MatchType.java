@@ -7,7 +7,7 @@ public enum MatchType {
     @Override
     public String toString() {
         switch (super.toString().toUpperCase()) {
-            case "PRELIM": return "Vorrunde";
+            case "PRELIM": return "Kleine Finalspiele";
             case "EIGHTHFINAL": return "Achtelfinale";
             case "QUARTERFINAL": return "Viertelfinale";
             case "SEMIFINAL": return "Halbfinale";
