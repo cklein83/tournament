@@ -1317,28 +1317,28 @@ public class TournamentService extends Service {
         Group groupA = new Group("1", t);
         entityManager.persist(groupA);
 
-        Team teamA1 = new Team("Mannschaft 8", groupA);
+        Team teamA1 = new Team("SV Sülzbach", groupA);
         teams.add(teamA1);
         groupA.addTeam(teamA1);
-        Team teamA2 = new Team("SV Sülzbach", groupA);
+        Team teamA2 = new Team("TSV Weinsberg", groupA);
         teams.add(teamA2);
         groupA.addTeam(teamA2);
-        Team teamA3 = new Team("TSV Weinsberg", groupA);
+        Team teamA3 = new Team("VfL Eberstadt", groupA);
         teams.add(teamA3);
         groupA.addTeam(teamA3);
-        Team teamA4 = new Team("VfL Eberstadt", groupA);
+        Team teamA4 = new Team("CVJM Neckarsulm", groupA);
         teams.add(teamA4);
         groupA.addTeam(teamA4);
-        Team teamA5 = new Team("TSV Neuenstein", groupA);
+        Team teamA5 = new Team("Old Boys Weinsberg", groupA);
         teams.add(teamA5);
         groupA.addTeam(teamA5);
-        Team teamA6 = new Team("Old Boys Weinsberg", groupA);
+        Team teamA6 = new Team("Friedrichshaller Kicker", groupA);
         teams.add(teamA6);
         groupA.addTeam(teamA6);
-        Team teamA7 = new Team("Friedrichshaller Kicker", groupA);
+        Team teamA7 = new Team("TSV Neuenstein", groupA);
         teams.add(teamA7);
         groupA.addTeam(teamA7);
-        Team teamA8 = new Team("CVJM", groupA);
+        Team teamA8 = new Team("n.n.", groupA);
         teams.add(teamA8);
         groupA.addTeam(teamA8);
 
