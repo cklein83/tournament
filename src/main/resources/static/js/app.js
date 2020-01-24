@@ -16,7 +16,8 @@ $(document).ready(function () {
 
     $('#myCarousel').carousel({
         keyboard: false,
-        pause: false
+        pause: false,
+        interval: 10000
     });
 });
 

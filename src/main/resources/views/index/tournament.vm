@@ -191,11 +191,11 @@
 
 
 #if($prelimDone)
-  #set($prelimSlideInterval=7000)
-  #set($finalSlideInterval=10000)
+  #set($prelimSlideInterval=13000)
+  #set($finalSlideInterval=17000)
 #else
-  #set($prelimSlideInterval=10000)
-  #set($finalSlideInterval=7000)
+  #set($prelimSlideInterval=17000)
+  #set($finalSlideInterval=13000)
 #end
 
 <div class="row">
